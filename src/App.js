@@ -1,17 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.scss';
 import firebase from 'firebase';
 
-import React, { Component } from 'react';
-import './App.css';
 
-export default class App extends Component {
+class App extends Component {
     render() {
         return (
             <div className="App">
-                    
+                    <h1>HELLLOO</h1>
             </div>
         );
     }
 }
+
+export default App;
