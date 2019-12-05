@@ -9,30 +9,50 @@ class Polls extends Component {
       };
   }
 
-
+  
 
   render() {
     return (
         <ul className='pollsList'>
           <li className='pollItem'>
             <p>gif or jif?</p>
-            <form action="">
+            <form onSubmit={}>
               <button>gif</button>
               <button>jif</button>
               <button type=''>Submit</button>
             </form>
           </li>
           <li className='pollItem'>
-
+              <p>gif or jif?</p>
+              <form action="">
+                <button>gif</button>
+                <button>jif</button>
+                <button type=''>Submit</button>
+              </form>
           </li>
           <li className='pollItem'>
-
+              <p>gif or jif?</p>
+              <form action="">
+                <button>gif</button>
+                <button>jif</button>
+                <button type=''>Submit</button>
+              </form>
           </li>
           <li className='pollItem'>
-
+              <p>gif or jif?</p>
+              <form action="">
+                <button>gif</button>
+                <button>jif</button>
+                <button type=''>Submit</button>
+              </form>
           </li>
           <li className='pollItem'>
-
+              <p>gif or jif?</p>
+              <form action="">
+                <button>gif</button>
+                <button>jif</button>
+                <button type=''>Submit</button>
+              </form>
           </li>
         </ul>
     );
