@@ -9,49 +9,55 @@ class Polls extends Component {
       };
   }
 
-  
+  onPollSubmit = (e) => {
+    e.preventDefault();
+    console.log(e.target.value)
+  }
 
   render() {
+
+    const {onPollSubmit} = this;
+
     return (
         <ul className='pollsList'>
           <li className='pollItem'>
             <p>gif or jif?</p>
-            <form onSubmit={}>
-              <button>gif</button>
-              <button>jif</button>
-              <button type=''>Submit</button>
+            <form onSubmit={onPollSubmit}>
+              <button value='gif'>gif</button>
+              <button value='jif'>jif</button>
+              <button type='submit'>Submit</button>
             </form>
           </li>
           <li className='pollItem'>
-              <p>gif or jif?</p>
-              <form action="">
-                <button>gif</button>
-                <button>jif</button>
-                <button type=''>Submit</button>
+              <p></p>
+              <form onSubmit={onPollSubmit}>
+                <button></button>
+                <button></button>
+                <button type='submit'>Submit</button>
               </form>
           </li>
           <li className='pollItem'>
-              <p>gif or jif?</p>
-              <form action="">
-                <button>gif</button>
-                <button>jif</button>
-                <button type=''>Submit</button>
+              <p></p>
+              <form onSubmit={onPollSubmit}>
+                <button></button>
+                <button></button>
+                <button type='submit'>Submit</button>
               </form>
           </li>
           <li className='pollItem'>
-              <p>gif or jif?</p>
-              <form action="">
-                <button>gif</button>
-                <button>jif</button>
-                <button type=''>Submit</button>
+              <p></p>
+              <form onSubmit={onPollSubmit}>
+                <button></button>
+                <button></button>
+                <button type='submit'>Submit</button>
               </form>
           </li>
           <li className='pollItem'>
-              <p>gif or jif?</p>
-              <form action="">
-                <button>gif</button>
-                <button>jif</button>
-                <button type=''>Submit</button>
+              <p></p>
+              <form onSubmit={onPollSubmit}>
+                <button></button>
+                <button></button>
+                <button type='submit'>Submit</button>
               </form>
           </li>
         </ul>
