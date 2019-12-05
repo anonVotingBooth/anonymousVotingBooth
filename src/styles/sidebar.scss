@@ -1,0 +1,9 @@
+.sideBar {
+  background-color: $bgColour;
+  width: 150px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
