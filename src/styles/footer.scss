@@ -1,5 +1,26 @@
 .footerContent {
-    font-family: $fontBase;
-    text-align: center;
-    font-size: .5rem;
+    padding: 10px 0;
+    p,
+    a {
+        font-family: $fontBase;
+        text-align: center;
+        font-size: 1.5rem;
+        text-decoration: none;
+        color: $black;
+        text-transform: capitalize;
+        a {
+            color: lighten($black, 10%);
+            padding: 10px 3px;
+            transition: ease .3s;
+            &:hover,
+            &:focus {
+                // highlighter effect on hover
+                text-shadow: 
+                    -5px 0px 5px $accentColour,
+                    5px 0px 5px $accentColour,
+                    6px 0px 6px $accentColour,
+                    -6px 0px 6px $accentColour;
+            }
+        }
+    }
 }
