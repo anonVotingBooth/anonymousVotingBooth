@@ -1,5 +1,5 @@
-* {
-    font-size: 125%;
+html {
+    font-size: 62.5%;
 }
 .wrapper {
     width: 80%;
@@ -7,9 +7,8 @@
     margin: 0 auto;
 }
 body {
-    background: $bgColour;
-    background-attachment: fixed;
-    
+    background-color: #c8e7ff;
+    font-size: 1.6rem;
 }
 
 ul, li, h1, h2, h3, p {
