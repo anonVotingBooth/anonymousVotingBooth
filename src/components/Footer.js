@@ -5,8 +5,9 @@ class Footer extends Component {
 
     return (
       <footer>
-        <div class='footerContent wrapper'>
-          <p>Copyright &copy; 2019 <a href="#">Sharon Yi</a>, <a href="#">Jasmine Carbone</a>, <a href="#">Mehdi Pilehvarian</a>, <a href="#">Vincent Dang.</a> All rights reserved</p>
+        <div className='footerContent wrapper'>
+          <p>copyright &copy; 2019 &nbsp;-&nbsp; all rights reserved </p>
+          <p><a href="#">sharon yi</a>, <a href="#">jasmine carbone</a>, <a href="#">mehdi pilehvarian</a>, <a href="#">vincent dang.</a></p>
         </div>
       </footer>
     );
