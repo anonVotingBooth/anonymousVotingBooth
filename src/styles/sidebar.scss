@@ -1,9 +1,22 @@
 .sideBar {
+  font-family: $fontHeader;
   background-color: $bgColour;
-  width: 150px;
+  width: 200px;
   height: 100vh;
   position: fixed;
   left: 0;
   top: 0;
   z-index: 100;
+  padding-top: 100px;
+  font-size: 1.5rem;
+
+  .sideBarLinks {
+    color: $white;
+    display: block;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: left;
+    padding: 0 0 20px 20px;
+  }
 }

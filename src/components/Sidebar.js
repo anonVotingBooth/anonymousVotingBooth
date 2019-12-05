@@ -7,7 +7,8 @@ class Sidebar extends Component {
         
         return (
             <div className='sideBar'>
-                <NavLink to='/dashboard/createapoll'>Create a poll</NavLink>
+                <NavLink className="sideBarLinks" to='/dashboard/createapoll'>create a poll</NavLink>
+                <NavLink className="sideBarLinks" to='/dashboard/viewpolls'>view your polls</NavLink>
             </div>
         );
     };
