@@ -1,3 +1,17 @@
+* {
+    font-size: 125%;
+}
+.wrapper {
+    width: 80%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
 body {
-    background-color: pink;
+    background: $bgColour;
+    background-attachment: fixed;
+    
+}
+
+ul, li, h1, h2, h3, p {
+    margin: 0;
 }
