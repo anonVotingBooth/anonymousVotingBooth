@@ -19,29 +19,49 @@ class Polls extends Component {
         <div className="wrapper">
           <ul className='pollsList'>
             <li className='pollItem'>
-                <p>gif or jif?</p>
-                <button onClick={onPollSubmit} type='button' value='gif'>gif</button>
-                <button onClick={onPollSubmit} type='button' value='jif'>jif</button>
+                <div className="pollQuestion">
+                  <p>gif or jif?</p>
+                </div>
+                <div className="voteButtons">
+                  <button onClick={onPollSubmit} type='button' value='gif'>gif</button>
+                  <button onClick={onPollSubmit} type='button' value='jif'>jif</button>
+                </div>
             </li>
             <li className='pollItem'>
-                <p>pineapple on pizza?</p>
-                <button onClick={onPollSubmit} type='button' value='yes'>yes</button>
-                <button onClick={onPollSubmit} type='button' value='no'>no</button>
+                <div className="pollQuestion">
+                  <p>pineapple on pizza?</p>
+                </div>
+                <div className="voteButtons">
+                  <button onClick={onPollSubmit} type='button' value='yes'>yes</button>
+                  <button onClick={onPollSubmit} type='button' value='no'>no</button>
+                </div>
             </li>
             <li className='pollItem'>
-                <p>ketchup or mustard?</p>
-                <button onClick={onPollSubmit} type='button' value='ketchup'>ketchup</button>
-                <button onClick={onPollSubmit} type='button' value='mustard'>mustard</button>
+                <div className="pollQuestion">
+                  <p>ketchup or mustard?</p>
+                </div>
+                <div className="voteButtons">
+                  <button onClick={onPollSubmit} type='button' value='ketchup'>ketchup</button>
+                  <button onClick={onPollSubmit} type='button' value='mustard'>mustard</button>
+                </div>
             </li>
             <li className='pollItem'>
-                <p>chocolate or vanilla?</p>
-                <button onClick={onPollSubmit} type='button' value='chocolate'>chocolate</button>
-                <button onClick={onPollSubmit} type='button' value='vanilla'>vanilla</button >
+                <div className="pollQuestion">
+                	<p>chocolate or vanilla?</p>
+                </div>
+                <div className="voteButtons">
+                  <button onClick={onPollSubmit} type='button' value='chocolate'>chocolate</button>
+                  <button onClick={onPollSubmit} type='button' value='vanilla'>vanilla</button>
+                </div>
             </li>
             <li className='pollItem'>
-                <p>dogs or cats?</p>
-                <button onClick={onPollSubmit} type='button' value='dogs'>dogs</button>
-                <button onClick={onPollSubmit} type='button' value='cats'>cats</button >
+                <div className="pollQuestion">
+                  <p>dogs or cats?</p>
+                </div>
+                <div className="voteButtons">
+                  <button onClick={onPollSubmit} type='button' value='dogs'>dogs</button>
+                  <button onClick={onPollSubmit} type='button' value='cats'>cats</button>
+                </div>
             </li>
           </ul>
         </div>

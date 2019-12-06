@@ -3,6 +3,7 @@ import Sidebar from './Sidebar';
 import CreateAPoll from './CreateAPoll';
 import Polls from './Polls';
 import ViewPolls from './ViewPolls';
+import '../App.scss';
 
 class Dashboard extends Component {
     render() {
