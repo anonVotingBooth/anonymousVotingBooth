@@ -8,18 +8,15 @@ class Welcome extends Component {
         return (
                 <div className='welcomeSplash'>
                     <div className='wrapper'>
-                        <div className='logo'>
-                            <img className='logo' src={logo}></img>
-                        </div>
+                        <img className='logo' src={logo}></img>
                         <div className='userLoginHome'>
-                            <Link className='guestLoginButton' to='/guestlogin'>guest login</Link>
+                            <Link className='guestLoginButton' to='guest/dashboard'>guest login</Link>
                             <Link to='/signup'>Sign Up</Link>
                             <Link to='/signinpage'>Sign In</Link>
                         </div>
                             
                     </div>
                 </div>
-           
         );
     }
 }

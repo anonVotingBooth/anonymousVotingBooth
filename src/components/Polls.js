@@ -7,6 +7,7 @@ class Polls extends Component {
       super();
       this.state = {
           pollQuestions: [],
+          currentPoll: [],
           answer1: 0,
           answer2: 0
       };
@@ -22,20 +23,45 @@ class Polls extends Component {
 
     pollQuestionRef.on('value', fbData => {
       const pollData = fbData.val();
-      console.log(pollData);
+      const pollContent = Object.values(pollData);
+      const pollNum = [];
+      for (let key in pollData){
+        const pollNumbers = {
+          pNumber: key,
+          pName: pollData[key],
+          voted: false
+        }
+        pollNum.push(pollNumbers);
+      }
+      this.setState({
+        pollQuestions: pollContent,
+        currentPoll: pollNum
+      });
     });
   }
 
   render() {
-    
-
     const {
-      onPollSubmit
+      onPollSubmit,
+      state: {
+        currentPoll
+      }
     } = this;
 
     return (
         <div className="wrapper">
           <ul className='pollsList'>
+            {
+              this.state.pollQuestions.map((value, index) => {
+                const optionA = value.answer1;
+                const optionB = value.answer2;
+                const totalVotesA = value.votes1;
+                const totalVotesB = value.votes2;
+                const pollQ = value.question;
+                const 
+                const voted = currentPoll[index].voted;
+              })
+            }
             <li className='pollItem'>
                 <div className="pollQuestion">
                   <p>gif or jif?</p>
