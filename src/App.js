@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
 import './App.scss';
 import firebase from 'firebase';
+import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import GuestLogin from './components/GuestLogin';
-import SignUp from './components/SignUp';
 import Header from './components/Header';
-// import Dashboard from './components/Dashboard';
-import Footer from './components/Footer';
 import Welcome from './components/Welcome';
 import GuestLogin from './components/GuestLogin';
 import Dashboard from './components/Dashboard';
 import SignUp from './components/SignUp';
 import SignInPage from './components/SignInPage';
 import CreateAPoll from './components/CreateAPoll';
+import Footer from './components/Footer';
 
 class App extends Component {
     // constructor() {
