@@ -12,6 +12,7 @@ import GuestLogin from './components/GuestLogin';
 import Dashboard from './components/Dashboard';
 import SignUp from './components/SignUp';
 import SignInPage from './components/SignInPage';
+import CreateAPoll from './components/CreateAPoll';
 
 class App extends Component {
     // constructor() {
@@ -76,11 +77,11 @@ class App extends Component {
         return (
             <Router>
                 <div className='App'>
-                    <Header />
                     <Route exact path='/' component={Welcome} />
                     <Route path='/signup' component={SignUp} />
                     <Route path='/signinpage' component={SignInPage}/>
                     <Route path='/guest/dashboard' component={Dashboard} />
+                    <Route path='dashboard/create' component={CreateAPoll} />
                     <Footer />
                 </div>
             </Router>
