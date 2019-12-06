@@ -20,9 +20,8 @@ class App extends Component {
                     <Header />
                     <Route exact path='/' component={Welcome} />
                     <Route path='/signup' component={SignUp} />
-                    <Route path='/guestlogin' component={GuestLogin} />
                     <Route path='/signinpage' component={SignInPage}/>
-                    <Route path='/guestlogin/dashboard' component={Dashboard} />
+                    <Route path='/guest/dashboard' component={Dashboard} />
                     <Footer />
                 </div>
             </Router>
