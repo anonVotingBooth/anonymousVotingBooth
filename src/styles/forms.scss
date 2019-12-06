@@ -1,0 +1,10 @@
+.createPoll {
+    display: flex;
+    flex-direction: column;
+    form {
+        background: $white;
+        border-radius: 5px;
+        padding: 25px;
+        margin: 20px auto;
+    }
+}
