@@ -8,18 +8,14 @@ class Polls extends Component {
       this.state = {
           pollQuestions: [],
           currentPoll: [],
-          answer1: 0,
-          answer2: 0
+          answer1TotalVotes: 0,
+          answer2TotalVotes: 0,
+          pollQuestionRef: firebase.database().ref('users/guests/polls')
       };
   }
 
-  onPollSubmit = (e) => {
-    e.preventDefault();
-    console.log(e.target.value);
-  }
-
   componentDidMount() {
-    const pollQuestionRef = firebase.database().ref('users/guests/polls');
+    const {pollQuestionRef} = this.state;
 
     pollQuestionRef.on('value', fbData => {
       const pollData = fbData.val();
@@ -40,9 +36,40 @@ class Polls extends Component {
     });
   }
 
+  incrementAnswer1Count = (e) => {
+    e.preventDefault();
+    const {id} = e.currentTarget;
+    const {currentPoll, pollQuestionRef} = this.state;
+    const vote = currentPoll[id].pName.votes1 + 1;
+    pollQuestionRef.child(`${currentPoll[id].pNumber}`).update({votes1: vote});
+
+    const newCurrentPoll = [...currentPoll]
+    newCurrentPoll[id].voted = true
+    this.setState({
+      answer1TotalVotes: vote,
+      currentPoll: newCurrentPoll
+    });
+  }
+
+  incrementAnswer2Count = (e) => {
+    e.preventDefault();
+    const {id} = e.currentTarget;
+    const {currentPoll, pollQuestionRef} = this.state;
+    const vote = currentPoll[id].pName.votes2 + 1;
+    pollQuestionRef.child(`${currentPoll[id].pNumber}`).update({votes2: vote});
+
+    const newCurrentPoll = [...currentPoll]
+    newCurrentPoll[id].voted = true
+    this.setState({
+      answer2TotalVotes: vote,
+      currentPoll: newCurrentPoll
+    });
+  }
+
   render() {
     const {
-      onPollSubmit,
+      incrementAnswer1Count,
+      incrementAnswer2Count,
       state: {
         currentPoll
       }
@@ -58,20 +85,43 @@ class Polls extends Component {
                 const totalVotesA = value.votes1;
                 const totalVotesB = value.votes2;
                 const pollQ = value.question;
-                const 
+                const currentPollQ = index;
                 const voted = currentPoll[index].voted;
+                return (
+                  <li key={index} className='pollItem'>
+                      <div className="pollQuestion">
+                        <p>{pollQ}</p>
+                      </div>
+                      <div className="voteButtons">
+                        <button 
+                          id={currentPollQ} 
+                          onClick={incrementAnswer1Count}  
+                          value='votes1'
+                          disabled={voted ? true : false}
+                        >
+                          {optionA}
+                          <p className={`${voted ? 'showVotes' : null}`}>
+                            ({totalVotesA})
+                          </p>
+                        </button>
+                        <button 
+                          id={currentPollQ}
+                          onClick={incrementAnswer2Count} 
+                          value='votes2'
+                          disabled={voted ? true : false}
+                        >
+                          {optionB}
+                          <p className={`${voted ? 'showVotes' : null}`}>
+                            ({totalVotesB})
+                          </p>
+                        </button>
+                      </div>
+                  </li>
+                )
               })
             }
-            <li className='pollItem'>
-                <div className="pollQuestion">
-                  <p>gif or jif?</p>
-                </div>
-                <div className="voteButtons">
-                  <button onClick={onPollSubmit} type='button' value='gif'>gif</button>
-                  <button onClick={onPollSubmit} type='button' value='jif'>jif</button>
-                </div>
-            </li>
-            <li className='pollItem'>
+            
+            {/* <li className='pollItem'>
                 <div className="pollQuestion">
                   <p>pineapple on pizza?</p>
                 </div>
@@ -106,7 +156,7 @@ class Polls extends Component {
                   <button onClick={onPollSubmit} type='button' value='dogs'>dogs</button>
                   <button onClick={onPollSubmit} type='button' value='cats'>cats</button>
                 </div>
-            </li>
+            </li> */}
           </ul>
         </div>
     );

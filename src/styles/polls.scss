@@ -39,6 +39,12 @@
             background: none;
             color: $primaryColour;
             outline: none;
+            p {
+                display: none;
+            }
+            .showVotes {
+                display: block;
+            }
             &:nth-child(1){
                 border-bottom-left-radius: 20px;
                 border-left: none;
