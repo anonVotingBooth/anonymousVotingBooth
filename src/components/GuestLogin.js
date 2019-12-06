@@ -6,8 +6,8 @@ class GuestLogin extends Component {
   render() {
 
     return (
-        <div >
-          <Link to='/guestlogin/dashboard' className="guestLogin">dashboard</Link>
+        <div>
+          <Link className='guestLoginButton' to='/guestlogin/dashboard'>dashboard</Link>
         </div>
     );
   };
