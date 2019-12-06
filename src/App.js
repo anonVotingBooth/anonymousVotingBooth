@@ -7,6 +7,10 @@ import Header from './components/Header';
 // import Dashboard from './components/Dashboard';
 import Footer from './components/Footer';
 import Welcome from './components/Welcome';
+import GuestLogin from './components/GuestLogin';
+import Dashboard from './components/Dashboard';
+import SignUp from './components/SignUp';
+import SignInPage from './components/SignInPage';
 
 class App extends Component {
     render() {
@@ -14,7 +18,11 @@ class App extends Component {
             <Router>
                 <div className='App'>
                     <Header />
-                    <Welcome />
+                    <Route exact path='/' component={Welcome} />
+                    <Route path='/signup' component={SignUp} />
+                    <Route path='/guestlogin' component={GuestLogin} />
+                    <Route path='/signinpage' component={SignInPage}/>
+                    <Route path='/guestlogin/dashboard' component={Dashboard} />
                     <Footer />
                 </div>
             </Router>

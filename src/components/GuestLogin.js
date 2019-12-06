@@ -6,7 +6,7 @@ class GuestLogin extends Component {
 
     return (
         <div>
-          <Link to='/guestlogin/dashboard'>dashboard</Link>
+          <Link className='guestLoginButton' to='/guestlogin/dashboard'>dashboard</Link>
         </div>
     );
   };

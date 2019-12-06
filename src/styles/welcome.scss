@@ -14,5 +14,30 @@
 .userLoginHome {
     text-align: center;
     color: $accentColour;
-    border: 1px solid blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.guestLoginButton {
+    
+    text-transform: uppercase;
+    font-family: $fontBase;
+    margin: 10px 0;
+    font-weight: bold;
+    background: $bgColour;
+    border-radius: 5px;
+    border: none;
+    text-decoration: none;
+    padding: 10px;
+    color: $white;
+    transition: ease .3s;
+    &:hover, &:focus {
+        background: $primaryColour;
+        
+    }
+}
+
+.logo img {
+    size: 200px;
 }

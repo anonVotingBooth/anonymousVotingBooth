@@ -1,29 +1,25 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import GuestLogin from './GuestLogin';
-import Dashboard from './Dashboard';
-import SignUp from './SignUp';
-import SignInPage from './SignInPage';
+
+import logo from './../assets/logo.png'
 
 class Welcome extends Component {
     render() {
         return (
-            <Router>
                 <div className='welcomeSplash'>
                     <div className='wrapper'>
-                        <h1>Voted</h1>
-                        <div className='userLoginHome'>
-                            <Link to='/guestlogin'>Guest Log In</Link>
-                            <Route exact path='/guestlogin' component={GuestLogin} />
-                            <Route path='/guestlogin/dashboard' component={Dashboard} />
-                            <Link to='/signup'>Sign Up</Link>
-                            <Route path='/signup' component={SignUp} />
-                            <Link to='/signinpage'>Sign In</Link>
-                            <Route path='/signinpage' component={SignInPage}/>
+                        <div className='logo'>
+                            <img className='logo' src={logo}></img>
                         </div>
+                        <div className='userLoginHome'>
+                            <Link className='guestLoginButton' to='/guestlogin'>guest login</Link>
+                            <Link to='/signup'>Sign Up</Link>
+                            <Link to='/signinpage'>Sign In</Link>
+                        </div>
+                            
                     </div>
                 </div>
-            </Router>
+           
         );
     }
 }
