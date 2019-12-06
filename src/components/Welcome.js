@@ -14,7 +14,6 @@ class Welcome extends Component {
                             <Link to='/signup'>Sign Up</Link>
                             <Link to='/signinpage'>Sign In</Link>
                         </div>
-                            
                     </div>
                 </div>
         );
