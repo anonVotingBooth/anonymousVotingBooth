@@ -9,6 +9,9 @@
         border-radius: 20px;
         display: flex;
         flex-direction: column;
+        background: $white;
+        font-family: $fontBase;
+        font-weight: 700;
         .pollQuestion {
             display: flex;
             height: 75%;
@@ -27,6 +30,8 @@
             justify-content: center;
         }
         button {
+            font-family: $fontBase;
+            font-weight: 700;
             border: 1px solid $primaryColour;
             width: 50%;
             justify-self: flex-end;
