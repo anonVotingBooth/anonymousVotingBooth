@@ -5,7 +5,7 @@ class Header extends Component {
 
     return (
       <div>
-        <h2>hi</h2>
+        <h2>voted</h2>
       </div>
     );
   };
