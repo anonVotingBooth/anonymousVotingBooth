@@ -5,9 +5,9 @@ class CreateAPoll extends Component {
   constructor(){
     super();
     this.state = {
-      pollQuestion: '',
-      pollAnswerOne: '',
-      pollAnswerTwo: ''
+      question: '',
+      answer1: '',
+      answer2: ''
     }
   }
     componentDidMount() {
@@ -28,32 +28,37 @@ class CreateAPoll extends Component {
       });
     }
     handleChange = (e) => {
+      console.log(e.target.value)
       this.setState({
         [e.target.id]: e.target.value,
       })
     }
     handleSubmit = (e) => {
       e.preventDefault();  
+      console.log('clicked')
         const pollToAdd = {
-          pollQuestion: this.state.pollQuestion,
-          pollAnswerOne: this.state.pollAnswerOne,
-          pollAnswerTwo: this.state.pollAnswerTwo
+          question: this.state.question,
+          answer1: this.state.answer1,
+          answer2: this.state.answer2,
+          votes1: 0,
+          votes2: 0
         };
-      const dbRef = firebase.database().ref();
+      const dbRef = firebase.database().ref('/users/guests/polls');
+        if(pollToAdd.question !== '') {
+          dbRef.push(pollToAdd)
     }
-  
-
+    }
   render() {
     return (
-      <div className='wrapper'>
+      <div className='createPoll'>
         <form id='addPoll' onSubmit={this.handleSubmit}>
           <h2>Add your poll below</h2>
-          <label htmlFor="pollQuestion"></label>
-          <input id="pollQuestion" placeholder="Add your question" type="text" onChange={this.handleChange} required></input>
-          <label htmlFor="pollAnswerOne"></label>
-          <input id="pollAnswerOne" placeholder="Answer Option One" type="text" onChange={this.handleChange} required></input>
-          <label htmlFor="pollAnswerTwo"></label>
-          <input id="pollAnswerTwo" placeholder="Answer Option Two" type="text" onChange={this.handleChange} required></input>
+          <label htmlFor="question"></label>
+          <input id="question" placeholder="Add your question" type="text" onChange={this.handleChange} required></input>
+          <label htmlFor="answer1"></label>
+          <input id="answer1" placeholder="Answer Option One" type="text" onChange={this.handleChange} required></input>
+          <label htmlFor="answer2"></label>
+          <input id="answer2" placeholder="Answer Option Two" type="text" onChange={this.handleChange} required></input>
           <button type="submit">Add Poll!</button>
         </form>
       </div>
