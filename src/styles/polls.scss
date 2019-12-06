@@ -38,6 +38,7 @@
             text-transform: uppercase;
             background: none;
             color: $primaryColour;
+            outline: none;
             &:nth-child(1){
                 border-bottom-left-radius: 20px;
                 border-left: none;

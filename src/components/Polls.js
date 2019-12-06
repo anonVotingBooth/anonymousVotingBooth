@@ -1,15 +1,33 @@
 import React, { Component } from 'react';
-import firebase from 'firebase';
+import firebase from './firebase';
 import '../App.scss';
 
 class Polls extends Component {
+  constructor() {
+      super();
+      this.state = {
+          pollQuestions: [],
+          answer1: 0,
+          answer2: 0
+      };
+  }
 
   onPollSubmit = (e) => {
     e.preventDefault();
     console.log(e.target.value);
   }
 
+  componentDidMount() {
+    const pollQuestionRef = firebase.database().ref('users/guests/polls');
+
+    pollQuestionRef.on('value', fbData => {
+      const pollData = fbData.val();
+      console.log(pollData);
+    });
+  }
+
   render() {
+    
 
     const {
       onPollSubmit
