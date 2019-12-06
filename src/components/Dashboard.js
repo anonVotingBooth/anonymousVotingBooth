@@ -9,8 +9,9 @@ class Dashboard extends Component {
     render() {
         
         return (
-            <div>
+            <div className='wrapper'>
             <Sidebar />
+            <CreateAPoll />
             <Polls />
             </div>
         );
