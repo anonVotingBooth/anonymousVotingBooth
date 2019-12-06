@@ -1,5 +1,15 @@
 .pollsList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+    grid-auto-rows: 200px;
     .pollItem {
-        
+        border: 1px solid $black;
+        list-style-type: none;
+        width: 100px;
+        height: 100px;
+        button {
+            border: 1px solid $primaryColour;
+        }
     }
 }

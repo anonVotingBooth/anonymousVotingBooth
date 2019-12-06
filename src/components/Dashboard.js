@@ -10,7 +10,7 @@ class Dashboard extends Component {
         return (
             <div>
             <Sidebar />
-            
+            <Polls />
             </div>
         );
     };

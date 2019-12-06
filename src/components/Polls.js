@@ -1,66 +1,50 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
+import '../App.scss';
 
 class Polls extends Component {
-  constructor() {
-      super();
-      this.state = {
-        userInput: ''
-      };
-  }
 
   onPollSubmit = (e) => {
     e.preventDefault();
-    console.log(e.target.value)
+    console.log(e.target.value);
   }
 
   render() {
 
-    const {onPollSubmit} = this;
+    const {
+      onPollSubmit
+    } = this;
 
     return (
-        <ul className='pollsList'>
-          <li className='pollItem'>
-            <p>gif or jif?</p>
-            <form onSubmit={onPollSubmit}>
-              <button value='gif'>gif</button>
-              <button value='jif'>jif</button>
-              <button type='submit'>Submit</button>
-            </form>
-          </li>
-          <li className='pollItem'>
-              <p></p>
-              <form onSubmit={onPollSubmit}>
-                <button></button>
-                <button></button>
-                <button type='submit'>Submit</button>
-              </form>
-          </li>
-          <li className='pollItem'>
-              <p></p>
-              <form onSubmit={onPollSubmit}>
-                <button></button>
-                <button></button>
-                <button type='submit'>Submit</button>
-              </form>
-          </li>
-          <li className='pollItem'>
-              <p></p>
-              <form onSubmit={onPollSubmit}>
-                <button></button>
-                <button></button>
-                <button type='submit'>Submit</button>
-              </form>
-          </li>
-          <li className='pollItem'>
-              <p></p>
-              <form onSubmit={onPollSubmit}>
-                <button></button>
-                <button></button>
-                <button type='submit'>Submit</button>
-              </form>
-          </li>
-        </ul>
+        <div className="wrapper">
+          <ul className='pollsList'>
+            <li className='pollItem'>
+                <p>gif or jif?</p>
+                <button onClick={onPollSubmit} type='button' value='gif'>gif</button>
+                <button onClick={onPollSubmit} type='button' value='jif'>jif</button>
+            </li>
+            <li className='pollItem'>
+                <p>pineapple on pizza?</p>
+                <button onClick={onPollSubmit} type='button' value='yes'>yes</button>
+                <button onClick={onPollSubmit} type='button' value='no'>no</button>
+            </li>
+            <li className='pollItem'>
+                <p>ketchup or mustard?</p>
+                <button onClick={onPollSubmit} type='button' value='ketchup'>ketchup</button>
+                <button onClick={onPollSubmit} type='button' value='mustard'>mustard</button>
+            </li>
+            <li className='pollItem'>
+                <p>chocolate or vanilla?</p>
+                <button onClick={onPollSubmit} type='button' value='chocolate'>chocolate</button>
+                <button onClick={onPollSubmit} type='button' value='vanilla'>vanilla</button >
+            </li>
+            <li className='pollItem'>
+                <p>dogs or cats?</p>
+                <button onClick={onPollSubmit} type='button' value='dogs'>dogs</button>
+                <button onClick={onPollSubmit} type='button' value='cats'>cats</button >
+            </li>
+          </ul>
+        </div>
     );
   };
 };
