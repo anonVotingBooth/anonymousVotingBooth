@@ -16,33 +16,52 @@ import CreateAPoll from './components/CreateAPoll';
 const provider = new firebase.auth.GoogleAuthProvider();
 const auth = firebase.auth();
 
+
+
 class App extends Component {
     constructor() {
         super();
         this.state = {
-            user: null
+            user: null,
+            windowLogOut: ''
         }
     }
 
     login = () => {
-        auth.signInWithPopup(provider)
-            .then((result) => {
-                const user = result.user;
-                this.setState({
-                    user
+        firebase.auth().signIn().then(() => {
+            firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+                .then(() => {
+                    const provider = new firebase.auth.GoogleAuthProvider();
+                    return firebase.auth().signInWithRedirect(provider);
                 });
-            });
+        })
     }
+
+    // logout = () => {
+    //     auth.signOut()
+    //         .then(() => {
+    //             this.setState({
+    //                 user: null
+    //             });
+    //         });
+    // }
+
 
     logout = () => {
-        auth.signOut()
-            .then(() => {
-                this.setState({
-                    user: null
-                });
-            });
-    }
+        firebase.auth().signOut().then(() => {
+            firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+                .then(() => {
+                    this.setState({
+                        user: null,
+                        windowLogOut: "https://mail.google.com/mail/u/0/?logout&hl=en"
 
+                    });
+                    const provider = new firebase.auth.GoogleAuthProvider();
+                    return firebase.auth().signInWithRedirect(provider);
+                });
+        })}
+
+    
     componentDidMount() {
         auth.onAuthStateChanged((user) => {
             if (user) {
