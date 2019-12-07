@@ -15,6 +15,8 @@ import Footer from './components/Footer';
 const provider = new firebase.auth.GoogleAuthProvider();
 const auth = firebase.auth();
 
+
+
 class App extends Component {
     constructor() {
         super();
@@ -25,20 +27,36 @@ class App extends Component {
     }
 
     login = () => {
-        auth.signInWithPopup(provider).then(function() {
-            
+        firebase.auth().signIn().then(() => {
+            firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+                .then(() => {
+                    const provider = new firebase.auth.GoogleAuthProvider();
+                    return firebase.auth().signInWithRedirect(provider);
+                });
         })
     }
 
+    // logout = () => {
+    //     auth.signOut()
+    //         .then(() => {
+    //             this.setState({
+    //                 user: null
+    //             });
+    //         });
+    // }
+
+
     logout = () => {
         firebase.auth().signOut().then(() => {
-            firebase.auth().setPersistence(firebase.auth.Auth.Persistence.NONE)
+            firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
                 .then(() => {
                     this.setState({
                         user: null,
                         windowLogOut: "https://mail.google.com/mail/u/0/?logout&hl=en"
+
                     });
-                    return alert('you logged out');
+                    const provider = new firebase.auth.GoogleAuthProvider();
+                    return firebase.auth().signInWithRedirect(provider);
                 });
         })}
 
