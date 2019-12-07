@@ -50,8 +50,8 @@ class CreateAPoll extends Component {
     }
   render() {
     return (
-      <div className='createPoll'>
-        <form id='addPoll' onSubmit={this.handleSubmit}>
+      <div className='wrapper'>
+        <form className='createPoll' id='addPoll' onSubmit={this.handleSubmit}>
           <h2>Add your poll below</h2>
           <label htmlFor="question"></label>
           <input id="question" placeholder="Add your question" type="text" onChange={this.handleChange} required></input>
