@@ -22,47 +22,35 @@ class App extends Component {
     constructor() {
         super();
         this.state = {
-            user: null,
-            windowLogOut: ''
+            user: null
         }
     }
 
     login = () => {
-        firebase.auth().signIn().then(() => {
-            firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
-                .then(() => {
-                    const provider = new firebase.auth.GoogleAuthProvider();
-                    return firebase.auth().signInWithRedirect(provider);
+        firebase.auth().setPersistence(firebase.auth.Auth.Persistence.NONE)
+
+        auth.signInWithPopup(provider)
+            .then((result) => {
+                const user = result.user;
+                this.setState({
+                    user
                 });
-        })
+            });
     }
 
-    // logout = () => {
-    //     auth.signOut()
-    //         .then(() => {
-    //             this.setState({
-    //                 user: null
-    //             });
-    //         });
-    // }
-
-
     logout = () => {
-        firebase.auth().signOut().then(() => {
-            firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
-                .then(() => {
-                    this.setState({
-                        user: null,
-                        windowLogOut: "https://mail.google.com/mail/u/0/?logout&hl=en"
-
-                    });
-                    const provider = new firebase.auth.GoogleAuthProvider();
-                    return firebase.auth().signInWithRedirect(provider);
+        firebase.auth().setPersistence(firebase.auth.Auth.Persistence.NONE)
+        auth.signOut()
+            .then(() => {
+                this.setState({
+                    user: null
                 });
-        })}
-
+                window.location('https://accounts.google.com/logout')
+            });
+    }
     
     componentDidMount() {
+        
         auth.onAuthStateChanged((user) => {
             if (user) {
                 this.setState({ user });
