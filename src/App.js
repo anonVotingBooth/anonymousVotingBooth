@@ -12,65 +12,63 @@ import SignInPage from './components/SignInPage';
 import CreateAPoll from './components/CreateAPoll';
 import Footer from './components/Footer';
 
+const provider = new firebase.auth.GoogleAuthProvider();
+const auth = firebase.auth();
+
+
+
 class App extends Component {
-    // constructor() {
-    //     super();
-    //     this.state = {
-    //         signedIn: false,
-    //         userId: null,
-    //         userEmail: null,
-    //         name: null,
-    //         verified: null,
-    //         userIsNew: false,
-    //         isLoading: true            
-    //     }
-    // }
+    constructor() {
+        super();
+        this.state = {
+            user: null,
+            windowLogOut: ''
+        }
+    }
 
-    // componentDidMount() {
-    //     firebase.auth().onAuthStateChanged( (user) => {
+    login = () => {
+        firebase.auth().signIn().then(() => {
+            firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+                .then(() => {
+                    const provider = new firebase.auth.GoogleAuthProvider();
+                    return firebase.auth().signInWithRedirect(provider);
+                });
+        })
+    }
 
-    //         if (user &&  this.state.userIsNew) {
-
-    //             user.updateProfile({
-    //                 displayName: ''
-    //             });
-
+    // logout = () => {
+    //     auth.signOut()
+    //         .then(() => {
     //             this.setState({
-    //                 name: null,
-    //                 signedIn: true,
-    //                 email: user.email,
-    //                 userId: user.uid,
-    //                 isLoading: false
-    //             })
-    //         } else if (user && user.isAnonymous) {
-    //             const guestNumberData = firebase.database().ref('/generalConfig');
-
-    //             guestNumberData.once('value').then( (snapshot) => {
-    //                 this.setState({
-    //                     signedIn: true,
-    //                     userId: user.uid,
-    //                     email: null,
-    //                     isLoading: false,
-    //                     name: `guest${snapshot.val().guestNumber}`
-    //                 })
-
-    //                 guestNumberData.update({
-    //                     guestNumber: snapshot.val().guestNumber + 1
-    //                 });
+    //                 user: null
     //             });
-    //         } else {
-    //             this.setState({
-    //                 signedIN: false,
-    //                 userId: null,
-    //                 introduction: true,
-    //                 isLoading: false
-    //             })
-    //         }
-    //     })
+    //         });
     // }
 
 
+    logout = () => {
+        firebase.auth().signOut().then(() => {
+            firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+                .then(() => {
+                    this.setState({
+                        user: null,
+                        windowLogOut: "https://mail.google.com/mail/u/0/?logout&hl=en"
 
+                    });
+                    const provider = new firebase.auth.GoogleAuthProvider();
+                    return firebase.auth().signInWithRedirect(provider);
+                });
+        })}
+
+    
+    componentDidMount() {
+        auth.onAuthStateChanged((user) => {
+            if (user) {
+                this.setState({ user });
+            }
+        });
+    }
+    
     render() {
         return (
             <Router>
@@ -80,6 +78,7 @@ class App extends Component {
                     <Route path='/signinpage' component={SignInPage}/>
                     <Route path='/guest/dashboard' component={Dashboard} />
                     <Route path='dashboard/create' component={CreateAPoll} />
+                    {this.state.user ? <button onClick={this.logout}>Log Out</button> : <button onClick={this.login}>Log In</button>}
                     <Footer />
                 </div>
             </Router>
