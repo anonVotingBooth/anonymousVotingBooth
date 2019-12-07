@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "firebase": "^7.5.0",
+    "firebaseui": "^4.3.0",
     "get-google-fonts": "^1.2.1",
     "node-sass": "^4.13.0",
     "react": "^16.12.0",
