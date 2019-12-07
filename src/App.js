@@ -27,7 +27,10 @@ class App extends Component {
 
     login = () => {
         auth.signInWithPopup(provider).then(function() {
-            
+            firebase.auth().setPersistence(firebase.auth.Auth.Persistence.NONE)
+            .then(() => {
+                return alert('logged in');
+            });
         })
     }
 
@@ -38,6 +41,7 @@ class App extends Component {
                     this.setState({
                         user: null,
                         windowLogOut: "https://mail.google.com/mail/u/0/?logout&hl=en"
+
                     });
                     return alert('you logged out');
                 });
