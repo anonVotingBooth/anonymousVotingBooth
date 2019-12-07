@@ -21,7 +21,7 @@ class Polls extends Component {
       const pollData = fbData.val();
       const pollContent = Object.values(pollData);
       const pollNum = [];
-      for (let key in pollData){
+      for (let key in pollData){  
         const pollNumbers = {
           pNumber: key,
           pName: pollData[key],
