@@ -16,8 +16,6 @@ import CreateAPoll from './components/CreateAPoll';
 const provider = new firebase.auth.GoogleAuthProvider();
 const auth = firebase.auth();
 
-
-
 class App extends Component {
     constructor() {
         super();
@@ -28,36 +26,20 @@ class App extends Component {
     }
 
     login = () => {
-        firebase.auth().signIn().then(() => {
-            firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
-                .then(() => {
-                    const provider = new firebase.auth.GoogleAuthProvider();
-                    return firebase.auth().signInWithRedirect(provider);
-                });
+        auth.signInWithPopup(provider).then(function() {
+            
         })
     }
 
-    // logout = () => {
-    //     auth.signOut()
-    //         .then(() => {
-    //             this.setState({
-    //                 user: null
-    //             });
-    //         });
-    // }
-
-
     logout = () => {
         firebase.auth().signOut().then(() => {
-            firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+            firebase.auth().setPersistence(firebase.auth.Auth.Persistence.NONE)
                 .then(() => {
                     this.setState({
                         user: null,
                         windowLogOut: "https://mail.google.com/mail/u/0/?logout&hl=en"
-
                     });
-                    const provider = new firebase.auth.GoogleAuthProvider();
-                    return firebase.auth().signInWithRedirect(provider);
+                    return alert('you logged out');
                 });
         })}
 
