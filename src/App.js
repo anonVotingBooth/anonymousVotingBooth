@@ -13,7 +13,44 @@ import SignUp from './components/SignUp';
 import SignInPage from './components/SignInPage';
 import CreateAPoll from './components/CreateAPoll';
 
+const provider = new firebase.auth.GoogleAuthProvider();
+const auth = firebase.auth();
+
 class App extends Component {
+    constructor() {
+        super();
+        this.state = {
+            user: null
+        }
+    }
+
+    login = () => {
+        auth.signInWithPopup(provider)
+            .then((result) => {
+                const user = result.user;
+                this.setState({
+                    user
+                });
+            });
+    }
+
+    logout = () => {
+        auth.signOut()
+            .then(() => {
+                this.setState({
+                    user: null
+                });
+            });
+    }
+
+    componentDidMount() {
+        auth.onAuthStateChanged((user) => {
+            if (user) {
+                this.setState({ user });
+            }
+        });
+    }
+    
     render() {
         return (
             <Router>
@@ -23,6 +60,7 @@ class App extends Component {
                     <Route path='/signinpage' component={SignInPage}/>
                     <Route path='/guest/dashboard' component={Dashboard} />
                     <Route path='dashboard/create' component={CreateAPoll} />
+                    {this.state.user ? <button onClick={this.logout}>Log Out</button> : <button onClick={this.login}>Log In</button>}
                     <Footer />
                 </div>
             </Router>
