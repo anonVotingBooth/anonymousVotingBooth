@@ -15,3 +15,17 @@
         }
     }
 }
+// this needs to be cleaned up still
+.createPollButton {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 5rem;
+    margin-left: 150px;
+    background: transparent;
+    color: $accentColour;
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    border: 3px solid $accentColour;
+    cursor: pointer;
+}
