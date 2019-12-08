@@ -15,13 +15,15 @@ const uiConfig = {
         }
     }
     ],
-    signInSuccessUrl: '/dashboard',
+    signInSuccessUrl: '/user/dashboard',
     uiShown: function () {
         document.getElementById('loader').style.display = 'none';
     },
     queryParameterForSignInSuccessUrl: 'signInSuccessUrl',
     callbacks: {
         signInSuccessWithAuthResult: function (authResult, redirectUrl) {
+            const providerId = authResult.additionalUserInfo.providerId;
+            console.log(providerId);
             return true;
         }
     }
