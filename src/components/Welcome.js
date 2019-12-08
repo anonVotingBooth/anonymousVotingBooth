@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Link } from 'react-router-dom';
 
 import logo from './../assets/logo.png';
 import firebase from 'firebase';
@@ -32,7 +32,7 @@ class Welcome extends Component {
         return (
                 <div className='welcomeSplash'>
                     <div className='wrapper'>
-                        <img className='logo' src={logo}></img>
+                        <img className='logo' src={logo} alt='voted logo'></img>
                         <div className='userLoginHome'>
                             <Link className='guestLoginButton' to='guest/dashboard'>guest login</Link>
                             <Link to='/signup'>Sign Up</Link>

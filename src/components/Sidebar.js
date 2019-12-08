@@ -10,9 +10,8 @@ class Sidebar extends Component {
             <div className='sideBar'>
                 <Header />
                 {/* <NavLink className="sideBarLinks" to='/'>profile</NavLink> */}
-                <NavLink className="sideBarLinks" to='/dashboard/create'>create a poll</NavLink>
-                <NavLink className="sideBarLinks" to='/dashboard/viewpolls'>view your polls</NavLink>
-                <NavLink className="sideBarLinks" to='/'>log out</NavLink>
+                <NavLink className='sideBarLinks' to='/dashboard/viewpolls'>view your polls</NavLink>
+                <NavLink className='sideBarLinks' to='/'>log out</NavLink>
             </div>
         );
     };
