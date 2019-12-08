@@ -1,0 +1,19 @@
+html {
+  font-size: 62.5%;
+}
+
+.wrapper {
+  width: 80%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+body {
+  background-color: #c8e7ff;
+  font-size: 1.6rem;
+}
+
+ul, li, h1, h2, h3, p {
+  margin: 0;
+}
+/*# sourceMappingURL=global.css.map */

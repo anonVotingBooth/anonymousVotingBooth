@@ -9,7 +9,6 @@ import Dashboard from './components/Dashboard';
 import SignUp from './components/SignUp';
 import SignInPage from './components/SignInPage';
 import CreateAPoll from './components/CreateAPoll';
-import Footer from './components/Footer';
 
 class App extends Component {
 
