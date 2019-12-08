@@ -19,6 +19,7 @@ class Dashboard extends Component {
             currentView: e.target.id
         })
     }
+
     render() {
         return (
             <div className='wrapper'>
