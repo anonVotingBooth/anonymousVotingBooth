@@ -6,7 +6,7 @@ class Header extends Component {
 
     return (
       <div>
-        <img className='logo' src={logo}></img>
+        <img className='logo' src={logo} alt='logo for voted app'></img>
       </div>
     );
   };
