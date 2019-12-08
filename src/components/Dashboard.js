@@ -4,6 +4,7 @@ import CreateAPoll from './CreateAPoll';
 import Polls from './Polls';
 // import ViewPolls from './ViewPolls';
 import '../App.scss';
+import firebase from 'firebase';
 
 class Dashboard extends Component {
     constructor(){
@@ -18,6 +19,7 @@ class Dashboard extends Component {
             currentView: e.target.id
         })
     }
+
     render() {
         return (
             <div className='wrapper'>
