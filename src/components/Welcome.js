@@ -6,29 +6,49 @@ import firebase from 'firebase';
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import * as firebaseui from 'firebaseui';
 
-const uiConfig = {
-    signInFlow: "popup",
-    signInOptions: [{
-        provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-        customParameters: {
-            prompt: 'select_account'
-        }
-    }
-    ],
-    signInSuccessUrl: '/dashboard',
-    uiShown: function () {
-        document.getElementById('loader').style.display = 'none';
-    },
-    queryParameterForSignInSuccessUrl: 'signInSuccessUrl',
-    callbacks: {
-        signInSuccessWithAuthResult: function (authResult, redirectUrl) {
-            return true;
-        }
-    }
-};
-
 class Welcome extends Component {
+    constructor() {
+        super();
+        this.state = {
+            userId: ''
+        };
+    }
+
+    handleUserInfo = (user) => {
+        this.setState({
+            userId: user.uid
+        });
+    }
+    
     render() {
+        const {handleUserInfo} = this;
+
+        const uiConfig = {
+            signInFlow: "popup",
+            signInOptions: [{
+                provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+                customParameters: {
+                    prompt: 'select_account'
+                }
+            }
+            ],
+            signInSuccessUrl: `/${this.state.userInfo}/dashboard`,
+            uiShown: function () {
+                document.getElementById('loader').style.display = 'none';
+            },
+            queryParameterForSignInSuccessUrl: 'signInSuccessUrl',
+            callbacks: {
+                signInSuccessWithAuthResult: function (authResult, redirectUrl) {
+                    firebase.auth().onAuthStateChanged(function (user) {
+                        if (user) {
+                            handleUserInfo(user);
+                        }
+                    });
+                    return true;
+                }
+            }
+        };
+        
         return (
             <div className='welcomeSplash'>
                 <div className='wrapper'>
