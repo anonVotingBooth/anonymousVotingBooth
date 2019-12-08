@@ -4,6 +4,7 @@ import { BrowserRouter as Link } from 'react-router-dom';
 import logo from './../assets/logo.png';
 import firebase from 'firebase';
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
+import * as firebaseui from 'firebaseui';
 
 const uiConfig = {
     signInFlow: "popup",
@@ -14,7 +15,7 @@ const uiConfig = {
         }
     }
     ],
-    signInSuccessUrl: '/guest/dashboard',
+    signInSuccessUrl: '/dashboard',
     uiShown: function () {
         document.getElementById('loader').style.display = 'none';
     },
@@ -26,22 +27,20 @@ const uiConfig = {
     }
 };
 
-
 class Welcome extends Component {
     render() {
         return (
-                <div className='welcomeSplash'>
-                    <div className='wrapper'>
-                        <img className='logo' src={logo} alt='voted logo'></img>
-                        <div className='userLoginHome'>
-                            <Link className='guestLoginButton' to='guest/dashboard'>guest login</Link>
-                            <Link to='/signup'>Sign Up</Link>
-                        <Link to='/signinpage'>Sign In</Link>
-                        <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
-
-                        </div>
+            <div className='welcomeSplash'>
+                <div className='wrapper'>
+                    <img className='logo' src={logo}></img>
+                    <div className='userLoginHome'>
+                    <Link className='guestLoginButton' to='guest/dashboard'>guest login</Link>
+                    <Link to='/signup'>Sign Up</Link>
+                    <Link to='/signinpage'>Sign In</Link>
+                    <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
                     </div>
                 </div>
+            </div>
         );
     }
 }
