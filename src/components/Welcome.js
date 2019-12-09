@@ -16,11 +16,8 @@ const uiConfig = {
 };
 
 class Welcome extends Component {
-
     componentDidMount() {
-
         const {getAuthentication} = this.props;
-
         firebase.auth().onAuthStateChanged(user => {
             firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
             .then(function () {
@@ -31,26 +28,26 @@ class Welcome extends Component {
             })
         })
     }
-    
     render() {
-
         if (this.props.loggedIn) {
             console.log('redirecting into dashboard');
             return <Redirect to='/user/dashboard' /> 
         }
-
         return (
-                <div className='welcomeSplash'>
-                    <div className='wrapper'>
-                        <img className='logo' src={logo}></img>
-                        <div className='userLoginHome'>
-                        <Link className='guestLoginButton' to='guest/dashboard'>guest login</Link>
-                        <Link to='/signup'>Sign Up</Link>
-                        <Link to='/signinpage'>Sign In</Link>
-                        <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
+                <div>
+                    <div className='welcomeSplash'>
+                        <div className='wrapper'>
+                            <img className='logo' src={logo}></img>
+                            <div className='userLoginHome'>
+                            <Link className='guestLoginButton' to='guest/dashboard'>guest login</Link>
+                            <Link to='/signup'>Sign Up</Link>
+                            <Link to='/signinpage'>Sign In</Link>
+                            <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
+                            </div>
                         </div>
-                    </div>
-                </div> 
+                    </div> 
+                <AnimatedBackground />
+                </div>
             );
     }
 }
