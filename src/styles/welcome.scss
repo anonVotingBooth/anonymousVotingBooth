@@ -6,7 +6,6 @@
     border: 2px solid $primaryColour;
     box-shadow: 2px 2px 4px $bgColour;
     margin: 125px auto 0 auto;
-    // margin-top: 125px;
     background: $white;
     display: flex;
     flex-direction: column;
@@ -52,7 +51,6 @@
 .App {
     position: relative;
 }
-
 .bounce-in-fwd {
 	-webkit-animation: bounce-in-fwd 1.1s both;
 	        animation: bounce-in-fwd 1.1s both;
