@@ -1,0 +1,11 @@
+.flexDashboardParent {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.dashboard {
+    width: 80%;
+    margin-left: 20%;
+}
