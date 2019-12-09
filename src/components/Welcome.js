@@ -25,12 +25,14 @@ class Welcome extends Component {
 
         const uiConfig = {
             signInFlow: "popup",
-            signInOptions: [{
-                provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-                customParameters: {
-                    prompt: 'select_account'
-                }
-            }
+            signInOptions: [
+                {
+                    provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+                    customParameters: {
+                        prompt: 'select_account'
+                    },
+                },
+                firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID,
             ],
             signInSuccessUrl: `/${this.state.userInfo}/dashboard`,
             uiShown: function () {
