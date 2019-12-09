@@ -5,7 +5,7 @@ import logo from './../assets/logo.svg';
 import firebase from 'firebase';
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import * as firebaseui from 'firebaseui';
-
+import AnimatedBackground from './AnimatedBackground';
 
 class Welcome extends Component {
     constructor() {
@@ -69,7 +69,7 @@ class Welcome extends Component {
                         </div>
                     </div>
                 </div>
-                
+                <AnimatedBackground />
             </div>
         );
     }
