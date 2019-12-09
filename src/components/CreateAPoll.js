@@ -68,7 +68,7 @@ class CreateAPoll extends Component {
           <input id='answer1' placeholder='Answer Option One' type='text' onChange={this.handleChange}value={this.state.answer1} autoComplete='off' required></input>
           <label htmlFor='answer2'></label>
           <input id='answer2' placeholder='Answer Option Two' type='text' onChange={this.handleChange}value={this.state.answer2} autoComplete='off' required></input>
-          <button type='submit'>Add Poll!</button>
+          <button className='addPollButton' type='submit'>Add Poll!</button>
         </form>
       </div>
     );
