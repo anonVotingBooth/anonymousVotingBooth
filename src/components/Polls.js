@@ -16,7 +16,7 @@ class Polls extends Component {
 
   componentDidMount() {
     const {pollQuestionRef} = this.state;
-
+    // Going to firebase and check each object (Poll) to see if the first one is checked/voted and storing them into an array
     pollQuestionRef.on('value', fbData => {
       const pollData = fbData.val();
       const pollContent = Object.values(pollData);

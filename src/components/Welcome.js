@@ -14,6 +14,7 @@ class Welcome extends Component {
         };
     }
 
+    // Getting user info/id
     handleUserInfo = (user) => {
         this.setState({
             userId: user.uid
@@ -22,7 +23,7 @@ class Welcome extends Component {
     
     render() {
         const {handleUserInfo} = this;
-
+        // Signing in with Google Auth
         const uiConfig = {
             signInFlow: "popup",
             signInOptions: [
