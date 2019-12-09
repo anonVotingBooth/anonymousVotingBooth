@@ -7,7 +7,7 @@ class SignUp extends Component {
             <form className='signUp' action="">
                 <h2>Sign Up</h2>
                 <label htmlFor='email'>Enter email</label>
-                <input type='email' id='email' required/>
+                <input type='email' id='email' required />
                 <label htmlFor='password'>Enter password</label>
                 <input type='password' id='password' minLength={6} required />
                 <SubmitButton label='Sign up' />

@@ -11,7 +11,6 @@ import SignInPage from './components/SignInPage';
 import CreateAPoll from './components/CreateAPoll';
 
 class App extends Component {
-
     render() {
         return (
             <Router>
@@ -21,7 +20,7 @@ class App extends Component {
                     <Route path='/signinpage' component={SignInPage} />
                     <Route path="/user/dashboard" component={Dashboard} />
                     <Route path='/guest/dashboard' component={Dashboard} />
-                    <Route path='dashboard/create' component={CreateAPoll} />
+                    <Route path='dashboard/create' component={CreateAPoll} /> 
                     <Footer />
                 </div>
             </Router>
