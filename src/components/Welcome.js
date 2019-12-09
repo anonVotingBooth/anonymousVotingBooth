@@ -37,7 +37,7 @@ class Welcome extends Component {
                 <div>
                     <div className='welcomeSplash'>
                         <div className='wrapper'>
-                            <img className='logo' src={logo}></img>
+                        <img className='logo bounce-in-fwd' src={logo}></img>
                             <div className='userLoginHome'>
                             <Link className='guestLoginButton' to='guest/dashboard'>guest login</Link>
                             <Link to='/signup'>Sign Up</Link>
