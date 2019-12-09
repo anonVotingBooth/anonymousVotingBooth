@@ -38,17 +38,17 @@ class Welcome extends Component {
                 }
             }
             ],
-            signInSuccessUrl: '/',
+            signInSuccessUrl: '/guest/dashboard',
             uiShown: function () {
                 document.getElementById('loader').style.display = 'none';
             },
             queryParameterForSignInSuccessUrl: 'signInSuccessUrl',
             callbacks: {
                 signInSuccessWithAuthResult: function (authResult, redirectUrl) {
-                    const userId = authResult.user.uid;
-                    handleUserInfo(userId);
-                    window.location.assign(`/${userId}/dashboard`);
-                    return false;
+                    // const userId = authResult.user.uid;
+                    // handleUserInfo(userId);
+                    // window.location.assign();
+                    return true;
                 }
             }
         };
@@ -62,7 +62,6 @@ class Welcome extends Component {
                     <Link to='/signup'>Sign Up</Link>
                     <Link to='/signinpage'>Sign In</Link>
                     <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
-                    <Route path={`/${userId}/dashboard`} component={Dashboard} />
                     </div>
                 </div>
             </div>
