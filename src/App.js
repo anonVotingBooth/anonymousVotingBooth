@@ -10,36 +10,7 @@ import SignUp from './components/SignUp';
 import SignInPage from './components/SignInPage';
 import CreateAPoll from './components/CreateAPoll';
 
-import axios from 'axios';
-
 class App extends Component {
-    constructor() {
-        super();
-        this.state = {
-            pics: []
-        }
-    }
-    componentDidMount() {
-        axios({
-            url: 'https://picsum.photos/v2/list',
-            method: 'GET',
-            responseType: 'json',
-            params: {
-                limit: 10,
-            }
-        }).then( (res) => {
-            console.log(res.data);
-            const data = res.data
-            const downloadUrl = data.map( (item) => {
-                return item.download_url;
-            });
-
-            this.setState({
-                pics: downloadUrl
-            });     
-        })
-    }
-
     render() {
         return (
             <Router>
@@ -49,14 +20,8 @@ class App extends Component {
                     <Route path='/signinpage' component={SignInPage} />
                     <Route path="/user/dashboard" component={Dashboard} />
                     <Route path='/guest/dashboard' component={Dashboard} />
-                    <Route path='dashboard/create' component={CreateAPoll} />
-                    
+                    <Route path='dashboard/create' component={CreateAPoll} /> 
                     <Footer />
-                    {/* {
-                        this.state.pics.map((item) => {
-                            return <img src={item}/>
-                        })
-                    } */}
                 </div>
             </Router>
         );
