@@ -16,7 +16,7 @@ class Polls extends Component {
 
   componentDidMount() {
     const {pollQuestionRef} = this.state;
-
+    // Going to firebase and check each object (Poll) to see if the first one is checked/voted and storing them into an array
     pollQuestionRef.on('value', fbData => {
       const pollData = fbData.val();
       const pollContent = Object.values(pollData);
@@ -36,6 +36,7 @@ class Polls extends Component {
     });
   }
 
+  // Incrementing the option one every time a user votes for option one in any vote poll
   incrementAnswer1Count = (e) => {
     e.preventDefault();
     const {id} = e.currentTarget;
@@ -51,6 +52,7 @@ class Polls extends Component {
     });
   }
 
+  // Incrementing the option two every time a user votes for option two in any vote poll
   incrementAnswer2Count = (e) => {
     e.preventDefault();
     const {id} = e.currentTarget;
