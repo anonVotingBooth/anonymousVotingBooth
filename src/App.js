@@ -9,6 +9,7 @@ import Dashboard from './components/Dashboard';
 import SignUp from './components/SignUp';
 import SignInPage from './components/SignInPage';
 import CreateAPoll from './components/CreateAPoll';
+import AnimatedBackground from './components/AnimatedBackground';
 
 class App extends Component {
     render() {
@@ -22,6 +23,7 @@ class App extends Component {
                     <Route path='/guest/dashboard' component={Dashboard} />
                     <Route path='dashboard/create' component={CreateAPoll} /> 
                     <Footer />
+                    <AnimatedBackground />
                 </div>
             </Router>
         );

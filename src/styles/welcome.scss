@@ -1,6 +1,7 @@
 .welcomeSplash {
-    width:100%;
+    z-index: 10;
     height: 50vh;
+    margin-top: 125px;
     background: $white;
     display: flex;
     flex-direction: column;
@@ -42,4 +43,56 @@
     display: block;
     width: 50%;
     margin: 0 auto;
+}
+.animatedBackground {
+    z-index: 1;
+    border: 1px solid red;
+    overflow-x: hidden;
+    height: 125vh;
+    top: -300px;
+    position: absolute;
+}
+#imageOne {
+    animation-delay: .5s;
+}
+#imageTwo {
+    animation-delay: .3s;
+}
+#imageThree {
+    animation-delay: 1s;
+}
+#imageFour {
+    animation-delay: 8s;
+}
+#imageFive {
+    animation-delay: 9s;
+}
+#imageSix {
+    animation-delay: .7s;
+}
+#imageSeven {
+    animation-delay: .5s;
+}
+#imageEight {
+    animation-delay: 1s;
+}
+#imageNine {
+    animation-delay: 2s;
+}
+#imageTen {
+    animation-delay: 3s;
+}
+.animatedImage {
+    width: 125px;
+    margin: 15px;
+    animation: floatUpAnimation 10s reverse infinite;
+}
+
+@keyframes floatUpAnimation {
+    from { 
+        top: -300vh; 
+    }
+    to { 
+        transform: translateY(110vh);
+    }
 }
