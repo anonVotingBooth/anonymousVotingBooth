@@ -38,7 +38,7 @@ class Welcome extends Component {
                 }
             }
             ],
-            signInSuccessUrl: '/users/dashboard',
+            signInSuccessUrl: '/',
             uiShown: function () {
                 document.getElementById('loader').style.display = 'none';
             },
@@ -47,7 +47,7 @@ class Welcome extends Component {
                 signInSuccessWithAuthResult: function (authResult, redirectUrl) {
                     const userId = authResult.user.uid;
                     handleUserInfo(userId);
-                    window.location.assign(`/dashboard/${userId}`);
+                    window.location.assign(`/${userId}/dashboard`);
                     return false;
                 }
             }
@@ -62,7 +62,7 @@ class Welcome extends Component {
                     <Link to='/signup'>Sign Up</Link>
                     <Link to='/signinpage'>Sign In</Link>
                     <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
-                    <Route path='/dashboard/:userId' component={Dashboard} />
+                    <Route path={`/${userId}/dashboard`} component={Dashboard} />
                     </div>
                 </div>
             </div>
