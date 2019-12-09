@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.scss';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 // import Header from './components/Header';
 import Footer from './components/Footer';
 import Welcome from './components/Welcome';
@@ -19,6 +19,7 @@ class App extends Component {
                     <Route exact path='/' component={Welcome} />
                     <Route path='/signup' component={SignUp} />
                     <Route path='/signinpage' component={SignInPage} />
+                    <Route path="/user/dashboard" component={Dashboard} />
                     <Route path='/guest/dashboard' component={Dashboard} />
                     <Route path='dashboard/create' component={CreateAPoll} />
                     <Footer />

@@ -13,6 +13,7 @@
         font-family: $fontBase;
         font-weight: 700;
         .pollQuestion {
+            font-size: 1.8rem;
             display: flex;
             height: 75%;
             justify-content: center;
@@ -20,6 +21,7 @@
         }
         p {
             color: $primaryColour;
+            text-align: center;
             &:first-letter {
                 text-transform: capitalize;
             }

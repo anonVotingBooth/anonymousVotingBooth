@@ -10,7 +10,7 @@ class Polls extends Component {
           currentPoll: [],
           answer1TotalVotes: 0,
           answer2TotalVotes: 0,
-          pollQuestionRef: firebase.database().ref('users/guests/polls')
+          pollQuestionRef: firebase.database().ref('/publicPolls')
       };
   }
 
