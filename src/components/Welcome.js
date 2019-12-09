@@ -1,58 +1,77 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Link, Redirect } from 'react-router-dom';
+import { BrowserRouter as Link } from 'react-router-dom';
 
 import logo from './../assets/logo.svg';
 import firebase from 'firebase';
-import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import * as firebaseui from 'firebaseui';
-import Dashboard from './Dashboard';
-import 'firebase/auth';
-
-const uiConfig = {
-    signInFlow: 'popup',
-    signInOptions: [
-        firebase.auth.GoogleAuthProvider.PROVIDER_ID
-    ]
-};
 import AnimatedBackground from './AnimatedBackground';
 
 class Welcome extends Component {
+    constructor() {
+        super();
+        this.state = {
+            userId: ''
+        };
+    }
 
-    componentDidMount() {
-
-        const {getAuthentication} = this.props;
-
-        firebase.auth().onAuthStateChanged(user => {
-            firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
-            .then(function () {
-                if (user) {
-                    getAuthentication(user);
-                }
-                return true;
-            })
-        })
+    // Getting user info/id
+    handleUserInfo = (user) => {
+        this.setState({
+            userId: user.uid
+        });
     }
     
     render() {
-
-        if (this.props.loggedIn) {
-            console.log('redirecting into dashboard');
-            return <Redirect to='/user/dashboard' /> 
-        }
-
+        const {handleUserInfo} = this;
+        // Signing in with Google Auth
+        const uiConfig = {
+            signInFlow: "popup",
+            signInOptions: [
+                {
+                    provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+                    customParameters: {
+                        prompt: 'select_account'
+                    },
+                },
+                firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID,
+            ],
+            
+            signInSuccessUrl: `/${this.state.userInfo}/dashboard`,
+            uiShown: function () {
+                document.getElementById('loader').style.display = 'none';
+            },
+            queryParameterForSignInSuccessUrl: 'signInSuccessUrl',
+            callbacks: {
+                signInSuccessWithAuthResult: function (authResult, redirectUrl) {
+                    firebase.auth().onAuthStateChanged(function (user) {
+                        if (user) {
+                            handleUserInfo(user);
+                        }
+                    });
+                    return true;
+                }
+            }
+        };
+        
         return (
+            <div>
                 <div className='welcomeSplash'>
                     <div className='wrapper'>
-                        <img className='logo' src={logo}></img>
+                        <img className='logo bounce-in-fwd' src={logo}></img>
                         <div className='userLoginHome'>
+                        {/* 
+                        Commented this out as we don't need anymore, but left it just in case we change routes later. Delete before submitting project. -Jasmine
                         <Link className='guestLoginButton' to='guest/dashboard'>guest login</Link>
                         <Link to='/signup'>Sign Up</Link>
-                        <Link to='/signinpage'>Sign In</Link>
+                    <Link to='/signinpage'>Sign In</Link> */}
                         <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
                         </div>
                     </div>
-                </div> 
-            );
+                </div>
+                <AnimatedBackground />
+            </div>
+        );
     }
 }
 
