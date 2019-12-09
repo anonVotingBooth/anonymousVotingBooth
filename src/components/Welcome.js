@@ -6,6 +6,7 @@ import firebase from 'firebase';
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import * as firebaseui from 'firebaseui';
 
+
 class Welcome extends Component {
     constructor() {
         super();
@@ -35,6 +36,7 @@ class Welcome extends Component {
                 },
                 firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID,
             ],
+            
             signInSuccessUrl: `/${this.state.userInfo}/dashboard`,
             uiShown: function () {
                 document.getElementById('loader').style.display = 'none';
@@ -53,18 +55,21 @@ class Welcome extends Component {
         };
         
         return (
-            <div className='welcomeSplash'>
-                <div className='wrapper'>
-                    <img className='logo bounce-in-fwd' src={logo}></img>
-                    <div className='userLoginHome'>
-                    {/* 
-                    Commented this out as we don't need anymore, but left it just in case we change routes later. Delete before submitting project. -Jasmine
-                    <Link className='guestLoginButton' to='guest/dashboard'>guest login</Link>
-                    <Link to='/signup'>Sign Up</Link>
+            <div>
+                <div className='welcomeSplash bounce-in-fwd'>
+                    <div className='wrapper'>
+                        <img className='logo' src={logo}></img>
+                        <div className='userLoginHome'>
+                        {/* 
+                        Commented this out as we don't need anymore, but left it just in case we change routes later. Delete before submitting project. -Jasmine
+                        <Link className='guestLoginButton' to='guest/dashboard'>guest login</Link>
+                        <Link to='/signup'>Sign Up</Link>
                     <Link to='/signinpage'>Sign In</Link> */}
-                    <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
+                        <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
+                        </div>
                     </div>
                 </div>
+                
             </div>
         );
     }
