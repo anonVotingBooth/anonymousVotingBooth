@@ -8,13 +8,15 @@ class ImageApi extends Component {
             pics: []
         }
     }
+    // Make axios call when the app component mounts to the unsplash API and store the default data into state
+    // Limiting the results to 2 per request
     componentDidMount() {
         axios({
             url: 'https://picsum.photos/v2/list',
             method: 'GET',
             responseType: 'json',
             params: {
-                limit: 10,
+                limit: 2,
             }
         }).then((res) => {
             console.log(res.data);

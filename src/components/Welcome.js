@@ -15,6 +15,7 @@ class Welcome extends Component {
         };
     }
 
+    // Getting user info/id
     handleUserInfo = (user) => {
         this.setState({
             userId: user.uid
@@ -23,7 +24,7 @@ class Welcome extends Component {
     
     render() {
         const {handleUserInfo} = this;
-
+        // Signing in with Google Auth
         const uiConfig = {
             signInFlow: "popup",
             signInOptions: [
@@ -57,7 +58,7 @@ class Welcome extends Component {
             <div>
                 <div className='welcomeSplash'>
                     <div className='wrapper'>
-                        <img className='logo' src={logo}></img>
+                        <img className='logo bounce-in-fwd' src={logo}></img>
                         <div className='userLoginHome'>
                         {/* 
                         Commented this out as we don't need anymore, but left it just in case we change routes later. Delete before submitting project. -Jasmine
