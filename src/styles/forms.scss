@@ -1,68 +1,98 @@
 .createPoll {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto 40px auto;
+  background: $white;
+  border: 2px solid $accentColour;
+  box-shadow: 2px 2px 4px $bgColour;
+  border-radius: 20px;
+  padding: 10px;
+  form {
     background: $white;
-    border: 1px solid $primaryColour;
-    border-radius: 20px;
-    padding: 10px;
-    form {
-        background: $white;
-        border-radius: 5px;
-        padding: 35px;
-    }
+    border-radius: 5px;
+    padding: 35px;
+  }
+  h2 {
+    margin: 10px 0;
+  }
 }
 input {
-    height: 40px;
-    border: 1px solid $primaryColour;
-    font-family: $fontBase;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 10px auto;
-    width: 80%;
+  height: 40px;
+  border: 2px solid $accentColour;
+  font-family: $fontBase;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px auto;
+  width: 80%;
 }
 
 .addPollButton,
 .resetForm {
-    cursor: pointer;
-    background: $primaryColour;
-    color: $white;
-    font-family: $fontBase;
-    text-transform: uppercase;
-    padding: 10px;
-    font-weight: bold;
-    border-radius: 10px;
-    border: none;
-    width: 40%;
-    transition: ease all .3s;
-    &:hover, &:focus {
-        background: $accentColour;
-    }
+  cursor: pointer;
+  background: $primaryColour;
+  color: $white;
+  font-family: $fontBase;
+  text-transform: uppercase;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 10px;
+  border: none;
+  width: 40%;
+  transition: ease all 0.15s;
+  border: 2px solid #d17300;
+  margin: 10px 0;
+
+  &:hover {
+    background: #ffbb00;
+    border: 2px solid $primaryColour;
+  }
+  &:active {
+    background: $accentColour;
+    color: $primaryColour;
+  }
 }
 // this needs to be cleaned up still
 .createPollButton {
-    text-align: center;
-    margin: 0 auto;
-    font-size: 5rem;
-    margin-left: 150px;
-    background: transparent;
-    color: $accentColour;
-    border-radius: 50%;
-    width: 5rem;
-    height: 5rem;
-    border: 3px solid $accentColour;
-    cursor: pointer;
-    line-height: 0;
-    
+  text-align: center;
+  margin: 40px auto 20px auto;
+  font-family: $fontBase;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  margin-left: 10%;
+  background: $primaryColour;
+  color: $white;
+  border-radius: 10px;
+  width: 200px;
+  height: 40px;
+  border: 2px solid #d17300;
+  box-shadow: 2px 2px 3px $bgColour;
+  transition: ease all 0.15s;
+
+  cursor: pointer;
+  line-height: 0;
+  &:hover {
+    background: #ffbb00;
+    border: 2px solid $primaryColour;
+  }
+  &:active {
+    background: $accentColour;
+    color: $primaryColour;
+  }
 }
 
 .thanksPopup {
-    text-align: center;
-    background: $white;
-    border-radius: 20px;
-    border: 1px solid $primaryColour;
-    padding: 35px;
-    margin: 20px auto;
+  text-align: center;
+  background: $white;
+  border-radius: 20px;
+  border: 2px solid $accentColour;
+  box-shadow: 2px 2px 3px $bgColour;
+  padding: 30px 35px 20px 35px;
+  margin: 20px auto 40px auto;
+
+  button {
+    margin-top: 25px;
+  }
 }

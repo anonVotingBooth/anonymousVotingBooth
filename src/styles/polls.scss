@@ -1,64 +1,79 @@
 .pollsList {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 35px;
-    grid-auto-rows: 155px;
-    .pollItem {
-        border: 1px solid $primaryColour;
-        list-style-type: none;
-        border-radius: 20px;
-        display: flex;
-        flex-direction: column;
-        background: $white;
-        font-family: $fontBase;
-        font-weight: 700;
-        .pollQuestion {
-            font-size: 1.8rem;
-            display: flex;
-            height: 75%;
-            justify-content: center;
-            align-items: center;
-        }
-        p {
-            color: $primaryColour;
-            text-align: center;
-            &:first-letter {
-                text-transform: capitalize;
-            }
-        }
-        .voteButtons {
-            display: flex;
-            justify-content: center;
-        }
-        button {
-            padding: 10px 0;
-            height: auto;
-            font-family: $fontBase;
-            font-weight: 700;
-            border: 1px solid $primaryColour;
-            width: 50%;
-            justify-self: flex-end;
-            text-transform: uppercase;
-            background: none;
-            color: $primaryColour;
-            outline: none;
-            cursor: pointer;
-            p {
-                display: none;
-            }
-            .showVotes {
-                display: block;
-            }
-            &:nth-child(1){
-                border-bottom-left-radius: 20px;
-                border-left: none;
-                border-bottom: none;
-            }
-            &:nth-child(2){
-                border-bottom-right-radius: 20px;
-                border-right: none;
-                border-bottom: none;
-            }
-        }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 35px;
+  grid-auto-rows: 155px;
+  .pollItem {
+    border: 2px solid $accentColour;
+    box-shadow: 2px 2px 4px $bgColour;
+    list-style-type: none;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    background: $white;
+    font-family: $fontBase;
+    font-weight: 700;
+    .pollQuestion {
+      font-size: 1.8rem;
+      display: flex;
+      height: 75%;
+      justify-content: center;
+      align-items: center;
     }
+    p {
+      color: $primaryColour;
+      text-align: center;
+      font-size: 2rem;
+      &:first-letter {
+        text-transform: capitalize;
+      }
+    }
+    .voteButtons {
+      display: flex;
+      justify-content: center;
+    }
+    button {
+      padding: 15px 10px;
+      height: auto;
+      font-family: $fontBase;
+      font-weight: 700;
+      font-size: 1.8rem;
+      border-top: 2px solid $accentColour;
+      border-left: 1px solid $accentColour;
+      border-right: 1px solid $accentColour;
+      width: 50%;
+      justify-self: flex-end;
+      text-transform: uppercase;
+      background: none;
+      color: $primaryColour;
+      outline: none;
+      cursor: pointer;
+      p {
+        display: none;
+      }
+      .showVotes {
+        display: block;
+      }
+      &:nth-child(1) {
+        border-bottom-left-radius: 15px;
+        border-left: none;
+        border-bottom: none;
+      }
+      &:nth-child(2) {
+        border-bottom-right-radius: 15px;
+        border-right: none;
+        border-bottom: none;
+      }
+      &:hover {
+        background-color: #fdf4c6;
+        font-size: 2.1rem;
+        padding: 0 10px;
+        transition: ease all 0.15s;
+      }
+      &:active {
+        background-color: $primaryColour;
+        color: $accentColour;
+      }
+    }
+  }
 }
