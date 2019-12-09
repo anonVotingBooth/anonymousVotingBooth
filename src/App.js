@@ -19,7 +19,6 @@ class App extends Component {
                     <Route exact path='/' component={Welcome} />
                     <Route path='/signup' component={SignUp} />
                     <Route path='/signinpage' component={SignInPage} />
-                    <Route path="/user/dashboard" component={Dashboard} />
                     <Route path='/guest/dashboard' component={Dashboard} />
                     <Route path='dashboard/create' component={CreateAPoll} />
                     <Footer />

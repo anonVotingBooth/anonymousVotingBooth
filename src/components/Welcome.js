@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Link } from 'react-router-dom';
+import { BrowserRouter as Route, Link } from 'react-router-dom';
 
 import logo from './../assets/logo.png';
 import firebase from 'firebase';
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import * as firebaseui from 'firebaseui';
+import Dashboard from './Dashboard';
 
 class Welcome extends Component {
     constructor() {
@@ -16,15 +17,20 @@ class Welcome extends Component {
 
     handleUserInfo = (user) => {
         this.setState({
-            userId: user.uid
+            userId: user
         });
     }
     
     render() {
-        const {handleUserInfo} = this;
+        const {
+            handleUserInfo,
+            state: {
+                userId
+            }
+        } = this;
 
         const uiConfig = {
-            signInFlow: "popup",
+            signInFlow: 'popup',
             signInOptions: [{
                 provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
                 customParameters: {
@@ -32,19 +38,17 @@ class Welcome extends Component {
                 }
             }
             ],
-            signInSuccessUrl: `/${this.state.userInfo}/dashboard`,
+            signInSuccessUrl: '/users/dashboard',
             uiShown: function () {
                 document.getElementById('loader').style.display = 'none';
             },
             queryParameterForSignInSuccessUrl: 'signInSuccessUrl',
             callbacks: {
                 signInSuccessWithAuthResult: function (authResult, redirectUrl) {
-                    firebase.auth().onAuthStateChanged(function (user) {
-                        if (user) {
-                            handleUserInfo(user);
-                        }
-                    });
-                    return true;
+                    const userId = authResult.user.uid;
+                    handleUserInfo(userId);
+                    window.location.assign(`/dashboard/${userId}`);
+                    return false;
                 }
             }
         };
@@ -58,6 +62,7 @@ class Welcome extends Component {
                     <Link to='/signup'>Sign Up</Link>
                     <Link to='/signinpage'>Sign In</Link>
                     <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
+                    <Route path='/dashboard/:userId' component={Dashboard} />
                     </div>
                 </div>
             </div>
