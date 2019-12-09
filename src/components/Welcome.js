@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Route, Link, Redirect } from 'react-router-dom';
+import { BrowserRouter as Link, Redirect } from 'react-router-dom';
 
 import logo from './../assets/logo.png';
 import firebase from 'firebase';
@@ -33,8 +33,13 @@ class Welcome extends Component {
     }
     
     render() {
+
+        if (this.props.loggedIn) {
+            console.log('redirecting into dashboard');
+            return <Redirect to='/user/dashboard' /> 
+        }
+
         return (
-            this.props.loggedIn === false ? (
                 <div className='welcomeSplash'>
                     <div className='wrapper'>
                         <img className='logo' src={logo}></img>
@@ -45,8 +50,8 @@ class Welcome extends Component {
                         <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
                         </div>
                     </div>
-                </div>
-            ) : <Redirect to='/user/dashboard' /> );
+                </div> 
+            );
     }
 }
 

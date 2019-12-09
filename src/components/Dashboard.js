@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Sidebar from './Sidebar';
 import CreateAPoll from './CreateAPoll';
 import Polls from './Polls';
-import { BrowserRouter as Redirect } from 'react-router-dom';
 // import ViewPolls from './ViewPolls';
 import '../App.scss';
 import firebase from 'firebase';
@@ -22,10 +21,13 @@ class Dashboard extends Component {
         })
     }
 
+    // componentWillUnmount() {
+    //     firebase.auth().signOut();
+    // }
+
     render() {
         return (
-            this.props.loggedIn === false 
-            ? <div className='flexDashboardParent'>
+            <div className='flexDashboardParent'>
                 <Sidebar />
                 <div className='dashboard'>
                     <button className='createPollButton' id='createPoll' onClick={this.handleClick}> + </button>
@@ -33,8 +35,7 @@ class Dashboard extends Component {
                     <Polls />
                 </div>
             </div>
-            : <Redirect to='/' />
-        );  
+        );
     };
 };
 
