@@ -56,9 +56,11 @@ class Welcome extends Component {
                 <div className='wrapper'>
                     <img className='logo' src={logo}></img>
                     <div className='userLoginHome'>
+                    {/* 
+                    Commented this out as we don't need anymore, but left it just in case we change routes later. Delete before submitting project. -Jasmine
                     <Link className='guestLoginButton' to='guest/dashboard'>guest login</Link>
                     <Link to='/signup'>Sign Up</Link>
-                    <Link to='/signinpage'>Sign In</Link>
+                    <Link to='/signinpage'>Sign In</Link> */}
                     <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
                     </div>
                 </div>
