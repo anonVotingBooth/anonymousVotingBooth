@@ -6,6 +6,7 @@ import ImageApi from './ImageApi';
 // import ViewPolls from './ViewPolls';
 import '../App.scss';
 import firebase from 'firebase';
+import 'firebase/auth';
 
 class Dashboard extends Component {
     constructor(){
@@ -20,6 +21,10 @@ class Dashboard extends Component {
             currentView: e.target.id
         })
     }
+
+    // componentWillUnmount() {
+    //     firebase.auth().signOut();
+    // }
 
     render() {
         return (
