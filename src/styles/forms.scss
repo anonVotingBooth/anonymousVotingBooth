@@ -8,16 +8,10 @@
     border: 1px solid $primaryColour;
     border-radius: 20px;
     padding: 10px;
-    h2 {
-        font-size: 2rem;
-        color: $primaryColour;
-        font-family: $fontBase;
-        text-transform: uppercase;
     form {
         background: $white;
         border-radius: 5px;
         padding: 35px;
-    }
     }
 }
 input {
@@ -30,7 +24,8 @@ input {
     width: 80%;
 }
 
-.addPollButton {
+.addPollButton,
+.resetForm {
     cursor: pointer;
     background: $primaryColour;
     color: $white;
@@ -61,4 +56,13 @@ input {
     cursor: pointer;
     line-height: 0;
     
+}
+
+.thanksPopup {
+    text-align: center;
+    background: $white;
+    border-radius: 20px;
+    border: 1px solid $primaryColour;
+    padding: 35px;
+    margin: 20px auto;
 }

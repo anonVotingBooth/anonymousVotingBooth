@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import firebase from './firebase';
+import Thanks from './Thanks';
 
 class CreateAPoll extends Component {
   constructor(){
@@ -7,7 +8,8 @@ class CreateAPoll extends Component {
     this.state = {
       question: '',
       answer1: '',
-      answer2: ''
+      answer2: '',
+      thanksPopup: null
     }
   }
 
@@ -51,15 +53,21 @@ class CreateAPoll extends Component {
       this.setState({
         question: '',
         answer1: '',
-        answer2: ''
+        answer2: '',
+        thanksPopup: 'showThankYou',
       });
     }
-
   }
-
+  // resets form to add more and sets thanks state to null
+  resetForm = (e) => {
+    this.setState ({
+        thanksPopup: null,
+    })
+  }
   render() {
     return (
       <div className='wrapper'>
+        {this.state.thanksPopup !== 'showThankYou' ? 
         <form className='createPoll' id='createPoll' onSubmit={this.handleSubmit}>
           <h2>Add your poll below</h2>
           <label htmlFor='question'></label>
@@ -69,7 +77,8 @@ class CreateAPoll extends Component {
           <label htmlFor='answer2'></label>
           <input id='answer2' placeholder='Answer Option Two' type='text' onChange={this.handleChange}value={this.state.answer2} autoComplete='off' required></input>
           <button className='addPollButton' type='submit'>Add Poll!</button>
-        </form>
+        </form> : <Thanks resetForm={this.resetForm}/>
+        }
       </div>
     );
   };
