@@ -30,7 +30,7 @@ class Dashboard extends Component {
             <div className='flexDashboardParent'>
                 <Sidebar />
                 <div className='dashboard'>
-                    <button className='createPollButton' id='createPoll' onClick={this.handleClick}> + </button>
+                    <button className='createPollButton' id='createPoll' onClick={this.handleClick}>+ create your own</button>
                     {this.state.currentView === 'createPoll' && <CreateAPoll />}
                     <Polls />
                 </div>

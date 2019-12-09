@@ -4,12 +4,15 @@
   width: 20%; // set width to 20% to try to flex these two sections next to each other (sidebar and dash)
   height: 100vh;
   position: fixed;
-  // commented out left/right because there is no position rel/ab so they aren't doing anything I don't think? -Jasmine
-  // left: 0;
-  // top: 0;
   z-index: 100;
   padding-top: 100px;
   font-size: 1.5rem;
+  @include smallDesktop {
+    width: 25%;
+  }
+  // @include tablet {
+  //   display: none;
+  // }
 
   .sideBarLinks {
     color: $white;
