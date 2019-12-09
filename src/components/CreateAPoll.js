@@ -14,7 +14,9 @@ class CreateAPoll extends Component {
   }
 
   componentDidMount() {
+    // Connecting app to firebase
     const dbRef = firebase.database().ref();
+    // Storing firebase into variable for use
     dbRef.on('value', (response) => {
       const poll = response.val();
       const newPoll = []
@@ -25,19 +27,21 @@ class CreateAPoll extends Component {
           }
         newPoll.push(eachPoll)
         }
+        // Converting the object into an array and storing into state
         this.setState({
           pollList: newPoll
         });
     });
   }
 
+  // Binding the input, and setting new values in state
   handleChange = (e) => {
-    console.log(e.target.value)
     this.setState({
       [e.target.id]: e.target.value,
     })
   }
 
+  // On submitting a poll, grab user's inputs from the form, add them to firebase
   handleSubmit = (e) => {
     e.preventDefault();  
     const pollToAdd = {

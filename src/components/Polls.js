@@ -36,6 +36,7 @@ class Polls extends Component {
     });
   }
 
+  // Incrementing the option one every time a user votes for option one in any vote poll
   incrementAnswer1Count = (e) => {
     e.preventDefault();
     const {id} = e.currentTarget;
@@ -51,6 +52,7 @@ class Polls extends Component {
     });
   }
 
+  // Incrementing the option two every time a user votes for option two in any vote poll
   incrementAnswer2Count = (e) => {
     e.preventDefault();
     const {id} = e.currentTarget;
