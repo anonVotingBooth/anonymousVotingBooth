@@ -41,16 +41,22 @@
 
 .logo {
     display: block;
-    width: 50%;
-    margin: 0 auto;
+    width: 12%;
+    margin: 20px auto;
+}
+.App {
+    position: relative;
 }
 .animatedBackground {
-    z-index: 1;
-    border: 1px solid red;
+    opacity: 70%;
+    z-index: -1;
+    width: 100%;
     overflow-x: hidden;
     height: 125vh;
     top: -300px;
     position: absolute;
+    display: flex;
+    flex-wrap: wrap;
 }
 #imageOne {
     animation-delay: .5s;
@@ -91,6 +97,7 @@
 @keyframes floatUpAnimation {
     from { 
         top: -300vh; 
+        opacity: 10%;
     }
     to { 
         transform: translateY(110vh);
