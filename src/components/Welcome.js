@@ -56,9 +56,9 @@ class Welcome extends Component {
         
         return (
             <div>
-                <div className='welcomeSplash bounce-in-fwd'>
+                <div className='welcomeSplash'>
                     <div className='wrapper'>
-                        <img className='logo' src={logo}></img>
+                        <img className='logo bounce-in-fwd' src={logo}></img>
                         <div className='userLoginHome'>
                         {/* 
                         Commented this out as we don't need anymore, but left it just in case we change routes later. Delete before submitting project. -Jasmine
