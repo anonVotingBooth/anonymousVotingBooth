@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Link, Redirect } from 'react-router-dom';
-
 import logo from './../assets/logo.svg';
 import firebase from 'firebase';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import * as firebaseui from 'firebaseui';
 import Dashboard from './Dashboard';
 import 'firebase/auth';
+import AnimatedBackground from './AnimatedBackground';
 
 const uiConfig = {
     signInFlow: 'popup',
@@ -14,7 +14,6 @@ const uiConfig = {
         firebase.auth.GoogleAuthProvider.PROVIDER_ID
     ]
 };
-import AnimatedBackground from './AnimatedBackground';
 
 class Welcome extends Component {
 
