@@ -22,13 +22,13 @@ class Dashboard extends Component {
 
     render() {
         return (
-            <div className='wrapper'>
-            <Sidebar />
-            <div>
-                <button className='createPollButton' id='createPoll' onClick={this.handleClick}> + </button>
-                {this.state.currentView === 'createPoll' && <CreateAPoll />}
-                <Polls />
-            </div>
+            <div className='flexDashboardParent'>
+                <Sidebar />
+                <div className='dashboard'>
+                    <button className='createPollButton' id='createPoll' onClick={this.handleClick}> + </button>
+                    {this.state.currentView === 'createPoll' && <CreateAPoll />}
+                    <Polls />
+                </div>
             </div>
         );
     };

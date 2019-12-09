@@ -1,11 +1,12 @@
 .sideBar {
   font-family: $fontHeader;
   background-color: $bgColour;
-  width: 200px;
+  width: 20%; // set width to 20% to try to flex these two sections next to each other (sidebar and dash)
   height: 100vh;
   position: fixed;
-  left: 0;
-  top: 0;
+  // commented out left/right because there is no position rel/ab so they aren't doing anything I don't think? -Jasmine
+  // left: 0;
+  // top: 0;
   z-index: 100;
   padding-top: 100px;
   font-size: 1.5rem;
