@@ -44,9 +44,6 @@ class Welcome extends Component {
                 }
                 return true;
             })
-            .catch(function (error) {
-                // Handle Errors here.
-            });
         })
     }
     
