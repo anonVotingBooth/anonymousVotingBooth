@@ -11,16 +11,40 @@ import SignInPage from './components/SignInPage';
 import CreateAPoll from './components/CreateAPoll';
 
 class App extends Component {
+    constructor() {
+        super();
+        this.state = {
+            userName: '',
+            userId: ''
+        };
+    }
+
+
+    setAuthentication = (userInfo) => {
+        this.setState({
+            userName: userInfo.displayName,
+            userId: userInfo.userId
+        });
+    }
 
     render() {
+        const {
+            setAuthentication,
+            state: {
+                userName,
+                userId
+            }
+        } = this;
+
         return (
             <Router>
                 <div className='App'>
-                    <Route exact path='/' component={Welcome} />
+                    <Route exact path='/' render={() => (<Welcome getAuthentication={setAuthentication}/>)} />
                     <Route path='/signup' component={SignUp} />
                     <Route path='/signinpage' component={SignInPage} />
+                    <Route path='/user/dashboard' render={() => (<Dashboard userName={userName} userId={userId}/>)} />
                     <Route path='/guest/dashboard' component={Dashboard} />
-                    <Route path='dashboard/create' component={CreateAPoll} />
+                    <Route path='/dashboard/create' component={CreateAPoll} />
                     <Footer />
                 </div>
             </Router>

@@ -3,55 +3,72 @@ import { BrowserRouter as Route, Link } from 'react-router-dom';
 
 import logo from './../assets/logo.png';
 import firebase from 'firebase';
-import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
+import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import * as firebaseui from 'firebaseui';
 import Dashboard from './Dashboard';
+import 'firebase/auth';
+
+const uiConfig = {
+    signInFlow: 'popup',
+    signInOptions: [
+        firebase.auth.GoogleAuthProvider.PROVIDER_ID
+    ]
+};
 
 class Welcome extends Component {
-    constructor() {
-        super();
-        this.state = {
-            userId: ''
-        };
-    }
+    // constructor() {
+    //     super();
+    //     this.state = {
+    //         userId: ''
+    //     };
+    // }
 
-    handleUserInfo = (user) => {
-        this.setState({
-            userId: user
-        });
+    // handleUserInfo = (user) => {
+    //     this.setState({
+    //         userId: user
+    //     });
+    // }
+
+    componentDidMount() {
+        const {getAuthentication} = this.props;
+        firebase.auth().onAuthStateChanged(user => {
+            firebase.auth().setPersistence(firebase.auth.Auth.Persistence.NONE)
+            .then(function () {
+                if (user) {
+                    const userCredentials = {
+                        displayName: user.displayName,
+                        userId: user.uid
+                    }
+                    getAuthentication(userCredentials);
+                    window.location.assign('/user/dashboard');
+                }
+                return true;
+            })
+            .catch(function (error) {
+                // Handle Errors here.
+            });
+        })
     }
     
     render() {
-        const {
-            handleUserInfo,
-            state: {
-                userId
-            }
-        } = this;
+        // const {
+        //     handleUserInfo,
+        //     state: {
+        //         userId
+        //     }
+        // } = this;
 
-        const uiConfig = {
-            signInFlow: 'popup',
-            signInOptions: [{
-                provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-                customParameters: {
-                    prompt: 'select_account'
-                }
-            }
-            ],
-            signInSuccessUrl: '/guest/dashboard',
-            uiShown: function () {
-                document.getElementById('loader').style.display = 'none';
-            },
-            queryParameterForSignInSuccessUrl: 'signInSuccessUrl',
-            callbacks: {
-                signInSuccessWithAuthResult: function (authResult, redirectUrl) {
-                    // const userId = authResult.user.uid;
-                    // handleUserInfo(userId);
-                    // window.location.assign();
-                    return true;
-                }
-            }
-        };
+            // signInSuccessUrl: '/user/dashboard',
+            // uiShown: function () {
+            //     document.getElementById('loader').style.display = 'none';
+            // },
+            // queryParameterForSignInSuccessUrl: 'signInSuccessUrl',
+            // callbacks: {
+            //     signInSuccessWithAuthResult: function (authResult, redirectUrl) {
+            //         return true;
+            //     }
+            // }
+        // };
         
         return (
             <div className='welcomeSplash'>

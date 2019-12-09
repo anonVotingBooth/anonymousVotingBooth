@@ -5,6 +5,7 @@ import Polls from './Polls';
 // import ViewPolls from './ViewPolls';
 import '../App.scss';
 import firebase from 'firebase';
+import 'firebase/auth';
 
 class Dashboard extends Component {
     constructor(){
@@ -18,6 +19,11 @@ class Dashboard extends Component {
         this.setState({
             currentView: e.target.id
         })
+    }
+    
+    componentDidMount(){
+        console.log(this.props.userId);
+        console.log(this.props.userName);
     }
 
     render() {
