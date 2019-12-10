@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import firebase from './firebase';
 import '../App.scss';
+import 'firebase/auth';
 
 class Polls extends Component {
   constructor() {
@@ -42,7 +43,10 @@ class Polls extends Component {
     const {id} = e.currentTarget;
     const {currentPoll, pollQuestionRef} = this.state;
     const vote = currentPoll[id].pName.votes1 + 1;
-    pollQuestionRef.child(`${currentPoll[id].pNumber}`).update({votes1: vote});
+    pollQuestionRef.child(`${currentPoll[id].pNumber}`).update({
+      votes1: vote,
+      alreadyVoted: true
+    });
 
     const newCurrentPoll = [...currentPoll]
     newCurrentPoll[id].voted = true
@@ -58,7 +62,10 @@ class Polls extends Component {
     const {id} = e.currentTarget;
     const {currentPoll, pollQuestionRef} = this.state;
     const vote = currentPoll[id].pName.votes2 + 1;
-    pollQuestionRef.child(`${currentPoll[id].pNumber}`).update({votes2: vote});
+    pollQuestionRef.child(`${currentPoll[id].pNumber}`).update({
+      votes2: vote,
+      alreadyVoted: true
+    });
 
     const newCurrentPoll = [...currentPoll]
     newCurrentPoll[id].voted = true
@@ -89,37 +96,73 @@ class Polls extends Component {
                 const pollQ = value.question;
                 const currentPollQ = index;
                 const voted = currentPoll[index].voted;
-                return (
-                  <li key={index} className='pollItem'>
-                      <div className="pollQuestion">
-                        <p>{pollQ}</p>
-                      </div>
-                      <div className="voteButtons">
-                        <button 
-                          id={currentPollQ} 
-                          onClick={incrementAnswer1Count}  
-                          value='votes1'
-                          disabled={voted ? true : false}
-                        >
-                          {optionA}
-                          <p className={`${voted ? 'showVotes' : null}`}>
-                            ({totalVotesA})
-                          </p>
-                        </button>
-                        <button 
-                          id={currentPollQ}
-                          onClick={incrementAnswer2Count} 
-                          value='votes2'
-                          disabled={voted ? true : false}
-                        >
-                          {optionB}
-                          <p className={`${voted ? 'showVotes' : null}`}>
-                            ({totalVotesB})
-                          </p>
-                        </button>
-                      </div>
-                  </li>
-                )
+                const voteCheck = value.alreadyVoted;
+                if (!voteCheck) {
+                  return (
+                    <li key={index} className='pollItem'>
+                        <div className="pollQuestion">
+                          <p>{pollQ}</p>
+                        </div>
+                        <div className="voteButtons">
+                          <button 
+                            id={currentPollQ} 
+                            onClick={incrementAnswer1Count}  
+                            value='votes1'
+                            disabled={voted ? true : false}
+                          >
+                            {optionA}
+                            <p className={`${voted ? 'showVotes' : null}`}>
+                              ({totalVotesA})
+                            </p>
+                          </button>
+                          <button 
+                            id={currentPollQ}
+                            onClick={incrementAnswer2Count} 
+                            value='votes2'
+                            disabled={voted ? true : false}
+                          >
+                            {optionB}
+                            <p className={`${voted ? 'showVotes' : null}`}>
+                              ({totalVotesB})
+                            </p>
+                          </button>
+                        </div>
+                    </li>
+                  )
+                } 
+                else {
+                  return (
+                    <li key={index} className='pollItem'>
+                        <div className="pollQuestion">
+                          <p>{pollQ}</p>
+                        </div>
+                        <div className="voteButtons">
+                          <button 
+                            id={currentPollQ} 
+                            onClick={incrementAnswer1Count}  
+                            value='votes1'
+                            disabled={true}
+                          >
+                            {optionA}
+                            <p className='showVotes'>
+                              ({totalVotesA})
+                            </p>
+                          </button>
+                          <button 
+                            id={currentPollQ}
+                            onClick={incrementAnswer2Count} 
+                            value='votes2'
+                            disabled={true}
+                          >
+                            {optionB}
+                            <p className='showVotes'>
+                              ({totalVotesB})
+                            </p>
+                          </button>
+                        </div>
+                    </li>
+                  )
+                }
               })
             }
           </ul>

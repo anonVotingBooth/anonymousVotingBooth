@@ -36,7 +36,6 @@ class Welcome extends Component {
     }
     render() {
         if (this.props.loggedIn) {
-            console.log('redirecting into dashboard');
             return <Redirect to='/user/dashboard' />
         } 
         return (
@@ -45,9 +44,6 @@ class Welcome extends Component {
                     <div className='wrapper'>
                         <img className='logo bounce-in-fwd' src={logo}></img>
                         <div className='userLoginHome'>
-                            {/* <Link className='guestLoginButton' to='guest/dashboard'>guest login</Link>
-                            <Link to='/signup'>Sign Up</Link>
-                            <Link to='/signinpage'>Sign In</Link> */}
                             <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
                         </div>
                     </div>
