@@ -65,7 +65,6 @@ class App extends Component {
                         }} />
                     <Route path='/guest/dashboard' component={Dashboard} />
                     <Route path='/dashboard/create' component={CreateAPoll} />
-                    <Footer />
                 </div>
             </Router>
         );
