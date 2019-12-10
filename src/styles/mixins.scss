@@ -9,9 +9,9 @@
 //temporary media queries - just putting them in for now so we can figure out what we need later
 
 
-// @mixin mobile {
-//   @media (max-width: 680px) { @content; }
-// }
+@mixin mobile {
+  @media (max-width: 680px) { @content; }
+}
 
 // @mixin smallMobile {
 //   @media (max-width: 480px) { @content; }
