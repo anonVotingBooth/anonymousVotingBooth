@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-class Footer extends Component {
+class FooterDashboard extends Component {
   render() {
 
     return (
       <footer>
-        <div className='footerWelcome'>
+        <div className='footerDashboard'>
           <p>copyright &copy; 2019 &nbsp;-&nbsp; all rights reserved </p>
           <ul className='footerLinks'>
             <li><a href="/about">sharon yi,</a></li>
@@ -19,4 +19,4 @@ class Footer extends Component {
   };
 };
 
-export default Footer;
+export default FooterDashboard;

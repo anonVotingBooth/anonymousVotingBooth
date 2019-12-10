@@ -7,6 +7,7 @@ import Polls from './Polls';
 import '../App.scss';
 // import firebase from 'firebase';
 import 'firebase/auth';
+import FooterDashboard from './FooterDashboard'
 
 class Dashboard extends Component {
     constructor(){
@@ -35,6 +36,7 @@ class Dashboard extends Component {
                     {this.state.currentView === 'createPoll' && <CreateAPoll />}
                     <Polls userId={this.props.userId}/>
                     {/* <ImageApi /> */}
+                <FooterDashboard />
                 </div>
             </div>
         );

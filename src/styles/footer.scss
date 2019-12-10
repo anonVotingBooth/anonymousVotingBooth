@@ -1,16 +1,20 @@
-footer {
-    margin-top: 100px;
-}
-.footerContent {
-    margin: 0 auto;
-    width: 100%;
+.footerDashboard {
     position: absolute;
-    bottom: 10px;
-    padding: 0 20px;
-    p,
-    ul,
-    li,
-    a {
+    bottom: 0;
+    width: 100%;
+}
+.footerWelcome {
+  margin: 0 auto;
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
+  padding: 0 20px;
+}
+footer {
+  p,
+  ul,
+  li,
+  a {
     list-style: none;
     font-family: $fontBase;
     text-align: center;

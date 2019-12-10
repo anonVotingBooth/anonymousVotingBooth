@@ -4,26 +4,27 @@
 ---------------------- 
 */
 @media (max-width: 940px) {
-    .welcomeSplash {
-        width: 50%;
-    }
+  .welcomeSplash {
+    width: 50%;
+  }
 }
 
 @media (max-width: 784px) {
-    .welcomeSplash {
-        width: 60%;
-    }
-    .pollsList {
-        grid-auto-rows: 255px;
+  .welcomeSplash {
+    width: 60%;
+  }
+  .pollsList {
+    grid-auto-rows: 200px;
+    .pollItem {
         button {
-            padding: 25px 10px;
+          padding: 20px 10px;
         }
     }
+  }
 }
 
 @media (max-width: 420px) {
-    .welcomeSplash {
-        width: 80%;
-    }
-
+  .welcomeSplash {
+    width: 80%;
+  }
 }
