@@ -4,7 +4,7 @@ import logo from './../assets/logo.svg';
 import firebase from 'firebase';
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import * as firebaseui from 'firebaseui';
-import Footer from './Footer';
+import Dashboard from './Dashboard';
 import 'firebase/auth';
 import AnimatedBackground from './AnimatedBackground';
 
@@ -20,9 +20,10 @@ const uiConfig = {
                 prompt: 'select_account'
             },
         },
-        // firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID,
+        firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID,
     ],
 };
+
 
 class Welcome extends Component {
     componentDidMount() {
@@ -40,7 +41,7 @@ class Welcome extends Component {
     render() {
         if (this.props.loggedIn) {
             return <Redirect to='/user/dashboard' />
-        }
+        } 
         return (
             <div>
                 <div className='welcomeSplash'>
@@ -54,7 +55,6 @@ class Welcome extends Component {
                         </div>
                     </div>
                 </div>
-                <Footer />
                 <AnimatedBackground />
             </div>
         );
