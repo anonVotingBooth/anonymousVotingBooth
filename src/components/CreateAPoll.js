@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import firebase from './firebase';
+import Swal from 'sweetalert2';
 import Thanks from './Thanks';
 
 class CreateAPoll extends Component {
@@ -53,7 +54,13 @@ class CreateAPoll extends Component {
       alreadyVoted: false
     };
     const publicPollsRef = firebase.database().ref('/publicPolls');
-    if(pollToAdd.question !== '') {
+    if (this.state.answer1 === this.state.answer2) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Are you trying to swing the polls? Your answers cannot be the same!!',
+      })
+    } else if (pollToAdd.question !== '') {
       publicPollsRef.push(pollToAdd);
       this.setState({
         question: '',
