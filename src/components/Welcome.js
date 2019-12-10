@@ -11,44 +11,50 @@ import AnimatedBackground from './AnimatedBackground';
 const uiConfig = {
     signInFlow: 'popup',
     signInOptions: [
-        firebase.auth.GoogleAuthProvider.PROVIDER_ID
-    ]
+        {
+            provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+            customParameters: {
+                prompt: 'select_account'
+            },
+        },
+        firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID,
+    ],
 };
 
 class Welcome extends Component {
     componentDidMount() {
-        const {getAuthentication} = this.props;
+        const { getAuthentication } = this.props;
         firebase.auth().onAuthStateChanged(user => {
             firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
-            .then(function () {
-                if (user) {
-                    getAuthentication(user);
-                }
-                return true;
-            })
+                .then(function () {
+                    if (user) {
+                        getAuthentication(user);
+                    }
+                    return true;
+                })
         })
     }
     render() {
         if (this.props.loggedIn) {
             console.log('redirecting into dashboard');
-            return <Redirect to='/user/dashboard' /> 
+            return <Redirect to='/user/dashboard' />
         }
         return (
-                <div>
-                    <div className='welcomeSplash'>
-                        <div className='wrapper'>
+            <div>
+                <div className='welcomeSplash'>
+                    <div className='wrapper'>
                         <img className='logo bounce-in-fwd' src={logo}></img>
-                            <div className='userLoginHome'>
-                            <Link className='guestLoginButton' to='guest/dashboard'>guest login</Link>
+                        <div className='userLoginHome'>
+                            {/* <Link className='guestLoginButton' to='guest/dashboard'>guest login</Link>
                             <Link to='/signup'>Sign Up</Link>
-                            <Link to='/signinpage'>Sign In</Link>
+                            <Link to='/signinpage'>Sign In</Link> */}
                             <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
-                            </div>
                         </div>
-                    </div> 
-                <AnimatedBackground />
+                    </div>
                 </div>
-            );
+                <AnimatedBackground />
+            </div>
+        );
     }
 }
 
