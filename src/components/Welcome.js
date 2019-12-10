@@ -40,7 +40,7 @@ class Welcome extends Component {
     render() {
         if (this.props.loggedIn) {
             return <Redirect to='/user/dashboard' />
-        }
+        } 
         return (
             <div>
                 <div className='welcomeSplash'>
