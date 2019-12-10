@@ -28,6 +28,7 @@
   .sideBar {
     width: 230px;
     padding-top: 50px;
+    transition: width .5s ease;
   }
 
   .hamburger {
