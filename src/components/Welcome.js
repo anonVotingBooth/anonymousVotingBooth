@@ -4,7 +4,7 @@ import logo from './../assets/logo.svg';
 import firebase from 'firebase';
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import * as firebaseui from 'firebaseui';
-import Dashboard from './Dashboard';
+import Footer from './Footer';
 import 'firebase/auth';
 import AnimatedBackground from './AnimatedBackground';
 
@@ -40,7 +40,7 @@ class Welcome extends Component {
     render() {
         if (this.props.loggedIn) {
             return <Redirect to='/user/dashboard' />
-        } 
+        }
         return (
             <div>
                 <div className='welcomeSplash'>
@@ -52,6 +52,7 @@ class Welcome extends Component {
                         </div>
                     </div>
                 </div>
+                <Footer />
                 <AnimatedBackground />
             </div>
         );

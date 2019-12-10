@@ -4,26 +4,47 @@
 ---------------------- 
 */
 @media (max-width: 940px) {
-    .welcomeSplash {
-        width: 50%;
-    }
+  .welcomeSplash {
+    width: 50%;
+  }
 }
 
 @media (max-width: 784px) {
-    .welcomeSplash {
-        width: 60%;
+  .welcomeSplash {
+    width: 60%;
+  }
+  .pollsList {
+    grid-auto-rows: 200px;
+    .pollItem {
+      button {
+        padding: 20px 10px;
+      }
     }
-    .pollsList {
-        grid-auto-rows: 255px;
-        button {
-            padding: 25px 10px;
-        }
-    }
+  }
+  .sideBar {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+  .createPollButton {
+    display: none;
+  }
+  .createPollMobile {
+    display: block;
+    z-index: 100;
+  }
+  .dashboard {
+    margin: 0 auto;
+    width: 80%;
+  }
 }
 
-@media (max-width: 420px) {
-    .welcomeSplash {
-        width: 80%;
-    }
-
+@media (max-width: 520px) {
+  .welcomeSplash {
+    width: 80%;
+  }
+  .dashboard {
+    width: 100%;
+  }
 }
