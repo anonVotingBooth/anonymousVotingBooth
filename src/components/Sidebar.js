@@ -15,11 +15,7 @@ class Sidebar extends Component {
 
     handleSignOut = () => {
         firebase.auth().signOut().then(() => {
-            console.log('auth signed out');
-            // this.setState({
-            //     logOutRedirect: true
-            // });
-        })
+        });
     }
 
     render() {    

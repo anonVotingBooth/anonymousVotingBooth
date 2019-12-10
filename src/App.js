@@ -23,13 +23,10 @@ class App extends Component {
 
     componentDidMount() {
         firebase.auth().onAuthStateChanged((user) => {
-            console.log('firebase auth state changed');
             if (user) {
-                console.log('restored user from session');
                 this.setAuthentication(user);
             } 
             else if (this.state.userName){
-                console.log('no user state');
                 this.setState({
                     userName: '',
                     userId: ''
@@ -43,7 +40,6 @@ class App extends Component {
             userName: userInfo.displayName,
             userId: userInfo.uid,
         });
-        console.log(userInfo.displayName, userInfo.uid);
     }
 
     render() {
@@ -54,7 +50,6 @@ class App extends Component {
                 userId
             }
         } = this;
-        console.log('username', userName);
         return (
             <Router>
                 <div className='App'>
@@ -63,11 +58,11 @@ class App extends Component {
                     <Route path='/signup' component={SignUp} />
                     <Route path='/signinpage' component={SignInPage} />
                     <Route path='/user/dashboard' render={() => {
-                       if(!userName) {
-                           return <Redirect to='/' />
-                       }
-                       return (<Dashboard userName={userName} userId={userId}/>)
-                       }} />
+                        if (!userName) {
+                            return <Redirect to='/' />
+                        }
+                        return (<Dashboard userName={userName} userId={userId}/>)
+                        }} />
                     <Route path='/guest/dashboard' component={Dashboard} />
                     <Route path='/dashboard/create' component={CreateAPoll} />
                     <Footer />
