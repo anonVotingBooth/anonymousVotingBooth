@@ -49,7 +49,8 @@ class CreateAPoll extends Component {
       answer1: this.state.answer1,
       answer2: this.state.answer2,
       votes1: 0,
-      votes2: 0
+      votes2: 0,
+      alreadyVoted: false
     };
     const publicPollsRef = firebase.database().ref('/publicPolls');
     if(pollToAdd.question !== '') {

@@ -25,18 +25,14 @@ class Dashboard extends Component {
         })
     }
 
-    // componentWillUnmount() {
-    //     firebase.auth().signOut();
-    // }
-
     render() {
         
         return (
             <div className='flexDashboardParent'>
                 <Sidebar />
                 <div className='dashboard'>
-                    {this.state.hidden && <div> <button className='createPollButton' id='createPoll' onClick={this.handleClick}>+ create your own</button> </div>}
-                    {this.state.currentView === 'createPoll' && <CreateAPoll />} 
+                {this.state.hidden && <div> <button className='createPollButton' id='createPoll' onClick={this.handleClick}>+ create your own</button> </div>}
+                    {this.state.currentView === 'createPoll' && <CreateAPoll />}
                     <Polls userId={this.props.userId}/>
                     {/* <ImageApi /> */}
                 </div>
