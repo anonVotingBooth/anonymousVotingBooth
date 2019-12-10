@@ -20,9 +20,10 @@ const uiConfig = {
                 prompt: 'select_account'
             },
         },
-        // firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID,
+        firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID,
     ],
 };
+
 
 class Welcome extends Component {
     componentDidMount() {

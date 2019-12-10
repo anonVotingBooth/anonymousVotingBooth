@@ -14,6 +14,7 @@
     width: 60%;
   }
   .pollsList {
+    margin-top: 100px;
     grid-auto-rows: 200px;
     .pollItem {
       button {
@@ -21,22 +22,23 @@
       }
     }
   }
-  .sideBar {
+  .sideBar.mobileHidden {
     display: none;
   }
   .hamburger {
     display: block;
+    z-index: 999; //woo!
   }
   .createPollButton {
     display: none;
   }
   .createPollMobile {
     display: block;
-    z-index: 100;
+    z-index: 10;
   }
   .dashboard {
     margin: 0 auto;
-    width: 80%;
+    width: 100%;
   }
 }
 

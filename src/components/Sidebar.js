@@ -22,7 +22,7 @@ class Sidebar extends Component {
         const {handleSignOut} = this;
 
         return (
-            <div className='sideBar'>
+            <div className={`sideBar${this.props.isSidebarHidden ? ' mobileHidden' : ''}`} >
                 <Header />
                 {/* <NavLink className="sideBarLinks" to='/'>profile</NavLink> */}
                 <NavLink className='sideBarLinks' to='/dashboard/viewpolls'>view your polls</NavLink>
