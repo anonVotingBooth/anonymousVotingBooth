@@ -5,7 +5,7 @@ class Footer extends Component {
 
     return (
       <footer>
-        <div className='footerWelcome'>
+        <div className='footerContent'>
           <p>copyright &copy; 2019 &nbsp;-&nbsp; all rights reserved </p>
           <ul className='footerLinks'>
             <li><a href="/about">sharon yi,</a></li>

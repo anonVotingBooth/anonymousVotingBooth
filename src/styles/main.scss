@@ -1,17 +1,49 @@
 .flexDashboardParent {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .dashboard {
-    width: 80%;
-    margin-left: 20%;
-    min-height: 100vh;
-    padding-bottom: 200px;
-    position: relative;
+  width: 80%;
+  margin-left: 20%;
+  min-height: 100vh;
+  padding-bottom: 200px;
+  position: relative;
 }
+
+.hamburger {
+  display: none;
+  position: fixed;
+  cursor: pointer;
+  margin: 10px;
+  font-size: 40px;
+  padding-top: 2px;
+  min-width: 50px;
+  min-height: 50px;
+  color: $white;
+  background: $primaryColour;
+  border-radius: 50%;
+  border: 2px solid #d17300;
+  box-shadow: 2px 2px 2px $bgColour;
+}
+.createPollMobile {
+  display: none;
+  position: absolute;
+  cursor: pointer;
+  margin: 10px 10px 10px 80px;
+  font-size: 40px;
+  padding: 8px;
+  min-width: 50px;
+  min-height: 50px;
+  color: $white;
+  background: $primaryColour;
+  border-radius: 50%;
+  border: 2px solid #d17300;
+  box-shadow: 2px 2px 2px $bgColour;
+}
+
 
 // img {
 //     width: 100%;
