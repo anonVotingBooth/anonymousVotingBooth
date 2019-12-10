@@ -33,7 +33,7 @@ class ImageApi extends Component {
 
     render() {
         return (
-            <div>
+            <div className="imageFromApi">
                 {
                     this.state.pics.map( (item) => {
                         return <img src={item} />
