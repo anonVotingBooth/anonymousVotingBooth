@@ -5,7 +5,7 @@ import Polls from './Polls';
 // import ImageApi from './ImageApi';
 // import ViewPolls from './ViewPolls';
 import '../App.scss';
-// import firebase from 'firebase';
+import firebase from 'firebase';
 import 'firebase/auth';
 import FooterDashboard from './FooterDashboard'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -36,10 +36,10 @@ class Dashboard extends Component {
     }
 
     render() {
-
+        const {signOut} = this.props;
         return (
             <div className='flexDashboardParent'>
-                <Sidebar />
+                <Sidebar handleSignOut={signOut}/>
                 <FontAwesomeIcon className="hamburger" icon={faCaretDown} />
                 {this.state.hidden && <div> <FontAwesomeIcon className="createPollMobile" icon={faPlus} onClick={this.handleMobileClick} /> </div>}
                 <div className='dashboard'>
