@@ -16,32 +16,30 @@
         color: $accentColour;
     }
 }
-.userLoginHome {
-    text-align: center;
-    color: $accentColour;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.guestLoginButton {
-    
-    text-transform: uppercase;
-    font-family: $fontBase;
-    margin: 10px 0;
-    font-weight: bold;
-    background: $bgColour;
-    border-radius: 5px;
-    border: none;
-    text-decoration: none;
-    padding: 10px;
-    color: $white;
-    transition: ease .3s;
-    &:hover, &:focus {
-        background: $primaryColour;
-        
-    }
-}
+// .userLoginHome {
+//     text-align: center;
+//     color: $accentColour;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     flex-direction: column;
+// }
+// .guestLoginButton {
+//     text-transform: uppercase;
+//     font-family: $fontBase;
+//     margin: 10px 0;
+//     font-weight: bold;
+//     background: $bgColour;
+//     border-radius: 5px;
+//     border: none;
+//     text-decoration: none;
+//     padding: 10px;
+//     color: $white;
+//     transition: ease .3s;
+//     &:hover, &:focus {
+//         background: $primaryColour;
+//     }
+// }
 
 .logo {
     display: block;
@@ -53,7 +51,7 @@
 }
 .bounce-in-fwd {
 	-webkit-animation: bounce-in-fwd 1.1s both;
-	        animation: bounce-in-fwd 1.1s both;
+	animation: bounce-in-fwd 1.1s both;
 }
 
 /* ----------------------------------------------
