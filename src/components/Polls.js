@@ -131,7 +131,7 @@ class Polls extends Component {
                         >
                           {optionA}
                           <p className={voted ? 'showVotes' : null}>
-                            ({totalVotesA})
+                            {totalVotesA} votes
                           </p>
                         </button>
                         <button 
@@ -142,7 +142,7 @@ class Polls extends Component {
                         >
                           {optionB}
                           <p className={voted ? 'showVotes' : null}>
-                            ({totalVotesB})
+                            {totalVotesB} votes
                           </p>
                         </button>
                       </div>
