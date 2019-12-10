@@ -13,13 +13,8 @@ class Sidebar extends Component {
         };
     }
 
-    handleSignOut = () => {
-        firebase.auth().signOut().then(() => {
-        });
-    }
-
     render() {    
-        const {handleSignOut} = this;
+        const {handleSignOut} = this.props;
 
         return (
             <div className={`sideBar${this.props.isSidebarHidden ? ' mobileHidden' : ''}`} >

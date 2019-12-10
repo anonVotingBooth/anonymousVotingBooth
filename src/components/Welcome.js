@@ -13,6 +13,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons'
 
 const uiConfig = {
     signInFlow: 'popup',
+    // signInSuccessUrl:'/dashboard',
     signInOptions: [
         {
             provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -39,9 +40,12 @@ class Welcome extends Component {
         })
     }
     render() {
-        if (this.props.loggedIn) {
-            return <Redirect to='/user/dashboard' />
-        } 
+
+        const {loggedIn} = this.props;
+
+        if (loggedIn) {
+            return <Redirect to='/dashboard' />
+        }
         return (
             <div>
                 <div className='welcomeSplash'>
@@ -51,7 +55,7 @@ class Welcome extends Component {
 
                         <div className='userLoginHome'>
                             <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
-                            <Link className='guestLoginButton' to='guest/dashboard'><FontAwesomeIcon className="userIcon" icon={faUser} /> Continue as guest</Link>
+                            {/* <Link className='guestLoginButton' to='guest/dashboard'><FontAwesomeIcon className="userIcon" icon={faUser} /> Continue as guest</Link> */}
                         </div>
                     </div>
                 </div>

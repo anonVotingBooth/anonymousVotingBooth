@@ -5,7 +5,7 @@ import Polls from './Polls';
 // import ImageApi from './ImageApi';
 // import ViewPolls from './ViewPolls';
 import '../App.scss';
-// import firebase from 'firebase';
+import firebase from 'firebase';
 import 'firebase/auth';
 import FooterDashboard from './FooterDashboard'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -43,18 +43,14 @@ class Dashboard extends Component {
     // }
 
     render() {
-
+        const {signOut} = this.props;
         return (
             <div className='flexDashboardParent'>
-                
-                <Sidebar isSidebarHidden={this.state.isSidebarHidden}/>
-                
+                <Sidebar handleSignOut={signOut} isSidebarHidden={this.state.isSidebarHidden}/>
                 <FontAwesomeIcon onClick={this.handleSidebarClick} className="hamburger" icon={faCaretDown} />
-
                 {this.state.hidden && <div> <FontAwesomeIcon className="createPollMobile" icon={faPlus} id='createPoll' onClick={this.handleClick} /> </div>}
                 <div className='dashboard'>
                     {this.state.hidden && <div> <button className='createPollButton' id='createPoll' onClick={this.handleClick}>+ create your own</button> </div>}
-
                     {this.state.currentView === 'createPoll' && <CreateAPoll />}
                     <Polls userId={this.props.userId} />
                     {/* <ImageApi /> */}

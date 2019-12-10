@@ -22,11 +22,12 @@ class App extends Component {
     }
 
     componentDidMount() {
+        const {userId} = this.state;
         firebase.auth().onAuthStateChanged((user) => {
             if (user) {
                 this.setAuthentication(user);
             } 
-            else if (this.state.userName){
+            else if (userId){
                 this.setState({
                     userName: '',
                     userId: ''
@@ -36,15 +37,31 @@ class App extends Component {
     }
 
     setAuthentication = (userInfo) => {
+        if (userInfo.displayName) {
+            this.setState({
+                userName: userInfo.displayName,
+                userId: userInfo.uid,
+            });
+        }
+        else {
+            this.setState({
+                userId: userInfo.uid
+            })
+        }
+    }
+
+    handleSignOut = () => {
+        firebase.auth().signOut();
         this.setState({
-            userName: userInfo.displayName,
-            userId: userInfo.uid,
+            userName: '',
+            userId: ''
         });
     }
 
     render() {
         const {
             setAuthentication,
+            handleSignOut,
             state: {
                 userName,
                 userId
@@ -53,17 +70,16 @@ class App extends Component {
         return (
             <Router>
                 <div className='App'>
-                    <Route exact path='/' render={() => (<Welcome loggedIn={userName} getAuthentication={setAuthentication}/>)
+                    <Route exact path='/' render={() => (<Welcome loggedIn={userId} getAuthentication={setAuthentication}/>)
                     } />
                     <Route path='/signup' component={SignUp} />
                     <Route path='/signinpage' component={SignInPage} />
-                    <Route path='/user/dashboard' render={() => {
-                        if (!userName) {
+                    <Route path='/dashboard' render={() => {
+                        if (!userId) {
                             return <Redirect to='/' />
                         }
-                        return (<Dashboard userName={userName} userId={userId}/>)
+                        return (<Dashboard signOut={handleSignOut} userId={userId}/>)
                         }} />
-                    <Route path='/guest/dashboard' component={Dashboard} />
                     <Route path='/dashboard/create' component={CreateAPoll} />
                 </div>
             </Router>
