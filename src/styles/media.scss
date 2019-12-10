@@ -4,18 +4,12 @@
 ---------------------- 
 */
 @media (max-width: 940px) {
-    body {
-        border: 1px solid purple;
-    }
     .welcomeSplash {
         width: 50%;
     }
 }
 
 @media (max-width: 784px) {
-    body {
-        border: 1px solid red;
-    }
     .welcomeSplash {
         width: 60%;
     }
@@ -28,9 +22,6 @@
 }
 
 @media (max-width: 420px) {
-    body {
-        border: 1px solid lime;
-    }
     .welcomeSplash {
         width: 80%;
     }
