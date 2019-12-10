@@ -5,7 +5,7 @@
   height: 100vh;
   position: fixed;
   z-index: 100;
-  padding-top: 100px;
+  padding-top: 30px;
   font-size: 1.5rem;
   @include smallDesktop {
     width: 25%;
@@ -20,7 +20,25 @@
     text-decoration: none;
     font-weight: 700;
     text-transform: uppercase;
-    text-align: left;
-    margin: 0 0 20px 20px;
+    text-align: center;
+    margin: 20px auto;
+    font-family: $fontBase;
+    background: $primaryColour;
+    border-radius: 10px;
+    width: 80%;
+    height: 40px;
+    padding-top: 8px;
+    border: 2px solid #d17300;
+    transition: ease all 0.15s;
+    cursor: pointer;
+
+    &:hover {
+      background: #ffbb00;
+      border: 2px solid $primaryColour;
+    }
+    &:active {
+      background: $accentColour;
+      color: $primaryColour;
+    }
   }
 }

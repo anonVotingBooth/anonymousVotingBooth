@@ -16,7 +16,8 @@ class Dashboard extends Component {
         super();
         this.state = {
             currentView: null,
-            hidden: true
+            hidden: true,
+            isSidebarHidden: true,
         }
     }
 
@@ -27,24 +28,29 @@ class Dashboard extends Component {
             hidden: false,
         })
     }
-    handleMobileClick = (e) => {
-        console.log('i was clicked!!!!!!')
+    handleSidebarClick = () => {
         this.setState({
-            currentView: e.target.id,
-            hidden: false,
+            isSidebarHidden: !this.state.isSidebarHidden
         })
     }
+    // handleMobileClick = (e) => {
+    //     console.log('i was clicked!!!!!!')
+    //     console.log(!this.state.isMobileHidden)
+    //     this.setState({
+    //         currentView: e.target.id,
+    //         isMobileHidden: !this.state.isMobileHidden,
+    //     })
+    // }
 
     render() {
         const {signOut} = this.props;
         return (
             <div className='flexDashboardParent'>
-                <Sidebar handleSignOut={signOut}/>
-                <FontAwesomeIcon className="hamburger" icon={faCaretDown} />
-                {this.state.hidden && <div> <FontAwesomeIcon className="createPollMobile" icon={faPlus} onClick={this.handleMobileClick} /> </div>}
+                <Sidebar handleSignOut={signOut} isSidebarHidden={this.state.isSidebarHidden}/>
+                <FontAwesomeIcon onClick={this.handleSidebarClick} className="hamburger" icon={faCaretDown} />
+                {this.state.hidden && <div> <FontAwesomeIcon className="createPollMobile" icon={faPlus} id='createPoll' onClick={this.handleClick} /> </div>}
                 <div className='dashboard'>
                     {this.state.hidden && <div> <button className='createPollButton' id='createPoll' onClick={this.handleClick}>+ create your own</button> </div>}
-
                     {this.state.currentView === 'createPoll' && <CreateAPoll />}
                     <Polls userId={this.props.userId} />
                     {/* <ImageApi /> */}
