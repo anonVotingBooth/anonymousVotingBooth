@@ -3,7 +3,9 @@ html {
 }
 
 body {
-  background-color: #c8e7ff; //variable needed
+  background-image: url("https://www.transparenttextures.com/patterns/always-grey.png");
+  background-color: rgb(200,231,255); 
+  box-shadow: inset 0 0 0 1000px rgba(200,231,255,.6);
   font-size: 1.6rem;
   position: relative;
   min-height: 100vh;

@@ -1,6 +1,6 @@
 .welcomeSplash {
   z-index: 10;
-  height: 50vh;
+  height: auto;
   width: 30%;
   border-radius: 20px;
   border: 2px solid $primaryColour;
@@ -15,6 +15,11 @@
     text-align: center;
     color: $accentColour;
   }
+  p {
+      color: lighten($black, 30%);
+      text-align: center;
+      letter-spacing: .2rem;
+  }
 }
 .userLoginHome {
   text-align: center;
@@ -23,6 +28,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 40px;
 }
 .guestLoginButton {
   font-family: Roboto, helvetica, arial, sans-serif;
