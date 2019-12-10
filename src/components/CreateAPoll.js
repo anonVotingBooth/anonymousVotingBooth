@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import firebase from './firebase';
+import Swal from 'sweetalert2';
 import Thanks from './Thanks';
 
 class CreateAPoll extends Component {
@@ -53,7 +54,13 @@ class CreateAPoll extends Component {
       usersVotedList: ''
     };
     const publicPollsRef = firebase.database().ref('/publicPolls');
-    if(pollToAdd.question !== '') {
+    if (this.state.answer1 === this.state.answer2) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Are you trying to swing the polls? Your answers cannot be the same!!',
+      })
+    } else if (pollToAdd.question !== '') {
       publicPollsRef.push(pollToAdd);
       this.setState({
         question: '',
@@ -76,11 +83,11 @@ class CreateAPoll extends Component {
         <form className='createPoll' id='createPoll' onSubmit={this.handleSubmit}>
           <h2>Add your poll below</h2>
           <label htmlFor='question'></label>
-          <input id='question' placeholder='Add your question' type='text' onChange={this.handleChange} value={this.state.question} autoComplete='off' required></input>
+          <input id='question' maxlength='120' placeholder='Add your question' type='text' onChange={this.handleChange} value={this.state.question} autoComplete='off' required></input>
           <label htmlFor='answer1'></label>
-          <input id='answer1' placeholder='Answer Option One' type='text' onChange={this.handleChange}value={this.state.answer1} autoComplete='off' required></input>
+          <input id='answer1' maxlength='20' placeholder='Answer Option One' type='text' onChange={this.handleChange}value={this.state.answer1} autoComplete='off' required></input>
           <label htmlFor='answer2'></label>
-          <input id='answer2' placeholder='Answer Option Two' type='text' onChange={this.handleChange}value={this.state.answer2} autoComplete='off' required></input>
+          <input id='answer2' maxlength='20' placeholder='Answer Option Two' type='text' onChange={this.handleChange}value={this.state.answer2} autoComplete='off' required></input>
           <button className='addPollButton' type='submit'>Add Poll!</button>
         </form> : <Thanks resetForm={this.resetForm}/>
         }

@@ -96,3 +96,45 @@ input {
     margin-top: 25px;
   }
 }
+
+// Sweet Alert Styles
+.swal2-popup {
+  width: 55em !important;
+  padding: 3.5em !important;
+  border: 2px solid $accentColour !important;
+  border-radius: 20px !important;
+}
+
+.swal2-icon.swal2-error.swal2-icon-show {
+  font-size: 2rem !important;
+}
+
+[class^="swal2"] {
+  .swal2-icon.swal2-error [class^="swal2-x-mark-line"] {
+    background-color: $accentColour !important;
+  }
+
+}
+
+.swal2-icon.swal2-error {
+  border-color: $accentColour !important;
+}
+
+h2.swal2-title {
+  font-size: 3rem;
+  color: $primaryColour;
+}
+
+.swal2-content {
+  font-size: 1.8rem !important;
+}
+
+.swal2-styled.swal2-confirm {
+  font-size: 1.6em !important;
+  font-weight: bold !important;
+  border: 2px solid $accentColour !important;
+  background-color: $primaryColour !important;
+}
+
+
+

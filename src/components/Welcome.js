@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Link, Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import logo from './../assets/logo.svg';
 import firebase from 'firebase';
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
@@ -7,6 +7,9 @@ import * as firebaseui from 'firebaseui';
 import Dashboard from './Dashboard';
 import 'firebase/auth';
 import AnimatedBackground from './AnimatedBackground';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
 
 const uiConfig = {
     signInFlow: 'popup',
@@ -17,7 +20,7 @@ const uiConfig = {
                 prompt: 'select_account'
             },
         },
-        firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID,
+        // firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID,
     ],
 };
 
@@ -37,7 +40,7 @@ class Welcome extends Component {
     render() {
         if (this.props.loggedIn) {
             return <Redirect to='/user/dashboard' />
-        }
+        } 
         return (
             <div>
                 <div className='welcomeSplash'>
@@ -45,6 +48,7 @@ class Welcome extends Component {
                         <img className='logo bounce-in-fwd' src={logo}></img>
                         <div className='userLoginHome'>
                             <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
+                            <Link className='guestLoginButton' to='guest/dashboard'><FontAwesomeIcon className="userIcon" icon={faUser} /> Continue as guest</Link>
                         </div>
                     </div>
                 </div>
