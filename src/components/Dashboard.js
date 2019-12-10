@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Sidebar from './Sidebar';
 import CreateAPoll from './CreateAPoll';
 import Polls from './Polls';
+import ImageApi from './ImageApi';
 // import ViewPolls from './ViewPolls';
 import '../App.scss';
 import firebase from 'firebase';
@@ -33,6 +34,7 @@ class Dashboard extends Component {
                     <button className='createPollButton' id='createPoll' onClick={this.handleClick}>+ create your own</button>
                     {this.state.currentView === 'createPoll' && <CreateAPoll />}
                     <Polls />
+                    {/* <ImageApi /> */}
                 </div>
             </div>
         );
