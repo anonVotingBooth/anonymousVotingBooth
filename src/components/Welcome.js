@@ -38,7 +38,7 @@ class Welcome extends Component {
         if (this.props.loggedIn) {
             console.log('redirecting into dashboard');
             return <Redirect to='/user/dashboard' />
-        }
+        } 
         return (
             <div>
                 <div className='welcomeSplash'>
