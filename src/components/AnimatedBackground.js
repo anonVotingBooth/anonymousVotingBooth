@@ -34,4 +34,5 @@ class AnimatedBackground extends Component {
         )
     }
 }
+
 export default AnimatedBackground;

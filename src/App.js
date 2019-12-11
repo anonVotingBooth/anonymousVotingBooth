@@ -46,7 +46,6 @@ class App extends Component {
                 userId
             }
         } = this;
-
         return (
             <Router>
                 <div className='App'>
