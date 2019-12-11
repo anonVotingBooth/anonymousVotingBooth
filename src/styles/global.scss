@@ -4,8 +4,8 @@ html {
 
 body {
   background-image: url("https://www.transparenttextures.com/patterns/always-grey.png");
-  background-color: rgb(200,231,255); 
-  box-shadow: inset 0 0 0 1000px rgba(200,231,255,.6);
+  background-color: $lightBgColour;
+  box-shadow: inset 0 0 0 1000px rgba(200, 231, 255, 0.6);
   font-size: 1.6rem;
   position: relative;
   min-height: 100vh;

@@ -69,7 +69,7 @@
         opacity: 0;
         text-transform: uppercase;
         font-size: 1.5rem;
-        color: darkgrey;
+        color: $lightGrey;
         line-height: 0;
         padding-bottom: 10px;
       }
@@ -88,9 +88,9 @@
         border-bottom: none;
       }
       &:hover {
-        background-color: #fffbe4; //fix to be a lightened variable
+        background-color: lighten($accentColour, 32%);
         .options {
-          color: $accentColour;
+          color: darken($accentColour, 15%);
           transition: ease all 0.15s;
         }
       }

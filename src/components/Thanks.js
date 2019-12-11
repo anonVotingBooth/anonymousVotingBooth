@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class Thanks extends Component {
-    render () {
+    render() {
         return (
             <div id='thanksPopup' className='thanksPopup'>
                 <h2>Thanks for adding a poll!</h2>

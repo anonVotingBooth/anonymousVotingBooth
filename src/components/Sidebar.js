@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import '../App.scss';
 import Header from './Header';
 import 'firebase/auth';
 
@@ -12,7 +11,7 @@ class Sidebar extends Component {
         };
     }
 
-    render() {    
+    render() {
         const {
             handleSignOut,
             isSidebarHidden
