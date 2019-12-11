@@ -3,7 +3,7 @@ import Sidebar from './Sidebar';
 import FooterDashboard from './FooterDashboard'
 import firebase from 'firebase';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretDown, faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 import '../App.scss';
 
 class ViewPolls extends Component {
@@ -64,13 +64,10 @@ class ViewPolls extends Component {
   render() {
 
     const {
-        handleClick,
         handleSidebarClick,
         state: {
-            hidden,
             isSidebarHidden,
             pollQuestions,
-            currentPoll
         },
         props: {
             signOut,
