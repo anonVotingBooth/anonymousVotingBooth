@@ -69,7 +69,8 @@ class ViewPolls extends Component {
         state: {
             hidden,
             isSidebarHidden,
-            pollQuestions
+            pollQuestions,
+            currentPoll
         },
         props: {
             signOut,
@@ -94,9 +95,8 @@ class ViewPolls extends Component {
                     const pollQ = value.question;
                     const currentPollQ = index;
                     const pollCreatedBy = value.pollCreatedBy;
-                    let poll;
                     if (pollCreatedBy === userId) {
-                      poll = (
+                      return (
                         <li key={index} className='pollItem'>
                             <div className="pollQuestion">
                               <p>{pollQ}</p>
@@ -118,10 +118,6 @@ class ViewPolls extends Component {
                         </li>
                       );
                     }
-                    else {
-                      alert('error');
-                    }
-                    return poll;
                   })
                 }
               </ul>
