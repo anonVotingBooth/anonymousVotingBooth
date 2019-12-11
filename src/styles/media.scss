@@ -51,6 +51,12 @@
     margin: 0 auto;
     width: 100%;
   }
+
+  .dreamTeamImage {
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+}
 }
 
 @media (max-width: 520px) {
@@ -63,4 +69,7 @@
   .dreamTeamFlexChild {
     flex-direction: column;
   }
+  .dreamTeamList {
+    width: 60%;
+}
 }

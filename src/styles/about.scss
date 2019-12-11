@@ -1,53 +1,53 @@
 .dreamTeamFlexChild {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    margin: 30px auto 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: 30px auto 0 auto;
 }
 .dreamTeam {
-    text-transform: uppercase;
-    color: $primaryColour;
-    text-align: center;
-    font-weight: bolder;
-    margin-top: 20px;
-    font-family: $fontBase;
-    h1 {
-        font-size: 5rem;
-    }
-    ul {
-        list-style-type: none;
-        display: flex;
-        justify-content: center;
-        li {
-            padding: 10px;
-            a {
-                font-size: 2.8rem;
-                color: $bgColour;
-                transition: ease .3s;
-                &:hover, &:focus{
-                    color: $primaryColour;
-                    scale: 1.2;
-                }
-            }
+  text-transform: uppercase;
+  color: $primaryColour;
+  text-align: center;
+  font-weight: bolder;
+  margin-top: 20px;
+  font-family: $fontBase;
+  h1 {
+    font-size: 5rem;
+  }
+  ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    li {
+      padding: 10px;
+      a {
+        font-size: 2.8rem;
+        color: $bgColour;
+        transition: ease 0.3s;
+        &:hover,
+        &:focus {
+          color: $primaryColour;
+          scale: 1.2;
         }
-        
+      }
     }
+  }
 }
 .dreamTeamImage {
-    border-radius: 50%;
-    height: 200px;
-    width: 200px;
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
 }
 .dreamTeamList {
-    padding: 30px;
-    width: 40%;
-    list-style: none;
-    text-align: center;
-    margin: 0 auto;
+  padding: 30px;
+  width: 40%;
+  list-style: none;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .socialLinks {
-    display: flex;
+  display: flex;
 }
