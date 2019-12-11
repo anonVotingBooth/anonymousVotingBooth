@@ -1,6 +1,6 @@
 # Welcome to Anonymous Voting Booth
 
-[Live Demo](https://anonvotingbooth.github.io/anonymousVotingBooth/dashboard)
+[Live Demo](https://anonvotingbooth.github.io/anonymousVotingBooth)
 
 ## Description
 An easy-to-use app to create, take and share fun polls
