@@ -82,7 +82,7 @@ class ViewPolls extends Component {
       <div className='flexDashboardParent'>
         <Sidebar handleSignOut={signOut} isSidebarHidden={isSidebarHidden} />
         <FontAwesomeIcon onClick={handleSidebarClick} className="hamburger" icon={faCaretDown} />
-        {hidden && <div> <FontAwesomeIcon className="createPollMobile" icon={faPlus} id='createPoll' onClick={handleClick} /> </div>}
+        
         <div className='dashboard'>
             <div className="wrapper">
               <ul className='viewPollsList'>
