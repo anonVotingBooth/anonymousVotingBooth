@@ -3,6 +3,11 @@
 @media Styles 
 ---------------------- 
 */
+@media (max-width: 1180px) {
+  .welcomeSplash {
+    width: 40%;
+  }
+}
 @media (max-width: 940px) {
   .welcomeSplash {
     width: 50%;
