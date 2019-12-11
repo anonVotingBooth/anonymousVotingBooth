@@ -25,7 +25,6 @@ const uiConfig = {
     ],
 };
 
-
 class Welcome extends Component {
     componentDidMount() {
         const { getAuthentication } = this.props;
@@ -52,10 +51,8 @@ class Welcome extends Component {
                     <div className='wrapper'>
                         <img className='logo bounce-in-fwd' src={logo}></img>
                         <p>Hey there! Welcome to blaajsdfo  sadofjosf  sdfjosjdf sodif sodfifo sf osdifo asfd sdkf sjdfih fsofd jofhsdof of sodf osf osf saof eefsof</p>
-
                         <div className='userLoginHome'>
                             <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
-                            {/* <Link className='guestLoginButton' to='guest/dashboard'><FontAwesomeIcon className="userIcon" icon={faUser} /> Continue as guest</Link> */}
                         </div>
                     </div>
                 </div>

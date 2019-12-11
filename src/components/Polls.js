@@ -58,7 +58,6 @@ class Polls extends Component {
       });
     }
   }
-      // console.log(usersVotedList[users]);
 
   // Incrementing the option two every time a user votes for option two in any vote poll
   incrementAnswer2Count = (e) => {

@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import './App.scss';
 import { BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
-// import Header from './components/Header';
-import Footer from './components/Footer';
 import Welcome from './components/Welcome';
-// import GuestLogin from './components/GuestLogin';
 import Dashboard from './components/Dashboard';
 import CreateAPoll from './components/CreateAPoll';
 import firebase from 'firebase';
@@ -65,6 +62,7 @@ class App extends Component {
                 userId
             }
         } = this;
+        
         return (
             <Router>
                 <div className='App'>

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Sidebar from './Sidebar';
 import CreateAPoll from './CreateAPoll';
 import Polls from './Polls';
-// import ImageApi from './ImageApi';
 // import ViewPolls from './ViewPolls';
 import '../App.scss';
 import firebase from 'firebase';
@@ -33,14 +32,6 @@ class Dashboard extends Component {
             isSidebarHidden: !this.state.isSidebarHidden
         })
     }
-    // handleMobileClick = (e) => {
-    //     console.log('i was clicked!!!!!!')
-    //     console.log(!this.state.isMobileHidden)
-    //     this.setState({
-    //         currentView: e.target.id,
-    //         isMobileHidden: !this.state.isMobileHidden,
-    //     })
-    // }
 
     render() {
         const {signOut} = this.props;
@@ -53,7 +44,6 @@ class Dashboard extends Component {
                     {this.state.hidden && <div> <button className='createPollButton' id='createPoll' onClick={this.handleClick}>+ create your own</button> </div>}
                     {this.state.currentView === 'createPoll' && <CreateAPoll />}
                     <Polls userId={this.props.userId} />
-                    {/* <ImageApi /> */}
                     <FooterDashboard />
                 </div>
             </div>
