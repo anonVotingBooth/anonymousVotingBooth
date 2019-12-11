@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import '../App.scss';
 import Header from './Header';
 
 class Sidebar extends Component {
@@ -11,7 +10,7 @@ class Sidebar extends Component {
         };
     }
 
-    render() {    
+    render() {
         const {
             handleSignOut,
             isSidebarHidden

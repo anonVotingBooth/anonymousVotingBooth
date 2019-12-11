@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Sidebar from './Sidebar';
 import CreateAPoll from './CreateAPoll';
 import Polls from './Polls';
-import '../App.scss';
 import FooterDashboard from './FooterDashboard'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretDown, faPlus } from '@fortawesome/free-solid-svg-icons'
@@ -16,7 +15,7 @@ class Dashboard extends Component {
             isSidebarHidden: true,
         }
     }
-
+    
     // this handle click shows the create a poll section above 'polls' when clicked. 
     handleClick = (e) => {
         this.setState({
@@ -54,7 +53,7 @@ class Dashboard extends Component {
 
         return (
             <div className='flexDashboardParent'>
-                <Sidebar handleSignOut={signOut} isSidebarHidden={isSidebarHidden}/>
+                <Sidebar handleSignOut={signOut} isSidebarHidden={isSidebarHidden} />
                 <FontAwesomeIcon onClick={handleSidebarClick} className="hamburger" icon={faCaretDown} />
                 {hidden && <div> <FontAwesomeIcon className="createPollMobile" icon={faPlus} id='createPoll' onClick={handleClick} /> </div>}
                 <div className='dashboard'>

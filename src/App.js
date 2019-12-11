@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './App.scss';
-import { BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import Welcome from './components/Welcome';
 import Dashboard from './components/Dashboard';
 import ViewPolls from './components/ViewPolls';
+import About from './components/About';
 import firebase from 'firebase';
 import 'firebase/auth';
-import About from './components/About';
 
 class App extends Component {
     constructor() {
@@ -17,11 +17,11 @@ class App extends Component {
     }
 
     componentDidMount() {
-        const {setAuthentication} = this;
+        const { setAuthentication } = this;
         firebase.auth().onAuthStateChanged((user) => {
             if (user) {
                 setAuthentication(user);
-            } 
+            }
         });
     }
 
@@ -50,16 +50,16 @@ class App extends Component {
         return (
             <Router basename='/anonymousVotingBooth'>
                 <div className='App'>
-                    <Route exact path='/' render={() => (<Welcome loggedIn={userId} getAuthentication={setAuthentication}/>)
+                    <Route exact path='/' render={() => (<Welcome loggedIn={userId} getAuthentication={setAuthentication} />)
                     } />
                     <Route exact path='/dashboard' render={() => {
                         if (!userId) {
                             return <Redirect to='/' />
                         }
-                        
-                        return (<Dashboard signOut={handleSignOut} userId={userId}/>)
+
+                        return (<Dashboard signOut={handleSignOut} userId={userId} />)
                     }} />
-                    <Route path='/dashboard/viewpolls' render={() => (<ViewPolls userId={userId}/>)} />
+                    <Route path='/dashboard/viewpolls' render={() => (<ViewPolls userId={userId} />)} />
                     <Route path='/about' component={About} />
 
                 </div>

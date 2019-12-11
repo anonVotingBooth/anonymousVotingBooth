@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import firebase from './firebase';
-import '../App.scss';
 import 'firebase/auth';
 
 class Polls extends Component {

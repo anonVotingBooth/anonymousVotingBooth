@@ -31,8 +31,8 @@ input {
 .addPollButton,
 .resetForm {
   cursor: pointer;
-  background: $primaryColour;
-  color: $white;
+  background: $btnBgColour;
+  color: $btnColour;
   font-family: $fontBase;
   text-transform: uppercase;
   padding: 10px;
@@ -41,16 +41,16 @@ input {
   border: none;
   width: 40%;
   transition: ease all 0.15s;
-  border: 2px solid #d17300;
+  border: 2px solid $btnBorderColour;
   margin: 10px 0;
 
   &:hover {
-    background: #ffbb00;
-    border: 2px solid $primaryColour;
+    background: $btnHoverBg;
+    border: 2px solid $btnHoverBorder;
   }
   &:active {
-    background: $accentColour;
-    color: $primaryColour;
+    background: $btnActiveBg;
+    color: $btnActiveColour;
   }
 }
 // this needs to be cleaned up still
@@ -62,24 +62,24 @@ input {
   text-transform: uppercase;
   font-size: 1.6rem;
   margin-left: 10%;
-  background: $primaryColour;
-  color: $white;
+  background: $btnBgColour;
+  color: $btnColour;
   border-radius: 10px;
   width: 200px;
   height: 40px;
-  border: 2px solid #d17300;
+  border: 2px solid $btnBorderColour;
   box-shadow: 2px 2px 3px $bgColour;
   transition: ease all 0.15s;
 
   cursor: pointer;
   line-height: 0;
   &:hover {
-    background: #ffbb00;
-    border: 2px solid $primaryColour;
+    background: $btnHoverBg;
+    border: 2px solid $btnHoverBorder;
   }
   &:active {
-    background: $accentColour;
-    color: $primaryColour;
+    background: $btnActiveBg;
+    color: $btnActiveColour;
   }
 }
 
@@ -113,7 +113,6 @@ input {
   .swal2-icon.swal2-error [class^="swal2-x-mark-line"] {
     background-color: $accentColour !important;
   }
-
 }
 
 .swal2-icon.swal2-error {
@@ -132,9 +131,6 @@ h2.swal2-title {
 .swal2-styled.swal2-confirm {
   font-size: 1.6em !important;
   font-weight: bold !important;
-  border: 2px solid $accentColour !important;
-  background-color: $primaryColour !important;
+  border: 2px solid $btnBorderColour !important;
+  background-color: $btnBgColour !important;
 }
-
-
-

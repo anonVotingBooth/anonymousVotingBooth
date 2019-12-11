@@ -3,7 +3,7 @@ import graphic1 from './../assets/backgroundImage1.svg';
 import graphic2 from './../assets/backgroundImage2.svg';
 
 class AnimatedBackground extends Component {
-    render(){
+    render() {
         return (
             <div>
                 <div className='animatedBackground'>

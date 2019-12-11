@@ -1,42 +1,46 @@
 .dreamTeamFlexChild {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  padding: 30px;
+  margin: 30px auto 0 auto;
 }
 .dreamTeam {
-    text-transform: uppercase;
-    color: $primaryColour;
-    text-align: center;
-    font-weight: bolder;
-    margin-top: 20px;
-    font-family: $fontBase;
-    h1 {
-        font-size: 5rem;
-    }
-    ul {
-        list-style-type: none;
-        display: flex;
-        justify-content: center;
-        li {
-            padding: 10px;
-            a {
-                font-size: 2.8rem;
-                color: $bgColour;
-                transition: ease .3s;
-                &:hover, &:focus{
-                    color: $primaryColour;
-                    scale: 1.2;
-                }
-            }
+  text-transform: uppercase;
+  color: $primaryColour;
+  text-align: center;
+  font-weight: bolder;
+  margin-top: 20px;
+  font-family: $fontBase;
+  h1 {
+    font-size: 5rem;
+  }
+  ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    li {
+      padding: 10px;
+      a {
+        font-size: 2.8rem;
+        color: $bgColour;
+        transition: ease 0.3s;
+        &:hover,
+        &:focus {
+          color: $primaryColour;
+          scale: 1.2;
         }
-        
+      }
     }
+  }
 }
 .dreamTeamImage {
     border-radius: 50%;
     height: 200px;
     width: 200px;
+    margin-bottom: 20px;
 }
 .dreamTeamList {
     padding: 30px;
@@ -44,9 +48,28 @@
     list-style: none;
     text-align: center;
     margin: 0 auto;
+    img {
+        width: 80%;
+        height: auto;
+        border: 15px solid rgba(255,255,255, 0);
+        transition: all .5s;
+        &:hover {
+            border: 15px solid rgba(255,255,255, .5);
+            transform: rotate(-10deg) scale(1.1);
+        }
+    }
+  border-radius: 50%;
+  // height: 200px;
+  // width: 200px;
 }
+// .dreamTeamList {
+//   padding: 30px;
+//   width: 40%;
+//   list-style: none;
+//   text-align: center;
+//   margin: 0 auto;
+// }
 
 .socialLinks {
-    display: flex;
-    border: 1px solid red;
+  display: flex;
 }
