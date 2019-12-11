@@ -69,8 +69,7 @@ class ViewPolls extends Component {
         state: {
             hidden,
             isSidebarHidden,
-            pollQuestions,
-            currentPoll
+            pollQuestions
         },
         props: {
             signOut,
