@@ -137,8 +137,9 @@ class Polls extends Component {
                           onClick={incrementAnswer1Count}  
                           value='votes1'
                           disabled={voted ? true : false}
-                        >
-                        {optionA}
+                      >
+                        <p className="options">{optionA}</p>
+                        
                           <p className={voted ? 'showVotes' : null}>
                             {totalVotesA} votes
                           </p>
@@ -149,7 +150,7 @@ class Polls extends Component {
                           value='votes2'
                           disabled={voted ? true : false}
                         >
-                        {optionB}
+                        <p className="options">{optionB}</p>
                           <p className={voted ? 'showVotes' : null}>
                             {totalVotesB} votes
                           </p>

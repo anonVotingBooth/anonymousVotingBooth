@@ -20,8 +20,6 @@
       justify-content: center;
       align-items: center;
       padding: 40px 10px;
-    }
-    p {
       color: $primaryColour;
       text-align: center;
       font-size: 2rem;
@@ -31,26 +29,30 @@
       }
     }
     button {
-      height: 100%;
-      padding: 15px 5px 10px 5px;
+      height: auto;
+      padding: 8px 5px;
       font-family: $fontBase;
       font-weight: 700;
-      font-size: 1.8rem;
       border-top: 2px solid $accentColour;
       border-left: 1px solid $accentColour;
       border-right: 1px solid $accentColour;
       width: 50%;
-      justify-self: flex-end;
-      text-transform: uppercase;
       background: none;
-      color: $primaryColour;
       outline: none;
-      line-height: 1;
       cursor: pointer;
+
+      .options {
+        opacity: 1;
+        text-transform: uppercase;
+        line-height: 1;
+        color: $primaryColour;
+        font-size: 1.8rem;
+      }
 
       p {
         opacity: 0;
-        padding: 15px 0 10px 0;
+        text-transform: uppercase;
+        padding: 10px 0 10px 0;
         font-size: 1.6rem;
         color: darkgrey;
         line-height: 0;
@@ -85,8 +87,4 @@
       }
     }
   }
-}
-.viewPollsList {
-  @extend .pollsList;
-  margin-top: 50px;
 }
