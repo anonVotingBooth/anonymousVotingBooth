@@ -6,6 +6,7 @@ import Dashboard from './components/Dashboard';
 import ViewPolls from './components/ViewPolls';
 import firebase from 'firebase';
 import 'firebase/auth';
+import About from './components/About';
 
 class App extends Component {
     constructor() {
@@ -59,6 +60,8 @@ class App extends Component {
                         return (<Dashboard signOut={handleSignOut} userId={userId}/>)
                     }} />
                     <Route path='/dashboard/viewpolls' render={() => (<ViewPolls userId={userId}/>)} />
+                    <Route path='/about' component={About} />
+
                 </div>
             </Router>
         );
