@@ -44,43 +44,43 @@ class About extends Component {
                         <p> and hire them!</p>
                         <ul className='dreamTeamFlexChild'>
                             <li className='dreamTeamList'>
-                                <img className='dreamTeamImage' src={jasmine} alt='photo of jasmine'></img>
+                                <img className='dreamTeamImage' src={jasmine} alt='jasmine on purple background'></img>
                                 <h2>jasmine carbone</h2>
                                 <ul classname='socialLinks'>
-                                    <li><a target='_blank' rel='noopener' href="https://github.com/tiltedcanvas">
+                                    <li><a target='_blank' rel='noopener noreferrer' href="https://github.com/tiltedcanvas">
                                     <FontAwesomeIcon icon={faGithubAlt} /></a></li>
-                                    <li><a target='_blank' rel='noopener' href='https://twitter.com/tiltedcanvas'><FontAwesomeIcon icon={faTwitter} /></a></li>
-                                    <li><a target='_blank' rel='noopener' href="mailto:jasmine@tiltedcanvas.com"><FontAwesomeIcon icon={faEnvelope} /></a></li>
+                                    <li><a target='_blank' rel='noopener noreferrer' href='https://twitter.com/tiltedcanvas'><FontAwesomeIcon icon={faTwitter} /></a></li>
+                                    <li><a target='_blank' rel='noopener noreferrer' href="mailto:jasmine@tiltedcanvas.com"><FontAwesomeIcon icon={faEnvelope} /></a></li>
                                 </ul>
                             </li>
                             <li className='dreamTeamList'>
-                                <img className='dreamTeamImage' src={mehdi} alt='photo of mehdi'></img>
+                                <img className='dreamTeamImage' src={mehdi} alt='mehdi on a yellow background'></img>
                                 <h2>mehdi pilehvarian</h2>
                                 <ul classname='socialLinks'>
-                                    <li><a target='_blank' rel='noopener' href="https://github.com/mantonionip">
+                                    <li><a target='_blank' rel='noopener noreferrer' href="https://github.com/mantonionip">
                                     <FontAwesomeIcon icon={faGithubAlt} /></a></li>
-                                    <li><a target='_blank' rel='noopener' href='https://twitter.com/mp_codes'><FontAwesomeIcon icon={faTwitter} /></a></li>
-                                    <li><a target='_blank' rel='noopener' href="mailto:mehdi.pilehvarian@gmail.com"><FontAwesomeIcon icon={faEnvelope} /></a></li>
+                                    <li><a target='_blank' rel='noopener noreferrer' href='https://twitter.com/mp_codes'><FontAwesomeIcon icon={faTwitter} /></a></li>
+                                    <li><a target='_blank' rel='noopener noreferrer' href="mailto:mehdi.pilehvarian@gmail.com"><FontAwesomeIcon icon={faEnvelope} /></a></li>
                                 </ul>
                             </li>
                             <li className='dreamTeamList'>
-                                <img className='dreamTeamImage' src={vince} alt='photo of vincent'></img> 
+                                <img className='dreamTeamImage' src={vince} alt='vincent on a yellow background'></img> 
                                 <h2>vincent dang</h2>
                                 <ul classname='socialLinks'>
-                                    <li><a target='_blank' rel='noopener' href="https://github.com/DangVincent">
+                                    <li><a target='_blank' rel='noopener noreferrer' href="https://github.com/DangVincent">
                                     <FontAwesomeIcon icon={faGithubAlt} /></a></li>
-                                    <li><a target='_blank' rel='noopener' href='https://twitter.com/VinceDCodes'><FontAwesomeIcon icon={faTwitter} /></a></li>
-                                    <li><a target='_blank' rel='noopener' href="mailto:vncntdang@gmail.com"><FontAwesomeIcon icon={faEnvelope} /></a></li>
+                                    <li><a target='_blank' rel='noopener noreferrer' href='https://twitter.com/VinceDCodes'><FontAwesomeIcon icon={faTwitter} /></a></li>
+                                    <li><a target='_blank' rel='noopener noreferrer' href="mailto:vncntdang@gmail.com"><FontAwesomeIcon icon={faEnvelope} /></a></li>
                                 </ul>
                             </li>
                             <li className='dreamTeamList'>
-                                <img className='dreamTeamImage' src={sharon} alt='photo of sharon'></img>
+                                <img className='dreamTeamImage' src={sharon} alt='sharon on a purple background'></img>
                                 <h2>sharon yi</h2>
                                 <ul classname='socialLinks'>
-                                    <li><a target='_blank' rel='noopener' href="https://github.com/sharon-yi">
+                                    <li><a target='_blank' rel='noopener noreferrer' href="https://github.com/sharon-yi">
                                     <FontAwesomeIcon icon={faGithubAlt} /></a></li>
-                                    <li><a target='_blank' rel='noopener' href='https://twitter.com/sharon_yi'><FontAwesomeIcon icon={faTwitter} /></a></li>
-                                    <li><a target='_blank' rel='noopener' href="mailto:sharon.yi@me.com"><FontAwesomeIcon icon={faEnvelope} /></a></li>
+                                    <li><a target='_blank' rel='noopener noreferrer' href='https://twitter.com/sharon_yi'><FontAwesomeIcon icon={faTwitter} /></a></li>
+                                    <li><a target='_blank' rel='noopener noreferrer' href="mailto:sharon.yi@me.com"><FontAwesomeIcon icon={faEnvelope} /></a></li>
                                 </ul>
                             </li>
                         </ul>
