@@ -64,3 +64,9 @@
     flex-direction: column;
   }
 }
+
+@media (max-width: 420px) {
+  .welcomeSplash {
+    margin: 75px auto 0 auto;
+  }
+}
