@@ -6,8 +6,6 @@ import Footer from './components/Footer';
 import Welcome from './components/Welcome';
 // import GuestLogin from './components/GuestLogin';
 import Dashboard from './components/Dashboard';
-import SignUp from './components/SignUp';
-import SignInPage from './components/SignInPage';
 import CreateAPoll from './components/CreateAPoll';
 import firebase from 'firebase';
 import 'firebase/auth';
@@ -72,8 +70,6 @@ class App extends Component {
                 <div className='App'>
                     <Route exact path='/' render={() => (<Welcome loggedIn={userId} getAuthentication={setAuthentication}/>)
                     } />
-                    <Route path='/signup' component={SignUp} />
-                    <Route path='/signinpage' component={SignInPage} />
                     <Route path='/dashboard' render={() => {
                         if (!userId) {
                             return <Redirect to='/' />
