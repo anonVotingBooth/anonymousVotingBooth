@@ -3,10 +3,7 @@
   width: 100%;
   padding: 0 20px;
   bottom: 10px;
-  p,
-  ul,
-  li,
-  a {
+  p {
     list-style: none;
     font-family: $fontBase;
     text-align: center;
@@ -14,21 +11,6 @@
     text-decoration: none;
     color: $black;
     text-transform: capitalize;
-    a {
-      color: lighten($black, 10%);
-      padding: 10px 3px;
-      transition: ease 0.3s;
-      &:hover,
-      &:focus {
-        // highlighter effect on hover
-        text-shadow: -5px 0px 5px $accentColour, 5px 0px 5px $accentColour,
-          6px 0px 6px $accentColour, -6px 0px 6px $accentColour;
-      }
-    }
   }
 }
-.footerLinks {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
+
