@@ -46,10 +46,11 @@ class Welcome extends Component {
                 <div className='welcomeSplash'>
                     <div className='wrapper'>
                         <img className='logo bounce-in-fwd' src={logo} alt='versus logo'></img>
-                        <p>Ready to find out if people prefer pineapple or ketchup on their pizza? Look no further. Build an unlimited amount of polls, vote on others and make your opinion known to the world!</p>
+                        <p>Ready to find out if people prefer pineapples or ketchup on their pizza? Look no further, with Versus™️, you're able to create an unlimited amount of polls and also vote on other user created polls. Don't hold back, it's all anonymous!</p>
                         <p className='miniText'>You can only vote once, so make it count!</p>
                         <div className='userLoginHome'>
                             <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
+                        <p className='disclaimerText'>Signing in with an account will let you keep track of the polls you've created.</p>
                         </div>
                     </div>
                 </div>

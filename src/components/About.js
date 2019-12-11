@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter, faGithubAlt } from '@fortawesome/free-brands-svg-icons';
 
+// the dream team about page!! best team ever!! :)
 class About extends Component {
     constructor() {
         super();
