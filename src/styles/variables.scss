@@ -3,7 +3,23 @@ $fontHeader: 'Montserrat', sans-serif;
 
 $black: #000;
 $white: #fff;
-$lightGrey: #a2a2a2;
+$lightGrey: #a9a9a9;
 $primaryColour: #ff8b00;
 $accentColour: #ffd731;
 $bgColour: #50b4ff;
+$lightBgColour: #c8e7ff;
+
+//button colours
+$btnBorderColour: #d17300;
+$btnBgColour: #ff8b00;
+$btnColour: #fff;
+
+//button hover state colours
+$btnHoverBorder: #ff8b00;
+$btnHoverBg: #ffbb00;
+$btnHoverColour: #fff;
+
+//button active state colours
+$btnActiveBorder: #ff8b00;
+$btnActiveBg: #ffd731;
+$btnActiveColour: #ff8b00;

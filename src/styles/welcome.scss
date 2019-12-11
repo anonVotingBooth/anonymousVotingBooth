@@ -16,13 +16,13 @@
     color: $accentColour;
   }
   p {
-      color: lighten($black, 30%);
-      text-align: center;
-      letter-spacing: .2rem;
+    color: lighten($black, 30%);
+    text-align: center;
+    letter-spacing: 0.2rem;
   }
   .miniText {
     color: $primaryColour;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: bold;
     margin: 10px 0;
     letter-spacing: normal;
@@ -37,36 +37,6 @@
   align-items: center;
   flex-direction: column;
   margin-bottom: 40px;
-}
-.guestLoginButton {
-  font-family: Roboto, helvetica, arial, sans-serif;
-  font-size: 14px;
-  position: relative;
-  letter-spacing: 0;
-  outline: 0;
-  cursor: pointer;
-  text-decoration: none;
-  vertical-align: middle;
-  border: none;
-  border-radius: 2px;
-  color: white;
-  margin: 0;
-  min-width: 64px;
-  display: inline-block;
-  background-color: #f4b400;
-  font-weight: 500;
-  line-height: normal;
-  max-width: 185px;
-  width: 80%;
-  min-height: 40px;
-  padding: 13px 16px;
-  text-align: left;
-  width: 100%;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
-    0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  .userIcon {
-    margin-right: 15px;
-  }
 }
 
 .logo {

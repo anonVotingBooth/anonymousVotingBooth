@@ -22,17 +22,17 @@
     width: 80%;
     height: 40px;
     padding-top: 8px;
-    border: 2px solid #d17300;
+    border: 2px solid $btnBorderColour;
     transition: ease all 0.15s;
     cursor: pointer;
 
     &:hover {
-      background: #ffbb00;
-      border: 2px solid $primaryColour;
+      background: $btnHoverBg;
+      border: 2px solid $btnHoverBorder;
     }
     &:active {
-      background: $accentColour;
-      color: $primaryColour;
+      background: $btnActiveBg;
+      color: $btnActiveColour;
     }
   }
 }

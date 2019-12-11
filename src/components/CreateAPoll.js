@@ -98,11 +98,11 @@ class CreateAPoll extends Component {
           <form className='createPoll' id='createPoll' onSubmit={handleSubmit}>
             <h2>Add your poll below</h2>
             <label htmlFor='question'></label>
-            <input id='question' maxlength='120' placeholder='Add your question' type='text' onChange={handleChange} value={question} autoComplete='off' required></input>
+            <input id='question' maxLength='120' placeholder='Add your question' type='text' onChange={handleChange} value={question} autoComplete='off' required></input>
             <label htmlFor='answer1'></label>
-            <input id='answer1' maxlength='20' placeholder='Answer Option One' type='text' onChange={handleChange} value={answer1} autoComplete='off' required></input>
+            <input id='answer1' maxLength='20' placeholder='Answer Option One' type='text' onChange={handleChange} value={answer1} autoComplete='off' required></input>
             <label htmlFor='answer2'></label>
-            <input id='answer2' maxlength='20' placeholder='Answer Option Two' type='text' onChange={handleChange} value={answer2} autoComplete='off' required></input>
+            <input id='answer2' maxLength='20' placeholder='Answer Option Two' type='text' onChange={handleChange} value={answer2} autoComplete='off' required></input>
             <button className='addPollButton' type='submit'>Add Poll!</button>
           </form> : <Thanks resetForm={resetForm} />
         }
