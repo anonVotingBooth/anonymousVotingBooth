@@ -22,6 +22,7 @@ class Polls extends Component {
       const pollData = fbData.val();
       const pollContent = Object.values(pollData);
       const pollNum = [];
+      
       for (let key in pollData){  
         const pollNumbers = {
           pNumber: key,
@@ -40,10 +41,19 @@ class Polls extends Component {
   incrementAnswer1Count = (e) => {
     e.preventDefault();
     const {id} = e.currentTarget;
-    const {currentPoll, pollQuestionRef} = this.state;
-    const {userId} = this.props;
+    const {
+      state: {
+        currentPoll, 
+        pollQuestionRef,
+      },
+      props: {
+        userId
+      }
+    } = this;
+
     const usersVotedList = currentPoll[id].pName.usersVotedList;
     const userList = [];
+
     for (let user in usersVotedList) {
       userList.push(usersVotedList[user])
     }
@@ -58,7 +68,6 @@ class Polls extends Component {
       });
     }
   }
-      // console.log(usersVotedList[users]);
 
   // Incrementing the option two every time a user votes for option two in any vote poll
   incrementAnswer2Count = (e) => {
