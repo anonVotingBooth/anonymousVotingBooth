@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/anonymousvotingbooth/static/css/main.f6730058.chunk.css",
-    "main.js": "/anonymousvotingbooth/static/js/main.fe9f8d15.chunk.js",
-    "main.js.map": "/anonymousvotingbooth/static/js/main.fe9f8d15.chunk.js.map",
-    "runtime-main.js": "/anonymousvotingbooth/static/js/runtime-main.2f00f6e1.js",
-    "runtime-main.js.map": "/anonymousvotingbooth/static/js/runtime-main.2f00f6e1.js.map",
-    "static/js/2.e586fef4.chunk.js": "/anonymousvotingbooth/static/js/2.e586fef4.chunk.js",
-    "static/js/2.e586fef4.chunk.js.map": "/anonymousvotingbooth/static/js/2.e586fef4.chunk.js.map",
-    "index.html": "/anonymousvotingbooth/index.html",
-    "precache-manifest.74654fa2ca3d2b9da05adc3ae46eee52.js": "/anonymousvotingbooth/precache-manifest.74654fa2ca3d2b9da05adc3ae46eee52.js",
-    "service-worker.js": "/anonymousvotingbooth/service-worker.js",
-    "static/css/main.f6730058.chunk.css.map": "/anonymousvotingbooth/static/css/main.f6730058.chunk.css.map",
-    "static/media/backgroundImage1.svg": "/anonymousvotingbooth/static/media/backgroundImage1.9fb0d5b7.svg",
-    "static/media/backgroundImage2.svg": "/anonymousvotingbooth/static/media/backgroundImage2.7897cea6.svg",
-    "static/media/jasmineCarbone.jpg": "/anonymousvotingbooth/static/media/jasmineCarbone.7e5d0b53.jpg",
-    "static/media/logo.svg": "/anonymousvotingbooth/static/media/logo.f8abd45d.svg",
-    "static/media/mehdiPilehvarian.jpg": "/anonymousvotingbooth/static/media/mehdiPilehvarian.6b3f1d4e.jpg",
-    "static/media/sharonYi.jpg": "/anonymousvotingbooth/static/media/sharonYi.c21f3cf5.jpg",
-    "static/media/vinceDang.jpg": "/anonymousvotingbooth/static/media/vinceDang.c68aa3ac.jpg"
+    "main.css": "/anonymousVotingBooth/static/css/main.f6730058.chunk.css",
+    "main.js": "/anonymousVotingBooth/static/js/main.1f37799d.chunk.js",
+    "main.js.map": "/anonymousVotingBooth/static/js/main.1f37799d.chunk.js.map",
+    "runtime-main.js": "/anonymousVotingBooth/static/js/runtime-main.b726d54b.js",
+    "runtime-main.js.map": "/anonymousVotingBooth/static/js/runtime-main.b726d54b.js.map",
+    "static/js/2.8d39d844.chunk.js": "/anonymousVotingBooth/static/js/2.8d39d844.chunk.js",
+    "static/js/2.8d39d844.chunk.js.map": "/anonymousVotingBooth/static/js/2.8d39d844.chunk.js.map",
+    "index.html": "/anonymousVotingBooth/index.html",
+    "precache-manifest.48652acff129d39c775c45d4de518ee7.js": "/anonymousVotingBooth/precache-manifest.48652acff129d39c775c45d4de518ee7.js",
+    "service-worker.js": "/anonymousVotingBooth/service-worker.js",
+    "static/css/main.f6730058.chunk.css.map": "/anonymousVotingBooth/static/css/main.f6730058.chunk.css.map",
+    "static/media/backgroundImage1.svg": "/anonymousVotingBooth/static/media/backgroundImage1.9fb0d5b7.svg",
+    "static/media/backgroundImage2.svg": "/anonymousVotingBooth/static/media/backgroundImage2.7897cea6.svg",
+    "static/media/jasmineCarbone.jpg": "/anonymousVotingBooth/static/media/jasmineCarbone.7e5d0b53.jpg",
+    "static/media/logo.svg": "/anonymousVotingBooth/static/media/logo.f8abd45d.svg",
+    "static/media/mehdiPilehvarian.jpg": "/anonymousVotingBooth/static/media/mehdiPilehvarian.6b3f1d4e.jpg",
+    "static/media/sharonYi.jpg": "/anonymousVotingBooth/static/media/sharonYi.c21f3cf5.jpg",
+    "static/media/vinceDang.jpg": "/anonymousVotingBooth/static/media/vinceDang.c68aa3ac.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.2f00f6e1.js",
-    "static/js/2.e586fef4.chunk.js",
+    "static/js/runtime-main.b726d54b.js",
+    "static/js/2.8d39d844.chunk.js",
     "static/css/main.f6730058.chunk.css",
-    "static/js/main.fe9f8d15.chunk.js"
+    "static/js/main.1f37799d.chunk.js"
   ]
 }
