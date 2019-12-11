@@ -23,7 +23,7 @@ class Sidebar extends Component {
             <div className={`sideBar${isSidebarHidden ? ' mobileHidden' : ''}`} >
                 <Header />
                 <NavLink className='sideBarLinks' to='/dashboard/viewpolls'>view your polls</NavLink>
-                <NavLink className='sideBarLinks' to='/dashboard/'>about us</NavLink>
+                <NavLink className='sideBarLinks' to='/about'>about us</NavLink>
                 <NavLink className='sideBarLinks' onClick={handleSignOut} to='/'>log out</NavLink>
             </div>
         );
