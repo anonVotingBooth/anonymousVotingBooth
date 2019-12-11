@@ -7,12 +7,6 @@
   z-index: 100;
   padding-top: 30px;
   font-size: 1.5rem;
-  @include smallDesktop {
-    width: 25%;
-  }
-  // @include tablet {
-  //   display: none;
-  // }
 
   .sideBarLinks {
     color: $white;

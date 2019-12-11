@@ -261,7 +261,6 @@
 }
 
 .animatedImage2 {
-  // overflow-x: hidden;
   width: calc(80% / 6);
   // margin: 15px;
   -webkit-animation: floatUpAnimation2 10s cubic-bezier(0.55, 0.085, 0.68, 0.53)
@@ -271,9 +270,7 @@
 }
 
 .animatedImage3 {
-  // overflow-x: hidden;
   width: calc(80% / 6);
-  // margin: 15px;
   -webkit-animation: floatUpAnimation3 10s cubic-bezier(0.55, 0.085, 0.68, 0.53)
     infinite;
   animation: floatUpAnimation3 10s cubic-bezier(0.55, 0.085, 0.68, 0.53)

@@ -22,7 +22,6 @@ class Sidebar extends Component {
         return (
             <div className={`sideBar${isSidebarHidden ? ' mobileHidden' : ''}`} >
                 <Header />
-                {/* <NavLink className="sideBarLinks" to='/'>profile</NavLink> */}
                 <NavLink className='sideBarLinks' to='/dashboard/viewpolls'>view your polls</NavLink>
                 <NavLink className='sideBarLinks' to='/dashboard/'>about us</NavLink>
                 <NavLink className='sideBarLinks' onClick={handleSignOut} to='/'>log out</NavLink>

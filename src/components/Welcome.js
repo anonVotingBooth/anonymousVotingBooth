@@ -20,7 +20,6 @@ const uiConfig = {
     ],
 };
 
-
 class Welcome extends Component {
     componentDidMount() {
         const { getAuthentication } = this.props;
