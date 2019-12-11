@@ -1,6 +1,6 @@
 # Welcome to Anonymous Voting Booth
 
-[Live Demo](http://voteanon.jasminecarbone.tech/)
+[Live Demo](https://anonvotingbooth.github.io/anonymousVotingBooth/dashboard)
 
 ## Description
 An easy-to-use app to create, take and share fun polls
@@ -24,6 +24,6 @@ An easy-to-use app to create, take and share fun polls
 
  :smirk_cat:[Vince Dang](https://github.com/DangVincent)
 
- :smiley_cat:[Mehdi Pilevarian](https://github.com/mantonionip)
+ :smiley_cat:[Mehdi Pilehvarian](https://github.com/mantonionip)
 
  :scream_cat:[Jasmine Carbone](https://github.com/tiltedcanvas)
