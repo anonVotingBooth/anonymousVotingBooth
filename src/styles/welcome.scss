@@ -20,6 +20,14 @@
       text-align: center;
       letter-spacing: .2rem;
   }
+  .miniText {
+    color: $primaryColour;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 10px 0;
+    letter-spacing: normal;
+    text-transform: uppercase;
+  }
 }
 .userLoginHome {
   text-align: center;
