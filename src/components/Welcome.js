@@ -47,6 +47,7 @@ class Welcome extends Component {
                     <div className='wrapper'>
                         <img className='logo bounce-in-fwd' src={logo} alt='versus logo'></img>
                         <p>Ready to find out if people prefer pineapple or ketchup on their pizza? Look no further. Build an unlimited amount of polls and vote on others and make your opinion known to the world!</p>
+                        <p className='miniText'>You can only vote once, so make it count!</p>
                         <div className='userLoginHome'>
                             <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
                         </div>
