@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import './App.scss';
 import { BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
-// import Header from './components/Header';
-import Footer from './components/Footer';
+import About from './components/About';
 import Welcome from './components/Welcome';
-// import GuestLogin from './components/GuestLogin';
 import Dashboard from './components/Dashboard';
 import SignUp from './components/SignUp';
 import SignInPage from './components/SignInPage';
@@ -81,6 +79,7 @@ class App extends Component {
                         return (<Dashboard signOut={handleSignOut} userId={userId}/>)
                         }} />
                     <Route path='/dashboard/create' component={CreateAPoll} />
+                    <Route path='/about' component={About} />
                 </div>
             </Router>
         );
