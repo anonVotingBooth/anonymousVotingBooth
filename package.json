@@ -1,6 +1,6 @@
 {
   "name": "anon-voting-app",
-  "homepage": "https://anonVotingBooth.github.io/anonymousvotingbooth/",
+  "homepage": "https://anonVotingBooth.github.io/anonymousVotingBooth/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
