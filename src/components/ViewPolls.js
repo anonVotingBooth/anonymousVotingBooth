@@ -103,15 +103,15 @@ class ViewPolls extends Component {
                             </div>
                             <div className="voteButtons">
                               <button id={currentPollQ} >
-                                {optionA}
+                              <p className="options">{optionA}</p>
                                 <p className='showVotes'>
-                                  ({totalVotesA})
+                                  {totalVotesA} votes
                                 </p>
                               </button>
                               <button id={currentPollQ}>
-                                {optionB}
+                              <p className="options">{optionB}</p>
                                 <p className='showVotes'>
-                                  ({totalVotesB})
+                                  {totalVotesB} votes
                                 </p>
                               </button>
                             </div>
