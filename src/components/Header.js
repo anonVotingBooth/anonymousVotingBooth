@@ -6,7 +6,7 @@ class Header extends Component {
 
     return (
       <div>
-       <a href='/dashboard'><img className='logo' src={logo} alt='logo for voted app'></img></a> 
+        <a href='/dashboard'><img className='logo' src={logo} alt='logo for voted app'></img></a>
       </div>
     );
   };

@@ -25,22 +25,22 @@ class Welcome extends Component {
         const { getAuthentication } = this.props;
         firebase.auth().onAuthStateChanged(user => {
             firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
-            .then(function () {
-                if (user) {
-                    getAuthentication(user);
-                }
-                return true;
-            })
+                .then(function () {
+                    if (user) {
+                        getAuthentication(user);
+                    }
+                    return true;
+                })
         })
     }
     render() {
 
-        const {loggedIn} = this.props;
+        const { loggedIn } = this.props;
 
         if (loggedIn) {
             return <Redirect to='/dashboard' />
         }
-        
+
         return (
             <div>
                 <div className='welcomeSplash'>
