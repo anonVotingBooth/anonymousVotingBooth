@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 import Thanks from './Thanks';
 
 class CreateAPoll extends Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
       question: '',
@@ -21,17 +21,17 @@ class CreateAPoll extends Component {
     dbRef.on('value', (response) => {
       const poll = response.val();
       const newPoll = []
-        for ( let key in poll ) {
-          const eachPoll = {
-            pollID: key,
-            pollName: poll[key]
-          }
-        newPoll.push(eachPoll)
+      for (let key in poll) {
+        const eachPoll = {
+          pollID: key,
+          pollName: poll[key]
         }
-        // Converting the object into an array and storing into state
-        this.setState({
-          pollList: newPoll
-        });
+        newPoll.push(eachPoll)
+      }
+      // Converting the object into an array and storing into state
+      this.setState({
+        pollList: newPoll
+      });
     });
   }
 
@@ -44,8 +44,8 @@ class CreateAPoll extends Component {
 
   // On submitting a poll, grab user's inputs from the form, add them to firebase
   handleSubmit = (e) => {
-    const {userId} = this.props;
-    e.preventDefault();  
+    const { userId } = this.props;
+    e.preventDefault();
     const pollToAdd = {
       question: this.state.question,
       answer1: this.state.answer1,
@@ -74,12 +74,12 @@ class CreateAPoll extends Component {
   }
   // resets form to add more and sets thanks state to null
   resetForm = (e) => {
-    this.setState ({
-        thanksPopup: null,
+    this.setState({
+      thanksPopup: null,
     })
   }
+  
   render() {
-
     const {
       handleSubmit,
       handleChange,
@@ -89,22 +89,22 @@ class CreateAPoll extends Component {
         question,
         answer1,
         answer2
-      } 
+      }
     } = this;
 
     return (
       <div className='wrapper'>
-        {thanksPopup !== 'showThankYou' ? 
-        <form className='createPoll' id='createPoll' onSubmit={handleSubmit}>
-          <h2>Add your poll below</h2>
-          <label htmlFor='question'></label>
-          <input id='question' maxlength='120' placeholder='Add your question' type='text' onChange={handleChange} value={question} autoComplete='off' required></input>
-          <label htmlFor='answer1'></label>
-          <input id='answer1' maxlength='20' placeholder='Answer Option One' type='text' onChange={handleChange}value={answer1} autoComplete='off' required></input>
-          <label htmlFor='answer2'></label>
-          <input id='answer2' maxlength='20' placeholder='Answer Option Two' type='text' onChange={handleChange}value={answer2} autoComplete='off' required></input>
-          <button className='addPollButton' type='submit'>Add Poll!</button>
-        </form> : <Thanks resetForm={resetForm}/>
+        {thanksPopup !== 'showThankYou' ?
+          <form className='createPoll' id='createPoll' onSubmit={handleSubmit}>
+            <h2>Add your poll below</h2>
+            <label htmlFor='question'></label>
+            <input id='question' maxLength='120' placeholder='Add your question' type='text' onChange={handleChange} value={question} autoComplete='off' required></input>
+            <label htmlFor='answer1'></label>
+            <input id='answer1' maxLength='20' placeholder='Answer Option One' type='text' onChange={handleChange} value={answer1} autoComplete='off' required></input>
+            <label htmlFor='answer2'></label>
+            <input id='answer2' maxLength='20' placeholder='Answer Option Two' type='text' onChange={handleChange} value={answer2} autoComplete='off' required></input>
+            <button className='addPollButton' type='submit'>Add Poll!</button>
+          </form> : <Thanks resetForm={resetForm} />
         }
       </div>
     );

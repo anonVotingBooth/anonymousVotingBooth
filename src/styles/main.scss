@@ -13,9 +13,9 @@
   position: relative;
 }
 
-.hamburger {
+.hamburger,
+.createPollMobile {
   display: none;
-  position: fixed;
   cursor: pointer;
   margin: 10px;
   font-size: 40px;
@@ -23,39 +23,24 @@
   min-width: 50px;
   min-height: 50px;
   color: $white;
-  background: $primaryColour;
+  background: $btnBgColour;
   border-radius: 50%;
-  border: 2px solid #d17300;
+  border: 2px solid $btnBorderColour;
   box-shadow: 2px 2px 2px $bgColour;
   &:hover {
-    background: #ffbb00;
-    border: 2px solid $primaryColour;
+    background: $btnHoverBg;
+    border: 2px solid $btnHoverBorder;
   }
   &:active {
-    background: $accentColour;
-    color: $primaryColour;
+    background: $btnActiveBg;
+    color: $btnActiveColour;
   }
 }
+.hamburger {
+  position: fixed;
+}
 .createPollMobile {
-  display: none;
   position: absolute;
-  cursor: pointer;
   margin: 10px 10px 10px 80px;
-  font-size: 40px;
   padding: 8px;
-  min-width: 50px;
-  min-height: 50px;
-  color: $white;
-  background: $primaryColour;
-  border-radius: 50%;
-  border: 2px solid #d17300;
-  box-shadow: 2px 2px 2px $bgColour;
-  &:hover {
-    background: #ffbb00;
-    border: 2px solid $primaryColour;
-  }
-  &:active {
-    background: $accentColour;
-    color: $primaryColour;
-  }
 }

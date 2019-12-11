@@ -16,6 +16,12 @@
   .welcomeSplash {
     width: 60%;
   }
+
+  .dashboard {
+    margin: 0 auto;
+    width: 100%;
+  }
+  // how the polls on the dashboard appear
   .pollsList {
     margin-top: 80px;
     .pollItem {
@@ -24,7 +30,7 @@
       }
     }
   }
-
+  // styles for hamburger menu toggle and the create poll button on smaller devices
   .sideBar.mobileHidden {
     margin-left: -240px;
   }
@@ -40,15 +46,19 @@
     display: block;
     z-index: 999; //woo!
   }
+
   .createPollButton {
     display: none;
   }
+
   .createPollMobile {
     display: block;
     z-index: 10;
   }
-  .dashboard {
-    margin: 0 auto;
+  // dream team image resize!
+  .dreamTeamImage {
+    border-radius: 50%;
+    height: 100%;
     width: 100%;
   }
 }
@@ -60,8 +70,12 @@
   .dashboard {
     width: 100%;
   }
+  // dream team page resize
   .dreamTeamFlexChild {
     flex-direction: column;
+  }
+  .dreamTeamList {
+    width: 60%;
   }
 }
 
