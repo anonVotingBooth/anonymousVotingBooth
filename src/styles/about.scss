@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   width: 80%;
+  padding: 30px;
   margin: 30px auto 0 auto;
 }
 .dreamTeam {
@@ -43,12 +44,13 @@
 }
 .dreamTeamList {
     padding: 30px;
-    width: 40%;
+    width: 50%;
     list-style: none;
     text-align: center;
     margin: 0 auto;
     img {
-        outline-offset: -1px;
+        width: 80%;
+        height: auto;
         border: 15px solid rgba(255,255,255, 0);
         transition: all .5s;
         &:hover {
@@ -57,16 +59,16 @@
         }
     }
   border-radius: 50%;
-  height: 200px;
-  width: 200px;
+  // height: 200px;
+  // width: 200px;
 }
-.dreamTeamList {
-  padding: 30px;
-  width: 40%;
-  list-style: none;
-  text-align: center;
-  margin: 0 auto;
-}
+// .dreamTeamList {
+//   padding: 30px;
+//   width: 40%;
+//   list-style: none;
+//   text-align: center;
+//   margin: 0 auto;
+// }
 
 .socialLinks {
   display: flex;
