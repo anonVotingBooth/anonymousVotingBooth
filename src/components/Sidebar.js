@@ -14,10 +14,13 @@ class Sidebar extends Component {
     }
 
     render() {    
-        const {handleSignOut} = this.props;
+        const {
+            handleSignOut,
+            isSidebarHidden
+        } = this.props;
 
         return (
-            <div className={`sideBar${this.props.isSidebarHidden ? ' mobileHidden' : ''}`} >
+            <div className={`sideBar${isSidebarHidden ? ' mobileHidden' : ''}`} >
                 <Header />
                 <NavLink className='sideBarLinks' to='/dashboard/viewpolls'>view your polls</NavLink>
                 <NavLink className='sideBarLinks' to='/dashboard/'>about us</NavLink>

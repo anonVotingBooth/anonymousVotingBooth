@@ -44,6 +44,7 @@ class CreateAPoll extends Component {
 
   // On submitting a poll, grab user's inputs from the form, add them to firebase
   handleSubmit = (e) => {
+    const {userId} = this.props;
     e.preventDefault();  
     const pollToAdd = {
       question: this.state.question,
@@ -51,7 +52,8 @@ class CreateAPoll extends Component {
       answer2: this.state.answer2,
       votes1: 0,
       votes2: 0,
-      usersVotedList: ''
+      usersVotedList: '',
+      pollCreatedBy: userId
     };
     const publicPollsRef = firebase.database().ref('/publicPolls');
     if (this.state.answer1 === this.state.answer2) {
@@ -77,19 +79,32 @@ class CreateAPoll extends Component {
     })
   }
   render() {
+
+    const {
+      handleSubmit,
+      handleChange,
+      resetForm,
+      state: {
+        thanksPopup,
+        question,
+        answer1,
+        answer2
+      } 
+    } = this;
+
     return (
       <div className='wrapper'>
-        {this.state.thanksPopup !== 'showThankYou' ? 
-        <form className='createPoll' id='createPoll' onSubmit={this.handleSubmit}>
+        {thanksPopup !== 'showThankYou' ? 
+        <form className='createPoll' id='createPoll' onSubmit={handleSubmit}>
           <h2>Add your poll below</h2>
           <label htmlFor='question'></label>
-          <input id='question' maxlength='120' placeholder='Add your question' type='text' onChange={this.handleChange} value={this.state.question} autoComplete='off' required></input>
+          <input id='question' maxlength='120' placeholder='Add your question' type='text' onChange={handleChange} value={question} autoComplete='off' required></input>
           <label htmlFor='answer1'></label>
-          <input id='answer1' maxlength='20' placeholder='Answer Option One' type='text' onChange={this.handleChange}value={this.state.answer1} autoComplete='off' required></input>
+          <input id='answer1' maxlength='20' placeholder='Answer Option One' type='text' onChange={handleChange}value={answer1} autoComplete='off' required></input>
           <label htmlFor='answer2'></label>
-          <input id='answer2' maxlength='20' placeholder='Answer Option Two' type='text' onChange={this.handleChange}value={this.state.answer2} autoComplete='off' required></input>
+          <input id='answer2' maxlength='20' placeholder='Answer Option Two' type='text' onChange={handleChange}value={answer2} autoComplete='off' required></input>
           <button className='addPollButton' type='submit'>Add Poll!</button>
-        </form> : <Thanks resetForm={this.resetForm}/>
+        </form> : <Thanks resetForm={resetForm}/>
         }
       </div>
     );

@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import Sidebar from './Sidebar';
 import CreateAPoll from './CreateAPoll';
 import Polls from './Polls';
-// import ViewPolls from './ViewPolls';
 import '../App.scss';
-import firebase from 'firebase';
-import 'firebase/auth';
 import FooterDashboard from './FooterDashboard'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretDown, faPlus } from '@fortawesome/free-solid-svg-icons'
@@ -27,23 +24,43 @@ class Dashboard extends Component {
             hidden: false,
         })
     }
+
     handleSidebarClick = () => {
+
+        const {
+            isSidebarHidden
+        } = this.state;
+
         this.setState({
-            isSidebarHidden: !this.state.isSidebarHidden
+            isSidebarHidden: !isSidebarHidden
         })
     }
 
     render() {
-        const {signOut} = this.props;
+
+        const {
+            handleClick,
+            handleSidebarClick,
+            state: {
+                hidden,
+                isSidebarHidden,
+                currentView
+            },
+            props: {
+                signOut,
+                userId
+            }
+        } = this;
+
         return (
             <div className='flexDashboardParent'>
-                <Sidebar handleSignOut={signOut} isSidebarHidden={this.state.isSidebarHidden}/>
-                <FontAwesomeIcon onClick={this.handleSidebarClick} className="hamburger" icon={faCaretDown} />
-                {this.state.hidden && <div> <FontAwesomeIcon className="createPollMobile" icon={faPlus} id='createPoll' onClick={this.handleClick} /> </div>}
+                <Sidebar handleSignOut={signOut} isSidebarHidden={isSidebarHidden}/>
+                <FontAwesomeIcon onClick={handleSidebarClick} className="hamburger" icon={faCaretDown} />
+                {hidden && <div> <FontAwesomeIcon className="createPollMobile" icon={faPlus} id='createPoll' onClick={handleClick} /> </div>}
                 <div className='dashboard'>
-                    {this.state.hidden && <div> <button className='createPollButton' id='createPoll' onClick={this.handleClick}>+ create your own</button> </div>}
-                    {this.state.currentView === 'createPoll' && <CreateAPoll />}
-                    <Polls userId={this.props.userId} />
+                    {hidden && <div> <button className='createPollButton' id='createPoll' onClick={handleClick}>+ create your own</button> </div>}
+                    {currentView === 'createPoll' && <CreateAPoll userId={userId} />}
+                    <Polls userId={userId} />
                     <FooterDashboard />
                 </div>
             </div>
