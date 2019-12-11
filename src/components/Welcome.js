@@ -45,8 +45,8 @@ class Welcome extends Component {
             <div>
                 <div className='welcomeSplash'>
                     <div className='wrapper'>
-                        <img className='logo bounce-in-fwd' src={logo}></img>
-                        <p>Hey there! Welcome to blaajsdfo  sadofjosf  sdfjosjdf sodif sodfifo sf osdifo asfd sdkf sjdfih fsofd jofhsdof of sodf osf osf saof eefsof</p>
+                        <img className='logo bounce-in-fwd' src={logo} alt='versus logo'></img>
+                        <p>Ready to find out if people prefer pineapple or ketchup on their pizza? Look no further. Build an unlimited amount of polls and vote on others and make your opinion known to the world!</p>
                         <div className='userLoginHome'>
                             <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
                         </div>
