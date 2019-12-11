@@ -3,11 +3,7 @@ import './App.scss';
 import { BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
 import Welcome from './components/Welcome';
 import Dashboard from './components/Dashboard';
-<<<<<<< HEAD
 import ViewPolls from './components/ViewPolls';
-=======
-import CreateAPoll from './components/CreateAPoll';
->>>>>>> master
 import firebase from 'firebase';
 import 'firebase/auth';
 
