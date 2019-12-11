@@ -39,6 +39,7 @@
     border-radius: 50%;
     height: 200px;
     width: 200px;
+    margin-bottom: 20px;
 }
 .dreamTeamList {
     padding: 30px;
@@ -46,6 +47,15 @@
     list-style: none;
     text-align: center;
     margin: 0 auto;
+    img {
+        outline-offset: -1px;
+        border: 15px solid rgba(255,255,255, 0);
+        transition: all .5s;
+        &:hover {
+            border: 15px solid rgba(255,255,255, .5);
+            transform: rotate(-10deg) scale(1.1);
+        }
+    }
 }
 
 .socialLinks {
