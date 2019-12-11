@@ -44,7 +44,7 @@ class About extends Component {
                         <p> and hire them!</p>
                         <ul className='dreamTeamFlexChild'>
                             <li className='dreamTeamList'>
-                                <img className='dreamTeamImage' src={jasmine} alt=''></img>
+                                <img className='dreamTeamImage' src={jasmine} alt='photo of jasmine'></img>
                                 <h2>jasmine carbone</h2>
                                 <ul classname='socialLinks'>
                                     <li><a target='_blank' rel='noopener' href="https://github.com/tiltedcanvas">
@@ -54,7 +54,7 @@ class About extends Component {
                                 </ul>
                             </li>
                             <li className='dreamTeamList'>
-                                <img className='dreamTeamImage' src={mehdi} alt=''></img>
+                                <img className='dreamTeamImage' src={mehdi} alt='photo of mehdi'></img>
                                 <h2>mehdi pilehvarian</h2>
                                 <ul classname='socialLinks'>
                                     <li><a target='_blank' rel='noopener' href="https://github.com/mantonionip">
@@ -64,7 +64,7 @@ class About extends Component {
                                 </ul>
                             </li>
                             <li className='dreamTeamList'>
-                                <img className='dreamTeamImage' src={vince} alt=''></img> 
+                                <img className='dreamTeamImage' src={vince} alt='photo of vincent'></img> 
                                 <h2>vincent dang</h2>
                                 <ul classname='socialLinks'>
                                     <li><a target='_blank' rel='noopener' href="https://github.com/DangVincent">
@@ -74,7 +74,7 @@ class About extends Component {
                                 </ul>
                             </li>
                             <li className='dreamTeamList'>
-                                <img className='dreamTeamImage' src={sharon} alt=''></img>
+                                <img className='dreamTeamImage' src={sharon} alt='photo of sharon'></img>
                                 <h2>sharon yi</h2>
                                 <ul classname='socialLinks'>
                                     <li><a target='_blank' rel='noopener' href="https://github.com/sharon-yi">

@@ -48,7 +48,7 @@ class App extends Component {
             }
         } = this;
         return (
-            <Router>
+            <Router basename='/anonymousVotingBooth'>
                 <div className='App'>
                     <Route exact path='/' render={() => (<Welcome loggedIn={userId} getAuthentication={setAuthentication}/>)
                     } />
