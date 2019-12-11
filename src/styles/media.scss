@@ -7,6 +7,9 @@
   .welcomeSplash {
     width: 50%;
   }
+  .sideBar {
+    width: 25%;
+  }
 }
 
 @media (max-width: 784px) {
@@ -30,7 +33,7 @@
     width: 230px;
     padding-top: 50px;
     margin-left: 0;
-    transition: all .7s ease;
+    transition: all 0.7s ease;
   }
 
   .hamburger {
