@@ -118,6 +118,9 @@ class ViewPolls extends Component {
                         </li>
                       );
                     }
+                    else {
+                      alert('error');
+                    }
                     return poll;
                   })
                 }

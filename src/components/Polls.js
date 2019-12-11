@@ -5,25 +5,25 @@ import 'firebase/auth';
 
 class Polls extends Component {
   constructor() {
-      super();
-      this.state = {
-          pollQuestions: [],
-          currentPoll: [],
-          answer1TotalVotes: 0,
-          answer2TotalVotes: 0,
-          pollQuestionRef: firebase.database().ref('/publicPolls')
-      };
+    super();
+    this.state = {
+      pollQuestions: [],
+      currentPoll: [],
+      answer1TotalVotes: 0,
+      answer2TotalVotes: 0,
+      pollQuestionRef: firebase.database().ref('/publicPolls')
+    };
   }
 
   componentDidMount() {
-    const {pollQuestionRef} = this.state;
+    const { pollQuestionRef } = this.state;
     // Going to firebase and check each object (Poll) to see if the first one is checked/voted and storing them into an array
     pollQuestionRef.on('value', fbData => {
       const pollData = fbData.val();
       const pollContent = Object.values(pollData);
       const pollNum = [];
-      
-      for (let key in pollData){  
+
+      for (let key in pollData) {
         const pollNumbers = {
           pNumber: key,
           pName: pollData[key],
@@ -40,10 +40,10 @@ class Polls extends Component {
   // Incrementing the option one every time a user votes for option one in any vote poll
   incrementAnswer1Count = (e) => {
     e.preventDefault();
-    const {id} = e.currentTarget;
+    const { id } = e.currentTarget;
     const {
       state: {
-        currentPoll, 
+        currentPoll,
         pollQuestionRef,
       },
       props: {
@@ -72,9 +72,9 @@ class Polls extends Component {
   // Incrementing the option two every time a user votes for option two in any vote poll
   incrementAnswer2Count = (e) => {
     e.preventDefault();
-    const {id} = e.currentTarget;
-    const {currentPoll, pollQuestionRef} = this.state;
-    const {userId} = this.props;
+    const { id } = e.currentTarget;
+    const { currentPoll, pollQuestionRef } = this.state;
+    const { userId } = this.props;
     const usersVotedList = currentPoll[id].pName.usersVotedList;
     const userList = [];
     for (let user in usersVotedList) {
@@ -91,7 +91,7 @@ class Polls extends Component {
         answer2TotalVotes: vote,
       });
     }
-  } 
+  }
 
   render() {
     const {
@@ -107,60 +107,61 @@ class Polls extends Component {
     } = this;
 
     return (
-        <div className="wrapper">
-          <ul className='pollsList'>
-            {
-              pollQuestions.map((value, index) => {
-                const optionA = value.answer1;
-                const optionB = value.answer2;
-                const totalVotesA = value.votes1;
-                const totalVotesB = value.votes2;
-                const pollQ = value.question;
-                const currentPollQ = index;
-                let voted = currentPoll[index].voted;
-                const usersVotedList = currentPoll[index].pName.usersVotedList;
-                const userList = [];
-                for (let user in usersVotedList) {
-                  userList.push(usersVotedList[user])
-                }
-                if (userList.includes(userId)) {
-                  voted = true;
-                }
-                return (
-                  <li key={index} className='pollItem'>
-                      <div className="pollQuestion">
-                        <p>{pollQ}</p>
-                      </div>
-                      <div className="voteButtons">
-                        <button 
-                          id={currentPollQ} 
-                          onClick={incrementAnswer1Count}  
-                          value='votes1'
-                          disabled={voted ? true : false}
-                        >
-                        {optionA}
-                          <p className={voted ? 'showVotes' : null}>
-                            {totalVotesA} votes
+      <div className="wrapper">
+        <ul className='pollsList'>
+          {
+            pollQuestions.map((value, index) => {
+              const optionA = value.answer1;
+              const optionB = value.answer2;
+              const totalVotesA = value.votes1;
+              const totalVotesB = value.votes2;
+              const pollQ = value.question;
+              const currentPollQ = index;
+              let voted = currentPoll[index].voted;
+              const usersVotedList = currentPoll[index].pName.usersVotedList;
+              const userList = [];
+              for (let user in usersVotedList) {
+                userList.push(usersVotedList[user])
+              }
+              if (userList.includes(userId)) {
+                voted = true;
+              }
+              return (
+                <li key={index} className='pollItem'>
+                  <div className="pollQuestion">
+                    <p>{pollQ}</p>
+                  </div>
+                  <div className="voteButtons">
+                    <button
+                      id={currentPollQ}
+                      onClick={incrementAnswer1Count}
+                      value='votes1'
+                      disabled={voted ? true : false}
+                    >
+                      <p className="options">{optionA}</p>
+
+                      <p className={voted ? 'showVotes' : null}>
+                        {totalVotesA} votes
                           </p>
-                        </button>
-                        <button 
-                          id={currentPollQ}
-                          onClick={incrementAnswer2Count} 
-                          value='votes2'
-                          disabled={voted ? true : false}
-                        >
-                        {optionB}
-                          <p className={voted ? 'showVotes' : null}>
-                            {totalVotesB} votes
+                    </button>
+                    <button
+                      id={currentPollQ}
+                      onClick={incrementAnswer2Count}
+                      value='votes2'
+                      disabled={voted ? true : false}
+                    >
+                      <p className="options">{optionB}</p>
+                      <p className={voted ? 'showVotes' : null}>
+                        {totalVotesB} votes
                           </p>
-                        </button>
-                      </div>
-                  </li>
-                );
-              })
-            }
-          </ul>
-        </div>
+                    </button>
+                  </div>
+                </li>
+              );
+            })
+          }
+        </ul>
+      </div>
     );
   };
 };
