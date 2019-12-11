@@ -46,7 +46,7 @@ class About extends Component {
                             <li className='dreamTeamList'>
                                 <img className='dreamTeamImage' src={jasmine} alt='jasmine on purple background'></img>
                                 <h2>jasmine carbone</h2>
-                                <ul classname='socialLinks'>
+                                <ul className='socialLinks'>
                                     <li><a target='_blank' rel='noopener noreferrer' href="https://github.com/tiltedcanvas">
                                     <FontAwesomeIcon icon={faGithubAlt} /></a></li>
                                     <li><a target='_blank' rel='noopener noreferrer' href='https://twitter.com/tiltedcanvas'><FontAwesomeIcon icon={faTwitter} /></a></li>
@@ -56,7 +56,7 @@ class About extends Component {
                             <li className='dreamTeamList'>
                                 <img className='dreamTeamImage' src={mehdi} alt='mehdi on a yellow background'></img>
                                 <h2>mehdi pilehvarian</h2>
-                                <ul classname='socialLinks'>
+                                <ul className='socialLinks'>
                                     <li><a target='_blank' rel='noopener noreferrer' href="https://github.com/mantonionip">
                                     <FontAwesomeIcon icon={faGithubAlt} /></a></li>
                                     <li><a target='_blank' rel='noopener noreferrer' href='https://twitter.com/mp_codes'><FontAwesomeIcon icon={faTwitter} /></a></li>
@@ -66,7 +66,7 @@ class About extends Component {
                             <li className='dreamTeamList'>
                                 <img className='dreamTeamImage' src={vince} alt='vincent on a yellow background'></img> 
                                 <h2>vincent dang</h2>
-                                <ul classname='socialLinks'>
+                                <ul className='socialLinks'>
                                     <li><a target='_blank' rel='noopener noreferrer' href="https://github.com/DangVincent">
                                     <FontAwesomeIcon icon={faGithubAlt} /></a></li>
                                     <li><a target='_blank' rel='noopener noreferrer' href='https://twitter.com/VinceDCodes'><FontAwesomeIcon icon={faTwitter} /></a></li>
@@ -76,7 +76,7 @@ class About extends Component {
                             <li className='dreamTeamList'>
                                 <img className='dreamTeamImage' src={sharon} alt='sharon on a purple background'></img>
                                 <h2>sharon yi</h2>
-                                <ul classname='socialLinks'>
+                                <ul className='socialLinks'>
                                     <li><a target='_blank' rel='noopener noreferrer' href="https://github.com/sharon-yi">
                                     <FontAwesomeIcon icon={faGithubAlt} /></a></li>
                                     <li><a target='_blank' rel='noopener noreferrer' href='https://twitter.com/sharon_yi'><FontAwesomeIcon icon={faTwitter} /></a></li>
