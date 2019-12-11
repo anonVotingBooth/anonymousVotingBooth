@@ -86,3 +86,7 @@
     }
   }
 }
+.viewPollsList {
+  @extend .pollsList;
+  margin-top: 50px;
+}
