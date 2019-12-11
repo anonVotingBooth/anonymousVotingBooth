@@ -94,8 +94,9 @@ class ViewPolls extends Component {
                     const pollQ = value.question;
                     const currentPollQ = index;
                     const pollCreatedBy = value.pollCreatedBy;
+                    let poll;
                     if (pollCreatedBy === userId) {
-                      return (
+                      poll = (
                         <li key={index} className='pollItem'>
                             <div className="pollQuestion">
                               <p>{pollQ}</p>
@@ -117,6 +118,7 @@ class ViewPolls extends Component {
                         </li>
                       );
                     }
+                    return poll;
                   })
                 }
               </ul>
