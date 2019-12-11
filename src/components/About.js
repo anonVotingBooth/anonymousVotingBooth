@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Sidebar from './Sidebar';
-import jasmine from './../assets/jasmineCarbone.jpg';
-import sharon from './../assets/sharonYi.jpg';
-import mehdi from './../assets/mehdiPilehvarian.jpg';
-import vince from './../assets/vinceDang.jpg';
+import jasmine from '../assets/jasmineCarbone.jpg';
+import sharon from '../assets/sharonYi.jpg';
+import mehdi from '../assets/mehdiPilehvarian.jpg';
+import vince from '../assets/vinceDang.jpg';
 import FooterDashboard from './FooterDashboard'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretDown, faEnvelope } from '@fortawesome/free-solid-svg-icons'
