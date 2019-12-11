@@ -19,20 +19,20 @@
       height: 100%;
       justify-content: center;
       align-items: center;
+      padding: 40px 10px;
     }
     p {
       color: $primaryColour;
       text-align: center;
       font-size: 2rem;
-      padding: 20px 10px;
 
       &:first-letter {
         text-transform: capitalize;
       }
     }
     button {
-      height: 70px;
-      padding: 25px 5px;
+      height: 100%;
+      padding: 15px 5px 10px 5px;
       font-family: $fontBase;
       font-weight: 700;
       font-size: 1.8rem;
@@ -45,14 +45,15 @@
       background: none;
       color: $primaryColour;
       outline: none;
-      line-height: 0;
+      line-height: 1;
       cursor: pointer;
 
       p {
         opacity: 0;
-        margin: 5px 0;
+        padding: 15px 0 10px 0;
         font-size: 1.6rem;
         color: darkgrey;
+        line-height: 0;
       }
       .showVotes {
         opacity: 1;
@@ -69,8 +70,8 @@
         border-bottom: none;
       }
       &:hover {
-        background-color: #fdf4c6; //fix to be a lightened variable
-        font-size: 2.1rem;
+        background-color: #fffbe4; //fix to be a lightened variable
+        color: $accentColour;
         transition: ease all 0.15s;
       }
 

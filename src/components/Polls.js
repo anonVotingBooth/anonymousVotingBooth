@@ -129,7 +129,7 @@ class Polls extends Component {
                           value='votes1'
                           disabled={voted ? true : false}
                         >
-                          {optionA}
+                        {optionA}
                           <p className={voted ? 'showVotes' : null}>
                             {totalVotesA} votes
                           </p>
@@ -140,7 +140,7 @@ class Polls extends Component {
                           value='votes2'
                           disabled={voted ? true : false}
                         >
-                          {optionB}
+                        {optionB}
                           <p className={voted ? 'showVotes' : null}>
                             {totalVotesB} votes
                           </p>
