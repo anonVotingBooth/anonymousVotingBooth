@@ -2,22 +2,22 @@
 
 [Live Demo](https://anonvotingbooth.github.io/anonymousVotingBooth)
 
+![Anonymous Voting Booth App](https://i.imgur.com/JIwHg12.jpg)
+
 ## Description
-An easy-to-use app to create, take and share fun polls
+Can't make a decision on something? Look no further as this client-based application allows users to create quick anonymous polls and share with anyone that would like to take part in the poll.
 
 ## Built With
+* HTML5
+* CSS3
+* Sass
+* JavaScript
+* Sass
+* VSCode
 * React (Bootstrapped with Create React App)
-* HTML
-* SASS
 * Firebase
-
-
-## To Do
-- [ ] Item
-- [ ] Item
-- [ ] Item
-- [ ] Item
-
+* [Animista](https://animista.net/) - Used to animate the welcome page background
+* [Sweet Alerts 2](https://cdn.jsdelivr.net/npm/sweetalert2@9) - Used to animate alerts for users when an event occurs
 
 ### Contributors 
  :heart_eyes_cat:[Sharon Yi](https://github.com/sharon-yi)
