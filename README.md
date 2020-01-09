@@ -2,7 +2,7 @@
 
 [Live Demo](https://anonvotingbooth.github.io/anonymousVotingBooth)
 
-![Anonymous Voting Booth App](https://i.imgur.com/JIwHg12.jpg)
+![Anonymous Voting Booth App](https://i.imgur.com/lfeXdzp.jpg)
 
 ## Description
 Can't make a decision on something? Look no further as this client-based application allows users to create quick anonymous polls and share with anyone that would like to take part in the poll.
