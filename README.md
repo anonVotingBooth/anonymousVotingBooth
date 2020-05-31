@@ -12,7 +12,6 @@ Can't make a decision on something? Look no further as this client-based applica
 * CSS3
 * Sass
 * JavaScript
-* Sass
 * VSCode
 * React (Bootstrapped with Create React App)
 * Firebase
