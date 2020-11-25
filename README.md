@@ -23,6 +23,6 @@ Can't make a decision on something? Look no further as this client-based applica
 
  :smirk_cat:[Vince Dang](https://github.com/DangVincent)
 
- :smiley_cat:[Mehdi Pilehvarian](https://github.com/mantonionip)
+ :smiley_cat:[Sam Pilehvarian](https://github.com/mantonionip)
 
  :scream_cat:[Jasmine Carbone](https://github.com/tiltedcanvas)
